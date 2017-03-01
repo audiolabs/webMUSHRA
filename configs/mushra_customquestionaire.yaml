@@ -1,0 +1,54 @@
+# test config mushra page, no waveform, 3 conditions,  looping, anchor35, anchor 70
+
+
+testname: MUSHRA with custom Questionaire
+testId: mushra_customquestionaire
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+
+    - type: mushra
+      id: trial2
+      name: Mono Trial
+      content: test description
+      showWaveform: false
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      popupcontent: Your results were sent. Goodbye and have a nice day
+      showResults: true
+      writeResults: true
+      questionnaire:
+          - type: text
+            label: eMail
+            name: email
+          - type: number
+            label: Age
+            name: age
+            min: 0
+            max: 100
+            default: 30
+          - type: likert
+            name: gender
+            label: Gender
+            response:
+             - value: female
+               label: Female
+             - value: male
+               label: Male
+             - value: other
+               label: Other

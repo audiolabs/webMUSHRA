@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Tolito Progress Bar for jQuery Mobile 1.2.0</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="../src/css/tolito-1.0.1.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        <script type="text/javascript" src="../src/js/tolito-1.0.1.js"></script>
+        <script>
+            $("#home-page")
+                .live('pagebeforeshow', function () {
+
+                var tolito = TolitoProgressBar('progressbar')
+                    .setOuterTheme('b')
+                    .setInnerTheme('e')
+                    .isMini(true)
+                    .setMax(1000)
+                    .setStartFrom(0)
+                    .setInterval(100)
+                    .showCounter(true)
+                    .logOptions()
+                    .build()
+                    .init();
+
+                // stop after 5 seconds
+                setTimeout(function () {
+                    tolito.stop()
+                }, 5000);
+
+            });
+        </script>
+    </head>
+    
+    <body>
+        <!-- /page -->
+        <div data-role="page" id="home-page">
+            <!-- /header -->
+            <div data-role="header" data-theme="c">
+                	<h1>Tolito Progress Bar for jQuery Mobile 1.2.0</h1>
+
+            </div>
+            <!-- /content -->
+            <div data-role="content">
+                <div id="progressbar"></div>
+            </div>
+        </div>
+    </body>
+
+</html>

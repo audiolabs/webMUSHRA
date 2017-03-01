@@ -1,0 +1,70 @@
+testname: webMUSHRA Example
+testId: training_example
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: The next pages present a few ideas about how to design a training page.
+    - type: generic
+      id: training_1
+      name: Training No.1
+      content: Please listen to each of the music excerpts:<br/><audio controls><source src='configs/resources/audio/mono_c1.wav' type='audio/wav'></audio><br/><audio controls><source src='configs/resources/audio/mono_c2.wav' type='audio/wav'></audio><br/><audio controls><source src='configs/resources/audio/mono_c3.wav' type='audio/wav'></audio><br/>
+    - type: likert_multi_stimulus
+      id: training_2
+      name: Training No.2
+      content: test description
+      mustRate: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+      response:
+        - value: listened
+          label: I listened to this item
+    - type: mushra
+      id: training_3
+      name: Training No.3
+      content: This MUSHRA page does not randomize the conditions. Furthermore, the conditions names are not hidden. 
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: true
+      randomize: false
+      showConditionNames: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav             
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending!
+      showResults: true
+      writeResults: true
+      questionnaire:
+          - type: text
+            label: eMail
+            name: email
+          - type: number
+            label: Age
+            name: age
+            min: 0
+            max: 100
+            default: 30
+          - type: likert
+            name: gender
+            label: Gender
+            response:
+             - value: female
+               label: Female
+             - value: male
+               label: Male
+             - value: other
+               label: Other

@@ -1,0 +1,32 @@
+# test config bs11.16 page, no waveform, 3 conditions, looping
+
+
+testname: BS.1116 without waveform
+testId: bs1116_nowav
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+
+    - type: bs1116
+      id: trial2
+      name: Mono Trial
+      content: test description
+      showWaveform: false
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+    
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      showResults: true
+      writeResults: true

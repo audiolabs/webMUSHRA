@@ -1,0 +1,20 @@
+image: drone/latex
+script:
+    - curl -LO https://github.com/jgm/pandoc/releases/download/1.13.2/pandoc-1.13.2-1-amd64.deb
+    - sudo dpkg -i pandoc-1.13.2-1-amd64.deb
+    - sudo apt-get update
+    - npm install
+    - npm install -g grunt-cli
+    - grunt package
+    - pandoc doc/experimenter.md -o doc/experimenter.pdf
+    - pandoc doc/participant.md -o doc/participant.pdf
+
+notify:
+    email:
+        on_failure: blame
+
+deploy:
+    bash:
+        script:
+            - scp -o StrictHostKeyChecking=no -P 22 -r doc/ stf@work.audiolabs.uni-erlangen.de:public_html/webMUSHRA/
+            - scp -o StrictHostKeyChecking=no -P 22 -r builds/ stf@work.audiolabs.uni-erlangen.de:public_html/webMUSHRA/

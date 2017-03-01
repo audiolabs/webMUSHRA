@@ -1,0 +1,36 @@
+testname: MUSHRA which shows the results to the participant
+testId: mushra_showresults
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+
+    - type: mushra
+      id: myMushraPage
+      name: Simple Test
+      content: test description
+      showWaveform: true
+      enableLooping: true
+      strict: false 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: false
+      stimuli:
+          system_under_test: configs/resources/audio/mono_c1.wav
+
+    - type: mushra_results
+      id: myResultsPage
+      name: Results of previous Mushra
+      content: none
+      mushra_page_id: myMushraPage
+
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      popupcontent: Your results were sent. Goodbye and have a nice day
+      showResults: true
+      writeResults: true

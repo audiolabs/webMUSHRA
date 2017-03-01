@@ -1,0 +1,98 @@
+testname: LMS and LSS test
+testId: lss_lms
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+
+pages:
+    - type: generic
+      id: LSS_LMS
+      name: LMS and LSS test
+      content: <ul> <li>This listening test tries to figure out the differences in the ratings with a Single Stimulus Likert Scale and a Multi Stimulus Likert Scale.</li> <li>In order to be able to compare the ratings the same items are first rated with a  Multi Stimulus Likert Scale and afterwards with a Single Stimulus Likert Scale</li><li> Before the test starts you can set the volume to your convenience and after the test you get an overview over your results!</li></ul>
+
+  
+ 
+    - type: volume
+      id: vol
+      name: Volume settings
+      content: Please adjust the volume!
+      stimulus: configs/resources/audio/mono_c1.wav
+      defaultVolume: 0.5
+
+
+
+    - type: likert_multi_stimulus
+      id: lms2
+      name: Multi Stimulus Likert Scale
+      content: Rate the items!
+      stimuli:
+          ref: configs/resources/audio/mono_ref.wav
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+
+      response:
+        - value: not at all
+          label: Not at all
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: not a lot
+          label: Not a lot
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: a bit
+          label: A bit
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: much
+          label: Much
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png          
+
+
+    - type: likert_single_stimulus
+      id: lss2
+      name: Single Stimulus Likert Scale
+      content: Rate the item!
+      stimuli:
+          ref: configs/resources/audio/mono_ref.wav
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+      response:
+        - value: not at all
+          label: Not at all
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: not a lot
+          label: Not a lot
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: a bit
+          label: A bit
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: much
+          label: Much
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png          
+
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      showResults: true
+      writeResults: true
+  
+            

@@ -1,0 +1,52 @@
+# test config mushra page, 2 trials: 1) not randomized, condition names shown 2) 
+
+testname: MUSHRA without randomization
+testId: mushra_norandom
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+
+    - type: mushra
+      id: trial1
+      name: Mono Trial
+      content: test description
+      showWaveform: true
+      enableLooping: true
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: false
+      randomize: false
+      showConditionNames: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+          
+
+    - type: mushra
+      id: trial2
+      name: Mono Trial
+      content: test description
+      showWaveform: true
+      enableLooping: true
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: false
+      randomize: true
+      showConditionNames: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      popupcontent: Your results were sent. Goodbye and have a nice day      
+      showResults: true
+      writeResults: true

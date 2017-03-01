@@ -1,0 +1,8 @@
+js{
+  "name": "webMUSHRA",
+  "version": "1.0",
+  "description": "webMUSHRA",
+  "dependencies": {
+    "qunit": "~1.16.0"
+  }
+}

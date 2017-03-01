@@ -1,0 +1,245 @@
+/*************************************************************************
+         (C) Copyright AudioLabs 2015 
+
+This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law. 
+
+**************************************************************************/
+
+
+input[type=number]::-webkit-outer-spin-button,
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.ui-slider-track.ui-state-disabled {  
+  opacity: 1.0;
+  -webkit-filter: brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8)  brightness(1.05);
+  filter:  brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8)  brightness(1.05);  
+}
+
+.noUi-connect {
+  background-color: #ED8C01; /* NOTE Background-color between handles alabs-orange */
+}
+
+body {
+  font-family: sans-serif,verdana,Helvetica,Arial;
+  text-align:center;
+  background-repeat: repeat-x;
+  background-position: 0 5em; 
+  background-color: #EEE;
+    
+} 
+
+body.ui-mobile-viewport, div.ui-mobile-viewport {
+	overflow-x: scroll;
+}
+
+.ui-mobile .ui-page-active {
+	overflow-x: visible;
+}
+
+
+#container {  
+	position: relative; 
+	top: 0%; 
+	margin-top: 0px; 
+	padding: 0 7%;
+}
+
+
+
+.header {
+  position:relative;
+  border-left-width: 0;
+  border-right-width: 0;
+  border: 1px solid #333;
+  background: #111;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-shadow: 0 -1px 1px black;
+  margin: 0 auto;
+  padding: .7em 0em;
+  text-align: center;
+  
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#3C3C3C),to(#111));
+  background-image: -webkit-linear-gradient(#3C3C3C,#111);
+  background-image: -moz-linear-gradient(#3C3C3C,#111);
+  background-image: -ms-linear-gradient(#3C3C3C,#111);
+  background-image: -o-linear-gradient(#3C3C3C,#111);
+  background-image: linear-gradient(#3C3C3C,#111); 
+
+}
+.default_padding {
+  border-collapse: separate;
+  border-spacing: 1.5em 0.1em;
+}
+
+#mushra_items {
+  border-spacing: 0.4em;
+  position: relative;
+}
+
+
+#tableBS1116 {
+  border-spacing: 0.4em;
+  position: relative;
+}
+
+td.logo {
+  padding: 0 0.5em 0 0.5em;
+}
+
+img.logo {
+  height: 2.5em;
+}
+
+table.logo {
+  margin-top: 0.8em;  
+}
+
+
+.center {
+	margin: 0 auto;
+}
+
+td.stopButton {
+  width: 10%;
+  vertical-align: bottom;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+#sliderLim {
+  width: 5%
+}
+
+#waveTable {
+  width: 100%
+}
+
+#conditionNameScale {
+  width: 12em;
+}
+
+#BS1116conditionNameScale {
+	width:13em;
+}
+
+#buttonStop, .audioControlElement {
+  width: 5.5em !important;
+  margin : 0 auto;
+}
+
+#mainUp {
+  width : 100%;
+}
+
+.ui-tolito-progressbar-outer-a
+{
+  background: #fff;
+  /*
+  background-image: linear-gradient( #202020, #2c2c2c);
+  background-image: -moz-linear-gradient( #202020, #2c2c2c);
+  background-image: -ms-linear-gradient( #202020, #2c2c2c);
+  background-image: -o-linear-gradient( #202020, #2c2c2c);
+  background-image: -webkit-gradient(linear, left top, left bottom, from( #202020), to( #2c2c2c));
+  background-image: -webkit-linear-gradient( #202020, #2c2c2c);
+  */
+  border: 1px solid #000;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #111;
+}
+
+.ui-tolito-progressbar-active-b
+{
+  background: #FFb500;
+  /*
+  background-image: linear-gradient( #6FACD5, #497BAE);
+  background-image: -moz-linear-gradient( #6FACD5, #497BAE);
+  background-image: -ms-linear-gradient( #6FACD5, #497BAE);
+  background-image: -o-linear-gradient( #6FACD5, #497BAE);
+  background-image: -webkit-gradient(linear, left top, left bottom, from( #6FACD5), to( #497BAE));
+  background-image: -webkit-linear-gradient( #6FACD5, #497BAE);
+  */
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px 1px #3373a5;
+}
+
+#page_progressbar {
+  width: 30em;
+  height: 1em;  
+  margin:0.5em auto;
+}
+
+.fileplayer_progressbar {
+  width: 10em;
+  height: 1.5em;    
+}
+
+/* grey background of the wavesurfer behind the slider*/
+#slider {
+	z-index:10;
+	cursor: auto;
+}
+
+/* alignment of the "start"button */
+#buttonReference {
+	margin-left:-0.4em !important;
+	margin : 0 auto;
+}
+
+/* justifications of the display of the slider values */ 
+.limits {
+	width:4em !important; 
+	text-align:center !important;
+}
+
+#div_lower_limit {
+	margin-right:1.5em; 
+	margin-bottom:-12px;
+}
+
+#div_upper_limit {
+	margin-left:1.5em; 
+	margin-bottom:-12px;
+}
+
+#main {
+	cursor:auto;
+}
+
+#tdPlayButton {
+	text-align:left
+}
+
+#tdStopButton {
+	text-align:left
+}
+
+
+.noUi-handle {
+	cursor: auto;
+}
+
+li{
+	text-align:left;
+	width:50%;
+	margin-left:25%;
+}
+
+.left {
+	text-align:left;
+	width:50%;
+	margin-left:25%;
+}
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<!--
+         (C) Copyright AudioLabs 2015 
+
+This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law. 
+-->  
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Example</title>
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.17.1.css">
+</head>
+<body>
+	<script type="text/javascript">
+	var configs = (['default', 'default', 'default', 'default', 'default', 'default']); 	//set config files for iframes and tests
+	if(configs.length > 6){
+	configs.splice(6, configs.length-6);  //make shure configs contains a maximum of 6 values
+	}
+	</script>
+
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<iframe src="" style="width: 600px; height: 400px;" id="testframe0"></iframe><br>
+	<iframe src="" style="width: 600px; height: 400px;" id="testframe1"></iframe><br>
+	<iframe src="" style="width: 600px; height: 400px;" id="testframe2"></iframe><br>
+	<iframe src="" style="width: 600px; height: 400px;" id="testframe3"></iframe><br>
+	<iframe src="" style="width: 600px; height: 400px;" id="testframe4"></iframe><br>
+	<iframe src="" style="width: 600px; height: 400px;" id="testframe5"></iframe><br>
+
+	<script>
+	for (i = 0; i < configs.length; i++) {
+	 document.getElementById("testframe"+i).src ="../index.html?config="+configs[i]+".yaml";
+	 }
+	</script>
+	<script src="http://code.jquery.com/qunit/qunit-1.17.1.js"></script>
+	<script type="text/javascript">
+	</script>
+	<script src="../lib/external/yaml/yaml.js"></script>
+	<script type="text/javascript" src="../lib/external/jquery/jquery-2.1.1.min.js"></script>
+	<script>
+		QUnit.config.reorder = false;
+		$q = jQuery.noConflict(true),
+		$ = null,
+		jQuery = null;
+	</script>
+	<script src="tests/sampleTests.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+testname: complete Test
+testId: complete_test
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+language: de
+remoteService: service/write.php
+
+pages:
+ - type: generic
+   id: all
+   name: All listening tests
+   content: <p>This example for a listening test shows all available tests. Some in random order and some not. They all use the same test item and filtered versions of it as conditions. </p> <br/><p> Before the test starts you can set the volume to your convenience and after the test you get an overview over your results!</p>
+ - type: volume
+   id: vol
+   name: Volume settings
+   content: Please adjust the volume!
+   stimulus: configs/resources/audio/mono_c1.wav
+   defaultVolume: 0.5
+ - type: generic
+   id: randomized_pages
+   name: Random
+   content: The next tests appear in randomized order.
+ -
+  - random   
+  -                                 
+   - type: generic
+     id: bs1116_instructions
+     name: BS.1116
+     content: The next pages show you some examples of BS.1116 listening tests.   
+   - type: bs1116
+     id: bs1116_nowav
+     name: BS 11.16 test
+     content: This is a BS1116 page without waveform but with looping.
+     showWaveform: false
+     enableLooping: true 
+     reference: configs/resources/audio/mono_c1.wav
+     createAnchor35: false
+     createAnchor70: false
+     stimuli:
+      C1: configs/resources/audio/mono_c1.wav
+      C2: configs/resources/audio/mono_c2.wav
+      C3: configs/resources/audio/mono_c3.wav
+  -
+   - type: generic
+     id: paired_comparison_AB_instructions
+     name: AB
+     content: The next pages show you some examples of paired comparison listening tests (AB).  
+   - type: paired_comparison
+     id: AB_noloop
+     name: AB test
+     unforced: 
+     content: This is a paired comparison listening test with two choices and no looping.
+     showWaveform: true
+     enableLooping: false 
+     reference: configs/resources/audio/mono_c1.wav
+     stimuli:
+      C1: configs/resources/audio/mono_c1.wav
+      C2: configs/resources/audio/mono_c2.wav
+      C3: configs/resources/audio/mono_c3.wav
+  -
+   - type: generic
+     id: paired_comparison_ABN_instructions
+     name: ABN
+     content: The next pages show you some examples of paired comparison listening tests (ABN).                                   
+   - type: paired_comparison
+     id: ABN
+     name: ABN test
+     unforced: I don't know
+     content: This is a paired comparison listening test with three choices and waveform and looping.
+     showWaveform: true
+     enableLooping: true 
+     reference: configs/resources/audio/mono_c1.wav
+     stimuli:
+      C1: configs/resources/audio/mono_c1.wav
+      C2: configs/resources/audio/mono_c2.wav
+      C3: configs/resources/audio/mono_c3.wav
+ - type: generic
+   id: mushra_instructions
+   name: MUSHRA
+   content: The next pages show you some examples of MUSHRA listening tests. They are not in randomized order.
+ - type: mushra
+   id: mushra
+   name: MUSHRA 
+   content: This is a MUSHRA page with enabled looping and waveform but without anchors.
+   showWaveform: true
+   enableLooping: true 
+   reference: configs/resources/audio/mono_c1.wav
+   createAnchor35: false
+   createAnchor70: false
+   stimuli:
+     C1: configs/resources/audio/mono_c1.wav
+     C2: configs/resources/audio/mono_c2.wav
+     C3: configs/resources/audio/mono_c3.wav                    
+ - type: mushra
+   id: mushra_nowav_noloop
+   name: MUSHRA
+   content: This is a MUSHRA page with disabled looping and waveform but with two anchors.
+   showWaveform: false
+   enableLooping: false 
+   reference: configs/resources/audio/mono_ref.wav
+   createAnchor35: true
+   createAnchor70: true
+   stimuli:
+     C1: configs/resources/audio/mono_c1.wav 
+     C2: configs/resources/audio/mono_c2.wav
+     C3: configs/resources/audio/mono_c3.wav
+ - type: mushra
+   id: mushra_randomize_false
+   name: MUSHRA
+   content: This is a MUSHRA page with one anchor and the condition names shown.
+   showWaveform: true
+   enableLooping: true
+   reference: configs/resources/audio/mono_ref.wav
+   createAnchor35: true
+   createAnchor70: false
+   randomize: false
+   showConditionNames: true
+   stimuli:
+     C1: configs/resources/audio/mono_c1.wav
+     C2: configs/resources/audio/mono_c2.wav
+     C3: configs/resources/audio/mono_c3.wav
+     C4: configs/resources/audio/mono_c1.wav
+     C5: configs/resources/audio/mono_c2.wav
+     C6: configs/resources/audio/mono_c3.wav
+     C7: configs/resources/audio/mono_c1.wav
+     C8: configs/resources/audio/mono_c2.wav
+     C9: configs/resources/audio/mono_c3.wav
+     C10: configs/resources/audio/mono_c1.wav
+     C11: configs/resources/audio/mono_c2.wav
+ - type: mushra
+   id: mushra_randomize_true
+   name: MUSHRA
+   content: This is a MUSHRA page with one anchor and the condition names shown and randomized order of conditions.
+   showWaveform: true
+   enableLooping: true
+   reference: configs/resources/audio/mono_ref.wav
+   createAnchor35: true
+   createAnchor70: false
+   randomize: true
+   showConditionNames: true
+   stimuli:
+     C1: configs/resources/audio/mono_c1.wav
+     C2: configs/resources/audio/mono_c2.wav
+     C3: configs/resources/audio/mono_c3.wav  
+     C4: configs/resources/audio/mono_c1.wav
+     C5: configs/resources/audio/mono_c2.wav
+     C6: configs/resources/audio/mono_c3.wav
+     C7: configs/resources/audio/mono_c1.wav
+     C8: configs/resources/audio/mono_c2.wav
+     C9: configs/resources/audio/mono_c3.wav
+     C10: configs/resources/audio/mono_c1.wav
+     C11: configs/resources/audio/mono_c2.wav
+ - type: generic
+   id: likert_instructions
+   name: Likert
+   content: The next pages show you some examples of Likert listening tests in randomized order.      
+ -
+  - random   
+  - type: likert_multi_stimulus
+    id: lms1
+    name: Likert
+    content: This is a Likert test with multi stimulus and two responses.
+    stimuli:
+        C1: configs/resources/audio/mono_c1.wav
+        C2: configs/resources/audio/mono_c2.wav
+        C3: configs/resources/audio/mono_c3.wav
+    response:
+      - value: not at all
+        label: Not at all
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png
+      - value: not a lot
+        label: Not a lot
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png    
+  - type: likert_multi_stimulus
+    id: lms2
+    name: Likert
+    content: This is a Likert test with multi stimulus and four responses. You must rate to go further in the test.
+    mustRate: true
+    stimuli:
+        C1: configs/resources/audio/mono_c1.wav
+    response:
+      - value: not at all
+        label: Not at all
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png
+      - value: not a lot
+        label: Not a lot
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png
+      - value: a bit
+        label: A bit
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png
+      - value: much
+        label: Much
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png                  
+  - type: likert_single_stimulus
+    id: lss1
+    name: Likert
+    content: This is a Likert test with single stimulus and two responses.
+    stimuli:
+        C1: configs/resources/audio/mono_c1.wav
+        C2: configs/resources/audio/mono_c2.wav
+        C3: configs/resources/audio/mono_c3.wav
+    response:
+      - value: not at all
+        label: Not at all
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png
+      - value: not a lot
+        label: Not a lot
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png               
+  - type: likert_single_stimulus
+    id: lss2
+    name: likert
+    content: This is a Likert test with single stimulus and four responses. You have to rate to go further in the test.
+    mustRate: true    
+    stimuli:
+        C1: configs/resources/audio/mono_c1.wav
+    response:
+      - value: not at all
+        label: Not at all
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png
+      - value: not a lot
+        label: Not a lot
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png
+      - value: a bit
+        label: A bit
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png
+      - value: much
+        label: Much
+        img: configs/resources/images/star_off.png
+        imgSelected: configs/resources/images/star_on.png
+        imgHigherResponseSelected: configs/resources/images/star_on.png  
+ - type: generic
+   id: finish_instructions
+   name: Finish page
+   content: The next page is the finish page. Here the results will be sent and questions will be asked.        
+ - type: finish
+   name: Thank you
+   content: Thank you for attending!
+   popupContent: Your results were sent. Goodbye and have a nice day   
+   showResults: true
+   showErrors: true
+   writeResults: true
+   questionnaire:
+       - type: text
+         label: eMail
+         name: email
+         optional: false
+       - type: number
+         label: Age
+         name: age
+         optional: true
+         min: 0
+         max: 100
+         default: 30
+       - type: likert
+         name: gender
+         label: Gender
+         response:
+          - value: female
+            label: Female
+          - value: male
+            label: Male
+          - value: other
+            label: Other
+       - type: long_text
+         label: Feedback
+         name: feedback
+         optional: true

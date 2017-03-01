@@ -1,0 +1,32 @@
+# test config AB test, no waveform, 3 conditions, looping
+
+
+testname: AB without waveform
+testId: ab_nowav
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+
+    - type: paired_comparison
+      id: trialAB2
+      name: Mono Trial AB
+      unforced: 
+      content: test description AB
+      showWaveform: false
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      showResults: true
+      writeResults: true

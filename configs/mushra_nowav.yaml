@@ -1,0 +1,34 @@
+# test config mushra page, no waveform, 3 conditions,  looping
+
+
+testname: MUSHRA without waveform
+testId: mushra_nowav
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+
+    - type: mushra
+      id: trial2
+      name: Mono Trial
+      content: test description
+      showWaveform: false
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      popupcontent: Your results were sent. Goodbye and have a nice day
+      showResults: true
+      writeResults: true

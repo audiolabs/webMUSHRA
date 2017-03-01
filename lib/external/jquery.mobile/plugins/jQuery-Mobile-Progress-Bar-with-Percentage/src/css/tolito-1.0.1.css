@@ -1,0 +1,268 @@
+.ui-tolito-progressbar
+{
+	height: 30px;
+	margin: 5em, 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	top: 4px;
+	width: 100%;
+}
+.ui-tolito-progressbar-mini
+{
+	height: 20px;
+	margin: 5em, 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	top: 4px;
+	width: 100%;
+}
+.ui-tolito-progressbar-bg
+{
+	border: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+.ui-tolito-progressbar-label
+{
+	border: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	vertical-align: text-top;
+	width: 100%;
+	z-index: 2;
+}
+.ui-tolito-progressbar-outer-a
+{
+	background: #222;
+	background-image: linear-gradient( #202020, #2c2c2c);
+	background-image: -moz-linear-gradient( #202020, #2c2c2c);
+	background-image: -ms-linear-gradient( #202020, #2c2c2c);
+	background-image: -o-linear-gradient( #202020, #2c2c2c);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #202020), to( #2c2c2c));
+	background-image: -webkit-linear-gradient( #202020, #2c2c2c);
+	border: 1px solid #000;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0 1px 1px #111;
+}
+.ui-tolito-progressbar-outer-b
+{
+	background: #4e89c5;
+	background-image: linear-gradient( #295b8e, #3e79b5);
+	background-image: -moz-linear-gradient( #295b8e, #3e79b5);
+	background-image: -ms-linear-gradient( #295b8e, #3e79b5);
+	background-image: -o-linear-gradient( #295b8e, #3e79b5);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #295b8e), to( #3e79b5));
+	background-image: -webkit-linear-gradient( #295b8e, #3e79b5);
+	border: 1px solid #225377;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0 1px 1px #194b7e;
+}
+.ui-tolito-progressbar-outer-c
+{
+	background: #d6d6d6;
+	background-image: linear-gradient( #d0d0d0, #dfdfdf);
+	background-image: -moz-linear-gradient( #d0d0d0, #dfdfdf);
+	background-image: -ms-linear-gradient( #d0d0d0, #dfdfdf);
+	background-image: -o-linear-gradient( #d0d0d0, #dfdfdf);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #d0d0d0), to( #dfdfdf));
+	background-image: -webkit-linear-gradient( #d0d0d0, #dfdfdf);
+	border: 1px solid #bbb;
+	color: #222;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #fff;
+}
+.ui-tolito-progressbar-outer-d
+{
+	background: #eee;
+	background-image: linear-gradient( #e5e5e5, #f2f2f2);
+	background-image: -moz-linear-gradient( #e5e5e5, #f2f2f2);
+	background-image: -ms-linear-gradient( #e5e5e5, #f2f2f2);
+	background-image: -o-linear-gradient( #e5e5e5, #f2f2f2);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #e5e5e5), to( #f2f2f2));
+	background-image: -webkit-linear-gradient( #e5e5e5, #f2f2f2);
+	border: 1px solid #aaa;
+	color: #333;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #fff;
+}
+.ui-tolito-progressbar-outer-e
+{
+	background: #fceda7;
+	background-image: linear-gradient( #f8d94c, #fadb4e);
+	background-image: -moz-linear-gradient( #f8d94c, #fadb4e);
+	background-image: -ms-linear-gradient( #f8d94c, #fadb4e);
+	background-image: -o-linear-gradient( #f8d94c, #fadb4e);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #f8d94c), to( #fadb4e));
+	background-image: -webkit-linear-gradient( #f8d94c, #fadb4e);
+	border: 1px solid #f2c43d;
+	color: #111;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #fff;
+}
+.ui-tolito-progressbar-active-a
+{
+	background: #333333;
+	background-image: linear-gradient( #3C3C3C, #111111);
+	background-image: -moz-linear-gradient( #3C3C3C, #111111);
+	background-image: -ms-linear-gradient( #3C3C3C, #111111);
+	background-image: -o-linear-gradient( #3C3C3C, #111111);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #3C3C3C), to( #111111));
+	background-image: -webkit-linear-gradient( #3C3C3C, #111111);
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #3373a5;
+}
+.ui-tolito-progressbar-active-b
+{
+	background: #456F9A;
+	background-image: linear-gradient( #6FACD5, #497BAE);
+	background-image: -moz-linear-gradient( #6FACD5, #497BAE);
+	background-image: -ms-linear-gradient( #6FACD5, #497BAE);
+	background-image: -o-linear-gradient( #6FACD5, #497BAE);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #6FACD5), to( #497BAE));
+	background-image: -webkit-linear-gradient( #6FACD5, #497BAE);
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #3373a5;
+}
+.ui-tolito-progressbar-active-c
+{
+	background: #B3B3B3;
+	background-image: linear-gradient( #F0F0F0, #DDDDDD);
+	background-image: -moz-linear-gradient( #F0F0F0, #DDDDDD);
+	background-image: -ms-linear-gradient( #F0F0F0, #DDDDDD);
+	background-image: -o-linear-gradient( #F0F0F0, #DDDDDD);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #F0F0F0), to( #DDDDDD));
+	background-image: -webkit-linear-gradient( #F0F0F0, #DDDDDD);
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #3373a5;
+}
+.ui-tolito-progressbar-active-d
+{
+	background: #BBBBBB;
+	background-image: linear-gradient( #DDDDDD, #BBBBBB);
+	background-image: -moz-linear-gradient( #DDDDDD, #BBBBBB);
+	background-image: -ms-linear-gradient( #DDDDDD, #BBBBBB);
+	background-image: -o-linear-gradient( #DDDDDD, #BBBBBB);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #DDDDDD), to( #BBBBBB));
+	background-image: -webkit-linear-gradient( #DDDDDD, #BBBBBB);
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #3373a5;
+}
+.ui-tolito-progressbar-active-e
+{
+	background: #F7C942;
+	background-image: linear-gradient( #FCEDA7, #FBEF7E);
+	background-image: -moz-linear-gradient( #FCEDA7, #FBEF7E);
+	background-image: -ms-linear-gradient( #FCEDA7, #FBEF7E);
+	background-image: -o-linear-gradient( #FCEDA7, #FBEF7E);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #FCEDA7), to( #FBEF7E));
+	background-image: -webkit-linear-gradient( #FCEDA7, #FBEF7E);
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #3373a5;
+}
+.ui-tolito-progressbar-corner-all
+{
+	border-radius: 1em;
+	moz-border-radius: 1em;
+	webkit-border-radius: 1em;
+}
+.ui-tolito-progressbar-overlay
+{
+	background-color: #000000;
+	bottom: 0;
+	left: 0;
+	min-height: 100%;
+	position: fixed;
+	right: 0;
+	width: 100%;
+}
+.ui-tolito-progressbar-overlay-box
+{
+	margin: 10% auto 15px auto;
+	max-width: 500px;
+	padding: 0;
+	position: relative;
+	top: -15px;
+	width: 92.5%;
+}
+.ui-tolito-progressbar-overlay-box-corner-top
+{
+	border-top-left-radius: .6em;
+	border-top-right-radius: .6em;
+	moz-border-radius-topleft: .6em;
+	moz-border-radius-topright: .6em;
+	webkit-border-top-left-radius: .6em;
+	webkit-border-top-right-radius: .6em;
+}
+.ui-tolito-progressbar-overlay-box-corner-bottom
+{
+	border-bottom-left-radius: .6em;
+	border-bottom-right-radius: .6em;
+	moz-border-radius-bottomleft: .6em;
+	moz-border-radius-bottomright: .6em;
+	webkit-border-bottom-left-radius: .6em;
+	webkit-border-bottom-right-radius: .6em;
+}
+.ui-tolito-progressbar-overlay-box-body-c
+{
+	background: #f9f9f9;
+	background-image: linear-gradient( #f9f9f9 , #eee );
+	background-image: -moz-linear-gradient( #f9f9f9 , #eee );
+	background-image: -ms-linear-gradient( #f9f9f9 , #eee );
+	background-image: -o-linear-gradient( #f9f9f9 , #eee );
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #f9f9f9 ), to( #eee ));
+	background-image: -webkit-linear-gradient( #f9f9f9 , #eee );
+	border: 1px solid #aaa;
+	color: #333;
+	text-shadow: 0 1px 0 #fff;
+}
+.ui-tolito-progressbar-overlay-box-body-c, .ui-tolito-progressbar-overlay-box-body-c input, .ui-tolito-progressbar-overlay-box-body-c select, .ui-tolito-progressbar-overlay-box-body-c textarea, .ui-tolito-progressbar-overlay-box-body-c button
+{
+	font-family: Helvetica, Arial, sans-serif;
+}
+.ui-tolito-progressbar-overlay-box-body-c .ui-link-inherit
+{
+	color: #333;
+}
+.ui-tolito-progressbar-overlay-box-body-c .ui-link
+{
+	color: #2489ce;
+	font-weight: bold;
+}
+.ui-tolito-progressbar-overlay-box-body-c .ui-link:visited
+{
+	color: #2489ce;
+}
+.ui-tolito-progressbar-overlay-box-body-c .ui-link:hover
+{
+	color: #2489ce;
+}
+.ui-tolito-progressbar-overlay-box-body-c .ui-link:active
+{
+	color: #2489ce;
+}
+.ui-tolito-progressbar-overlay-box-content
+{
+	border-width: 0;
+	overflow: visible;
+	overflow-x: hidden;
+	padding: 15px;
+}

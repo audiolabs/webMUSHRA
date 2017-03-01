@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<!--
+         (C) Copyright AudioLabs 2015 
+
+This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law. 
+-->  
+	<head>
+
+
+    <meta charset="utf-8">
+    <title>webMUSHRA</title>
+    <meta name="description" content="webMUSHRA by International Audio Laboratories Erlangen">
+    <meta name="author" content="International Audio Laboratories Erlangen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" />
+
+
+
+
+
+    <!-- jQuery / jQuery Mobile -->
+    <link type="text/css" href="design/jquery.mobile-theme/themes/default/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link type="text/css" href="lib/external/jquery.mobile/jquery.mobile-1.4.4.css" rel="stylesheet" />
+    <link type="text/css" href="design/jquery.mobile-theme/themes/default/alabs_0_3.css" rel="stylesheet" />
+    <link type="text/css" href="lib/external/jquery.mobile/plugins/jQuery-Mobile-Progress-Bar-with-Percentage/src/css/tolito-1.0.1.css" rel="stylesheet" />
+    <link type="text/css" href="lib/external/jquery.mobile/plugins/jQuery-Mobile-Icon-Pack/original/jqm-icon-pack-2.0-original.css" rel="stylesheet" />
+
+    <script src="lib/external/jquery/jquery-2.1.1.min.js"></script>
+	<script src="lib/external/jquery.mobile/jquery.mobile-1.4.4.js"></script>
+    <script src="lib/external/jquery.mobile/plugins/jQuery-Mobile-Progress-Bar-with-Percentage/src/js/tolito-1.0.1.js"></script>
+    <script src ="lib/external/jquery.mobile/patches/vertical-slider.js"></script>
+
+    <!--noUiSlider -->
+    <script src ="lib/external/noUiSlider.8.0.2/nouislider.min.js"></script>
+    <link type="text/css" href="lib/external/noUiSlider.8.0.2/nouislider.min.css" rel="stylesheet" />
+    <link type="text/css" href="lib/external/noUiSlider.8.0.2/nouislider.pips.css" rel="stylesheet" />
+	  
+
+    <!-- keyboard support -->
+    <script src ="lib/external/mousetrap/mousetrap.min.js"></script>
+
+    <!-- webMUSHRA -->
+    <!-- build:js:generic lib/webMUSHRA.js -->
+    <!-- audio -->
+    <script src="lib/webmushra/audio/AudioFileLoader.js"></script>
+    <script src="lib/webmushra/audio/MushraAudioControl.js"></script>
+    <script src="lib/webmushra/audio/GenericAudioControl.js"></script>
+
+    <!-- business -->
+    <script src="lib/webmushra/business/DataSender.js"></script>
+    <script src="lib/webmushra/business/ErrorHandler.js"></script>
+    <script src="lib/webmushra/business/PageManager.js"></script>
+    <script src="lib/webmushra/business/PageTemplateRenderer.js"></script>
+
+    <!-- control -->
+    <script src="lib/webmushra/control/MushraAudioControlInputController.js"></script>
+    <script src="lib/webmushra/control/BS1116AudioControlInputController.js"></script>    
+    <script src="lib/webmushra/control/FilePlayerController.js"></script>
+    <script src="lib/webmushra/control/InputController.js"></script>
+
+    <!-- datamodel -->
+    <script src="lib/webmushra/datamodel/BS1116Rating.js"></script>
+    <script src="lib/webmushra/datamodel/MUSHRARating.js"></script>
+    <script src="lib/webmushra/datamodel/LikertMultiStimulusRating.js"></script>
+    <script src="lib/webmushra/datamodel/LikertSingleStimulusRating.js"></script>
+    <script src="lib/webmushra/datamodel/PairedComparisonChoice.js"></script>
+    <script src="lib/webmushra/datamodel/Participant.js"></script>
+    <script src="lib/webmushra/datamodel/Session.js"></script>
+    <script src="lib/webmushra/datamodel/Stimulus.js"></script>
+    <script src="lib/webmushra/datamodel/Trial.js"></script>
+
+	
+    <!-- misc -->
+    <script src="lib/webmushra/misc/MushraValidator.js"></script>
+    <script src="lib/webmushra/misc/WaveformVisualizer.js"></script>
+    <script src="lib/webmushra/misc/LikertScale.js"></script>
+    <script src="lib/webmushra/misc/FilePlayer.js"></script>
+    <script src="lib/webmushra/misc/Localizer.js"></script>    
+    
+    <!-- nls -->
+    <script>
+      var nls = new Object();
+    </script>
+    <script src="lib/webmushra/nls/nls.js"></script>
+
+    <!-- pages -->
+    <script src="lib/webmushra/pages/BS1116Page.js"></script>
+    <script src="lib/webmushra/pages/BS1116PageManager.js"></script>
+    <script src="lib/webmushra/pages/FinishPage.js"></script>
+    <script src="lib/webmushra/pages/GenericPage.js"></script>
+    <script src="lib/webmushra/pages/MushraPage.js"></script>
+    <script src="lib/webmushra/pages/PairedComparisonPage.js"></script>
+    <script src="lib/webmushra/pages/PairedComparisonPageManager.js"></script>
+    <script src="lib/webmushra/pages/VolumePage.js"></script>
+    <script src="lib/webmushra/pages/LikertSingleStimulusPage.js"></script>
+    <script src="lib/webmushra/pages/LikertSingleStimulusPageManager.js"></script>
+    <script src="lib/webmushra/pages/LikertMultiStimulusPage.js"></script>
+
+    <!-- /build -->
+
+    <link rel="stylesheet" href="design/style.css">
+    <!-- import config -->
+    <script src="lib/external/yaml/yaml.js"></script>
+  </head>
+
+  <body data-theme="a">
+
+
+    <div class="header" id="header"></div>
+
+	<div id="container">
+
+    <div id = "page_progressbar"></div>
+    <h3 class="ui-bar ui-bar-a ui-corner-all" id="page_header"></h3>
+    <div class="ui-body ui-body-a ui-corner-all" id="page_content">
+    </div>
+    <br/>
+    <div class="ui-body ui-body-a ui-corner-all" id="page_navigation">
+    </div>
+
+
+    <table align="right" class="logo">
+      <tr>
+        <td class="logo" style="vertical-align:top; padding-right:0px;"><small><strong>webMUSHRA by</strong></small></td>
+        <td class="logo"><a href="https://www.audiolabs-erlangen.de/"><img src="design/images/alabs_new.png" class="logo"/></a></td>
+        <td class="logo"><a href="http://www.iis.fraunhofer.de/"><img src="design/images/iis.svg" class="logo" /></a></td>
+        <td class="logo"><a href="https://www.fau.eu/"><img src="design/images/techfak.svg" class="logo" /></a></td>
+      </tr>
+    </table>
+
+    </div>
+    <div data-role="popup" data-dismissible="false" data-history="false" data-transition="flip" positionTo="window" id="popupErrors">
+      <div id="popupErrorsContent">Errors:<br/></div>
+    </div>
+
+    <div data-role="popup" data-history="false" data-position-to="#page_content" data-transition="slidedown" id="popupDialog" data-overlay-theme="a" data-theme="c" data-dismissible="false" class="ui-corner-all">
+      <div data-role="header" class="ui-corner-top"  style="width : 57.5em; background-color: #FFb500;">
+        <h1 id="popHeader"></h1>
+      </div>
+    <div id="popupResultsContent" style="background-color: white;" class="ui-corner-bottom ui-content">
+    </div>
+	</div>
+    <!-- build:js:generic startup.min.js -->
+    <script src="startup.js"></script>
+    <!-- /build -->
+  </body>
+</html>
