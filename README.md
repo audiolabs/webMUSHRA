@@ -4,38 +4,53 @@ a MUSHRA compliant web audio API based experiment software.
 
 ## Introduction
 
-Listening tests are widely used to assess the quality of audio systems. In the last few years, conducting listening experiments over the Internet, as so called web-based experiments, has become popular. Until now, it was only possible to implement a limited number of listening test types as web-based experiments because web standards were missing some crucial features, e.g. sample manipulation of audio streams. MUSHRA tests are designed to compare the audio quality of several test conditions with intermediate impairments to a high quality reference. With the upcoming of the (http://webaudio.github.io/web-audio-api/ Web Audio API), for the first time MUSHRA experiments can be carried out within the web browser while at the same time being compliant to the ITU-R Recommendation BS.1534 (MUSHRA).
+Listening tests are widely used to assess the quality of audio systems. In the last few years, conducting listening experiments over the Internet, as so called web-based experiments, has become popular. Until now, it was only possible to implement a limited number of listening test types as web-based experiments because web standards were missing some crucial features, e.g. sample manipulation of audio streams. MUSHRA tests are designed to compare the audio quality of several test conditions with intermediate impairments to a high quality reference. With the rise of [Web Audio API](http://webaudio.github.io/web-audio-api/), for the first time MUSHRA experiments can be carried out within the web browser while at the same time being compliant to the ITU-R Recommendation BS.1534 (MUSHRA).
 
 ## Features
 
- * page based design with support for
- * compliant to ITU recommendations (looping, fade-out/in, sample accurate switching)
- * client side processing using web audio api
- * page based experiments supporting
-  * MUSHRA (ITU-R BS.1534)
-  * AB (ITU-R BS.1116)
-  * training/introduction
-  * finish page to gather the results
- * simple configuration using YAML preference files
- * automatically generates ITU-R compliant lower anchor files on the fly
+* page based experiments supporting
+ * MUSHRA (ITU-R BS.1534)
+ * AB (ITU-R BS.1116)
+ * training/introduction
+* compliant to ITU recommendations (looping, fade-out/in, sample accurate switching)
+* finish page to gather the results and send to a provided PHP service
+* client side processing using web audio api
+* simple configuration using YAML preference files
+* automatically generates ITU-R compliant lower anchor files on the fly
 
 ## Supported Browsers
 
  * Google Chrome on Windows, Mac and Linux
 
-## Getting started
+## Getting started: Setting up webMUSHRA
 
-### For Experimenters
+To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system, you can run a php development server on port 8000 using the following command:
 
-To load the audio files and save the results webMUSHRA needs to run on webserver.
-A simple mushra test in YAML looks like this:
+```
+php -S localhost:8000
+```
+
+Now you can run webMUSHRA following URL:
+
+  http://localhost:8000
+
+The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url:
+
+  http://localhost:8000/?config=mushra_showresults.yaml
+
+
+#### Change or add a configuration
+
+webMUSHRA uses [YAML](https://en.wikipedia.org/wiki/YAML) to configure experiments. Since YAML is using whitespace indentation (no tab characters!), we recommend to use a text editor like [Atom](http://atom.io) that supports YAML out of the box.
+
+A simple MUSHRA test in YAML looks like this:
 
 ```yaml
 pages:
   - type: mushra
     id: Item 1
     name: Orchestra
-    content: Try to concentrate on the violins!
+    content: Add additional notes for the participants
     showWaveform: true
     reference: reference.wav
     createAnchor35: true
@@ -46,7 +61,9 @@ pages:
       C3: codec3.wav
 ```
 
-## User Guide
+The specific parameters are described in the [Experimenters Manual](doc/experimenter.md).
+
+## Documentation
 
  * [Experimenters Manual](doc/experimenter.md)
  * [Participants Manual](doc/participant.md)
@@ -60,7 +77,8 @@ Any unauthorised use of this source code may result in severe civil and criminal
 
 ## Citation
 If you want to cite webMUSHRA, please refer to (see References for the link to the paper):
-"Towards the Next Generation of Web-based Experiments: A Case Study Assessing Basic Audio Quality Following the ITU-R Recommendation BS.1534 (MUSHRA)", Michael Schoeffler, Fabian-Robert Stöter, Bernd Edler and Jürgen Herre, 1st Web Audio Conference, 2015, Paris, France.
+
+> "Towards the Next Generation of Web-based Experiments: A Case Study Assessing Basic Audio Quality Following the ITU-R Recommendation BS.1534 (MUSHRA)", Michael Schoeffler, Fabian-Robert Stöter, Bernd Edler and Jürgen Herre, 1st Web Audio Conference, 2015, Paris, France.
 
 ## References
 
