@@ -1,10 +1,18 @@
 <!doctype html>
 <html>
 <!--
-         (C) Copyright AudioLabs 2015 
+         (C) Copyright AudioLabs 2015
 
-This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law. 
--->  
+This source code is protected by copyright law and international treaties.
+This source code is made available to You subject to the terms and conditions
+of the Software License for the webMUSHRA.js Software. Said terms and conditions
+have been made available to You prior to Your download of this source code.
+By downloading this source code You agree to be bound by the above mentionend
+terms and conditions, which can also be found here:
+https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use
+of this source code may result in severe civil and criminal penalties, and
+will be prosecuted to the maximum extent possible under law.
+-->
 	<head>
 
 
@@ -15,30 +23,30 @@ This source code is protected by copyright law and international treaties. This 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" />
 
-
-
-
-
     <!-- jQuery / jQuery Mobile -->
     <link type="text/css" href="design/jquery.mobile-theme/themes/default/jquery.mobile.icons.min.css" rel="stylesheet" />
     <link type="text/css" href="lib/external/jquery.mobile/jquery.mobile-1.4.4.css" rel="stylesheet" />
     <link type="text/css" href="design/jquery.mobile-theme/themes/default/alabs_0_3.css" rel="stylesheet" />
     <link type="text/css" href="lib/external/jquery.mobile/plugins/jQuery-Mobile-Progress-Bar-with-Percentage/src/css/tolito-1.0.1.css" rel="stylesheet" />
     <link type="text/css" href="lib/external/jquery.mobile/plugins/jQuery-Mobile-Icon-Pack/original/jqm-icon-pack-2.0-original.css" rel="stylesheet" />
-
-    <script src="lib/external/jquery/jquery-2.1.1.min.js"></script>
-	<script src="lib/external/jquery.mobile/jquery.mobile-1.4.4.js"></script>
-    <script src="lib/external/jquery.mobile/plugins/jQuery-Mobile-Progress-Bar-with-Percentage/src/js/tolito-1.0.1.js"></script>
-    <script src ="lib/external/jquery.mobile/patches/vertical-slider.js"></script>
-
-    <!--noUiSlider -->
-    <script src ="lib/external/noUiSlider.8.0.2/nouislider.min.js"></script>
     <link type="text/css" href="lib/external/noUiSlider.8.0.2/nouislider.min.css" rel="stylesheet" />
     <link type="text/css" href="lib/external/noUiSlider.8.0.2/nouislider.pips.css" rel="stylesheet" />
-	  
+
+    <script src="lib/external/jquery/jquery-2.1.1.min.js"></script>
+    <script src="lib/external/jquery.mobile/jquery.mobile-1.4.4.js"></script>
+    <script src="lib/external/jquery.mobile/plugins/jQuery-Mobile-Progress-Bar-with-Percentage/src/js/tolito-1.0.1.js"></script>
+    <script src="lib/external/jquery.mobile/patches/vertical-slider.js"></script>
+
+    <!--noUiSlider -->
+    <script src="lib/external/noUiSlider.8.0.2/nouislider.min.js"></script>
 
     <!-- keyboard support -->
     <script src ="lib/external/mousetrap/mousetrap.min.js"></script>
+
+    <!-- nls -->
+    <script>
+      var nls = new Object();
+    </script>
 
     <!-- webMUSHRA -->
     <!-- build:js:generic lib/webMUSHRA.js -->
@@ -55,7 +63,7 @@ This source code is protected by copyright law and international treaties. This 
 
     <!-- control -->
     <script src="lib/webmushra/control/MushraAudioControlInputController.js"></script>
-    <script src="lib/webmushra/control/BS1116AudioControlInputController.js"></script>    
+    <script src="lib/webmushra/control/BS1116AudioControlInputController.js"></script>
     <script src="lib/webmushra/control/FilePlayerController.js"></script>
     <script src="lib/webmushra/control/InputController.js"></script>
 
@@ -70,19 +78,12 @@ This source code is protected by copyright law and international treaties. This 
     <script src="lib/webmushra/datamodel/Stimulus.js"></script>
     <script src="lib/webmushra/datamodel/Trial.js"></script>
 
-	
     <!-- misc -->
     <script src="lib/webmushra/misc/MushraValidator.js"></script>
     <script src="lib/webmushra/misc/WaveformVisualizer.js"></script>
     <script src="lib/webmushra/misc/LikertScale.js"></script>
     <script src="lib/webmushra/misc/FilePlayer.js"></script>
-    <script src="lib/webmushra/misc/Localizer.js"></script>    
-    
-    <!-- nls -->
-    <script>
-      var nls = new Object();
-    </script>
-    <script src="lib/webmushra/nls/nls.js"></script>
+    <script src="lib/webmushra/misc/Localizer.js"></script>
 
     <!-- pages -->
     <script src="lib/webmushra/pages/BS1116Page.js"></script>
@@ -97,11 +98,13 @@ This source code is protected by copyright law and international treaties. This 
     <script src="lib/webmushra/pages/LikertSingleStimulusPageManager.js"></script>
     <script src="lib/webmushra/pages/LikertMultiStimulusPage.js"></script>
 
+    <script src="lib/webmushra/nls/nls.js"></script>
     <!-- /build -->
 
-    <link rel="stylesheet" href="design/style.css">
     <!-- import config -->
     <script src="lib/external/yaml/yaml.js"></script>
+
+    <link rel="stylesheet" href="design/style.css">
   </head>
 
   <body data-theme="a">
