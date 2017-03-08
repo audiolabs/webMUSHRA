@@ -2,6 +2,8 @@
 
 a MUSHRA compliant web audio API based experiment software.
 
+<img width="1011" alt="screen shot 2017-03-08 at 12 38 20" src="https://cloud.githubusercontent.com/assets/72940/23702580/2a49bc82-03fc-11e7-99ea-22d550604a73.png">
+
 ## Introduction
 
 Listening tests are widely used to assess the quality of audio systems. In the last few years, conducting listening experiments over the Internet, as so called web-based experiments, has become popular. Until now, it was only possible to implement a limited number of listening test types as web-based experiments because web standards were missing some crucial features, e.g. sample manipulation of audio streams. MUSHRA tests are designed to compare the audio quality of several test conditions with intermediate impairments to a high quality reference. With the rise of [Web Audio API](http://webaudio.github.io/web-audio-api/), for the first time MUSHRA experiments can be carried out within the web browser while at the same time being compliant to the ITU-R Recommendation BS.1534 (MUSHRA).
@@ -24,19 +26,11 @@ Listening tests are widely used to assess the quality of audio systems. In the l
 
 ## Getting started: Setting up webMUSHRA
 
-To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system, you can run a php development server on port 8000 using the following command:
+To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system, you can run a php development server on port 8000 using `php -S localhost:8000`. Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
 
-```
-php -S localhost:8000
-```
+Now you can run webMUSHRA following URL: http://localhost:8000
 
-Now you can run webMUSHRA following URL:
-
-  http://localhost:8000
-
-The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url:
-
-  http://localhost:8000/?config=mushra_showresults.yaml
+The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url http://localhost:8000/?config=mushra_showresults.yaml.
 
 
 #### Change or add a configuration
