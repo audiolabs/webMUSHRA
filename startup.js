@@ -1,7 +1,7 @@
 /*************************************************************************
-         (C) Copyright AudioLabs 2015 
+         (C) Copyright AudioLabs 2015
 
-This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law. 
+This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law.
 
 **************************************************************************/
 
@@ -105,9 +105,6 @@ for (var i = 0; i < _pages.length; ++i) {
       } else if (pageConfig.type == "mushra") {
         var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
         _pageManager.addPage(mushraPage);
-      } else if (pageConfig.type == "mushra_results") {
-        var mushraResultsPage = new MushraResultsPage(_pageManager, pageConfig, audioContext, config.bufferSize, errorHandler, config.language);
-        _pageManager.addPage(mushraResultsPage);
       } else if (pageConfig.type == "paired_comparison") {
       	var pcPageManager = new PairedComparisonPageManager();
       	pcPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
@@ -146,7 +143,7 @@ if (configArg) {
     configFile = 'configs/' + configArg;
 } else {
     configFile = 'configs/default.yaml';
-  }  
+  }
 
   var pageManager = null;
   var audioContext;
@@ -209,7 +206,7 @@ YAML.load(configFile, (function(result) {
     session = new Session();
     session.testId = config.testId;
     session.config = configFile;
-       
+
     if(config.language == undefined){
       config.language = 'en';
     }
