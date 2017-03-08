@@ -105,9 +105,6 @@ for (var i = 0; i < _pages.length; ++i) {
       } else if (pageConfig.type == "mushra") {
         var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
         _pageManager.addPage(mushraPage);
-      } else if (pageConfig.type == "mushra_results") {
-        var mushraResultsPage = new MushraResultsPage(_pageManager, pageConfig, audioContext, config.bufferSize, errorHandler, config.language);
-        _pageManager.addPage(mushraResultsPage);
       } else if (pageConfig.type == "paired_comparison") {
       	var pcPageManager = new PairedComparisonPageManager();
       	pcPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
