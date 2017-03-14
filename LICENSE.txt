@@ -1,1 +1,81 @@
-Software License for the webMUSHRA.js Software© Copyright 2015Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.1. INTRODUCTIONThe webMUSHRA Software Tools (“webMUSHRA Software”) areweb-based software tools to conduct Listening Tests. Patent licenses may berequired for using the webMUSHRA Software and it is in your responsibility toobtain those if necessary.2. COPYRIGHT LICENSERedistribution and use in source and binary forms, with or without modification,are permitted without payment of copyright license fees provided that yousatisfy the following conditions:You must retain the complete text of this software license inredistributions of the webMUSHRA Software or your modifications thereto insource code form.You must retain the complete text of this software license inthe documentation and/or other materials provided with redistributions of thewebMUSHRA Software or your modifications thereto in binary form.You must make available free of charge copies of the complete source code of the webMUSHRA Software and your modifications thereto to recipients of copies inbinary form. The name of Fraunhofer may not be used to endorse or promote products derived from this library without prior written permission.You may not charge copyright license fees for anyone to use, copy, or distributethe webMUSHRA Software or your modifications thereto.Your modified versions of the webMUSHRA Software must carry prominent notices stating that you changed the software and the date of any change. For modified versions of the webMUSHRA Software, the term "webMUSHRA Software" must be replaced by the term "Third-Party Modified Version of the webMUSHRA Software".Fraunhofer distributes the webMUSHRA Software together with some Open Sourcesoftware. These Open Source software components are defined in an (Annex/list) accompanying this text file. The Open Source software components are not subjectmatter of this Agreement. Each Open Source software component is copyrighted bya third party, namely the copyright holder/s indicated in the copyright noticesin the corresponding source files or other materials accompanying the respectiveOpen Source software. Each Open Source software component is licensable under itsown applicable license conditions. You must review the licenses under which the respective Open Source software is licensed, in order to understand Your rightsand obligations under them. In no event You will obtain under this Software Licenseany rights of use from Fraunhofer to use the Open Source software.3. NO PATENT LICENSENO EXPRESS OR IMPLIED LICENSES TO ANY PATENT CLAIMS, including without limitationthe patents of Fraunhofer, ARE GRANTED BY THIS SOFTWARE LICENSE. Fraunhoferprovides no warranty of patent non-infringement with respect to this software.You may use this webMUSHRA Software or modifications thereto only for purposesthat are authorized by appropriate patent licenses.4. DISCLAIMERThis webMUSHRA Software is provided by Fraunhofer on behalf of the copyright holdersand contributors "AS IS" and WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES,including but not limited to the implied warranties of merchantability andfitness for a particular purpose. IN NO EVENT SHALL THE COPYRIGHT HOLDER ORCONTRIBUTORS BE LIABLE for any direct, indirect, incidental, special, exemplary,or consequential damages, including but not limited to procurement of substitutegoods or services; loss of use, data, or profits, or business interruption,however caused and on any theory of liability, whether in contract, strictliability, or tort (including negligence), arising in any way out of the use ofthis software, even if advised of the possibility of such damage.5. CONTACT INFORMATIONFraunhofer Institute for Integrated Circuits IISAttention: Audio and Multimedia Departments – webMUSHRA SoftwareAm Wolfsmantel 3391058 Erlangen, Germanyhttp://www.audiolabs-erlangen.de/fraunhofermailto:info@audiolabs-erlangen.de
+Software License for the webMUSHRA.js Software
+
+© Copyright 2015
+Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+
+1. INTRODUCTION
+
+The webMUSHRA Software Tools (“webMUSHRA Software”) are
+web-based software tools to conduct Listening Tests. Patent licenses may be
+required for using the webMUSHRA Software and it is in your responsibility to
+obtain those if necessary.
+
+2. COPYRIGHT LICENSE
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted without payment of copyright license fees provided that you
+satisfy the following conditions:
+
+You must retain the complete text of this software license in
+redistributions of the webMUSHRA Software or your modifications thereto in
+source code form.
+
+You must retain the complete text of this software license in
+the documentation and/or other materials provided with redistributions of the
+webMUSHRA Software or your modifications thereto in binary form.
+
+You must make available free of charge copies of the complete source code of 
+the webMUSHRA Software and your modifications thereto to recipients of copies in
+binary form. The name of Fraunhofer may not be used to endorse or promote products
+derived from this library without prior written permission.
+
+You may not charge copyright license fees for anyone to use, copy, or distribute
+the webMUSHRA Software or your modifications thereto.
+
+Your modified versions of the webMUSHRA Software must carry prominent notices 
+stating that you changed the software and the date of any change. For modified 
+versions of the webMUSHRA Software, the term "webMUSHRA Software" must be replaced 
+by the term "Third-Party Modified Version of the webMUSHRA Software".
+
+Fraunhofer distributes the webMUSHRA Software together with some Open Source
+software. These Open Source software components are defined in an (Annex/list)
+accompanying this text file. The Open Source software components are not subject
+matter of this Agreement. Each Open Source software component is copyrighted by
+a third party, namely the copyright holder/s indicated in the copyright notices
+in the corresponding source files or other materials accompanying the respective
+Open Source software. Each Open Source software component is licensable under its
+own applicable license conditions. You must review the licenses under which the
+respective Open Source software is licensed, in order to understand Your rights
+and obligations under them. In no event You will obtain under this Software License
+any rights of use from Fraunhofer to use the Open Source software.
+
+3. NO PATENT LICENSE
+
+NO EXPRESS OR IMPLIED LICENSES TO ANY PATENT CLAIMS, including without limitation
+the patents of Fraunhofer, ARE GRANTED BY THIS SOFTWARE LICENSE. Fraunhofer
+provides no warranty of patent non-infringement with respect to this software.
+You may use this webMUSHRA Software or modifications thereto only for purposes
+that are authorized by appropriate patent licenses.
+
+4. DISCLAIMER
+
+This webMUSHRA Software is provided by Fraunhofer on behalf of the copyright holders
+and contributors "AS IS" and WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES,
+including but not limited to the implied warranties of merchantability and
+fitness for a particular purpose. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+CONTRIBUTORS BE LIABLE for any direct, indirect, incidental, special, exemplary,
+or consequential damages, including but not limited to procurement of substitute
+goods or services; loss of use, data, or profits, or business interruption,
+however caused and on any theory of liability, whether in contract, strict
+liability, or tort (including negligence), arising in any way out of the use of
+this software, even if advised of the possibility of such damage.
+
+5. CONTACT INFORMATION
+
+Fraunhofer Institute for Integrated Circuits IIS
+Attention: Audio and Multimedia Departments – webMUSHRA Software
+Am Wolfsmantel 33
+91058 Erlangen, Germany
+
+http://www.audiolabs-erlangen.de/fraunhofer
+info@audiolabs-erlangen.de
