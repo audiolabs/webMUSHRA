@@ -1,6 +1,6 @@
 Software License for the webMUSHRA.js Software
 
-© Copyright 2015
+© Copyright 2017
 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
 
 1. INTRODUCTION
@@ -24,7 +24,7 @@ You must retain the complete text of this software license in
 the documentation and/or other materials provided with redistributions of the
 webMUSHRA Software or your modifications thereto in binary form.
 
-You must make available free of charge copies of the complete source code of 
+You must make available free of charge copies of the complete source code of
 the webMUSHRA Software and your modifications thereto to recipients of copies in
 binary form. The name of Fraunhofer may not be used to endorse or promote products
 derived from this library without prior written permission.
@@ -32,22 +32,23 @@ derived from this library without prior written permission.
 You may not charge copyright license fees for anyone to use, copy, or distribute
 the webMUSHRA Software or your modifications thereto.
 
-Your modified versions of the webMUSHRA Software must carry prominent notices 
-stating that you changed the software and the date of any change. For modified 
-versions of the webMUSHRA Software, the term "webMUSHRA Software" must be replaced 
+Your modified versions of the webMUSHRA Software must carry prominent notices
+stating that you changed the software and the date of any change. For modified
+versions of the webMUSHRA Software, the term "webMUSHRA Software" must be replaced
 by the term "Third-Party Modified Version of the webMUSHRA Software".
 
 Fraunhofer distributes the webMUSHRA Software together with some Open Source
-software. These Open Source software components are defined in an (Annex/list)
-accompanying this text file. The Open Source software components are not subject
-matter of this Agreement. Each Open Source software component is copyrighted by
-a third party, namely the copyright holder/s indicated in the copyright notices
-in the corresponding source files or other materials accompanying the respective
-Open Source software. Each Open Source software component is licensable under its
-own applicable license conditions. You must review the licenses under which the
-respective Open Source software is licensed, in order to understand Your rights
-and obligations under them. In no event You will obtain under this Software License
-any rights of use from Fraunhofer to use the Open Source software.
+software. These Open Source software components are defined in a document named
+"THIRD-PARTY-NOTICES.txt" accompanying this text file. The Open Source software
+components are not subject matter of this Agreement. Each Open Source software
+component is copyrighted by a third party, namely the copyright holder/s
+indicated in the copyright notices in the corresponding source files or other
+materials accompanying the respective Open Source software. Each Open Source
+software component is licensable under its own applicable license conditions.
+You must review the licenses under which the respective Open Source software is
+licensed, in order to understand Your rights and obligations under them. In no 
+event You will obtain under this Software License any rights of use from
+Fraunhofer to use the Open Source software.
 
 3. NO PATENT LICENSE
 
