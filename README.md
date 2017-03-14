@@ -26,9 +26,11 @@ Listening tests are widely used to assess the quality of audio systems. In the l
 
 ## Getting started: Setting up webMUSHRA
 
-To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system, you can run a php development server on port 8000 using `php -S localhost:8000`. Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
+To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system (for example on Mac OS X), you can run a php development server on port 8000 from the terminal using `php -S localhost:8000`. 
 
-Now you can run webMUSHRA following URL: http://localhost:8000
+Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
+
+Now you can run webMUSHRA using the following URL: http://localhost:8000
 
 The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url http://localhost:8000/?config=mushra_showresults.yaml.
 
