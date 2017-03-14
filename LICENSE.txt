@@ -5,7 +5,7 @@ Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
 
 1. INTRODUCTION
 
-The webMUSHRA Software Tools (“webMUSHRA Software”) are
+The webMUSHRA.js Software Tools (“webMUSHRA Software”) are
 web-based software tools to conduct Listening Tests. Patent licenses may be
 required for using the webMUSHRA Software and it is in your responsibility to
 obtain those if necessary.
