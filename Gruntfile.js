@@ -89,7 +89,10 @@ module.exports = function(grunt) {
                 },
                 files: [
                 {
-                  src: [ 'LICENCE.txt' ],
+                  src: [ 'README.md' ],
+                  dest: '/'
+                }, {
+                  src: [ 'LICENSE.txt' ],
                   dest: '/'
                 }, {
                   expand: true,
@@ -122,7 +125,10 @@ module.exports = function(grunt) {
                 },
                 files: [
                 {
-                  src: [ 'LICENCE.txt' ],
+                  src: [ 'README.md' ],
+                  dest: '/'
+                }, {
+                  src: [ 'LICENSE.txt' ],
                   dest: '/'
                 }, {
                   src: [ 'index.html' ],
