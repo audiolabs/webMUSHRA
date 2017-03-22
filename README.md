@@ -1,6 +1,6 @@
 # webMUSHRA
 
-a MUSHRA compliant web audio API based experiment software.
+a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikipedia.org/wiki/MUSHRA)) compliant web audio API based experiment software.
 
 <img width="1011" alt="screen shot 2017-03-08 at 12 38 20" src="https://cloud.githubusercontent.com/assets/72940/23702580/2a49bc82-03fc-11e7-99ea-22d550604a73.png">
 
@@ -14,9 +14,9 @@ Listening tests are widely used to assess the quality of audio systems. In the l
  * MUSHRA (ITU-R BS.1534)
  * AB (ITU-R BS.1116)
  * training/introduction
-* compliant to ITU recommendations (looping, fade-out/in, sample accurate switching)
-* finish page to gather the results and send to a provided PHP service
-* client side processing using web audio api
+* compliant to ITU recommendations (looping, fade-in/out, sample accurate switching)
+* finish page to gather the results and send them to a provided PHP service
+* client side processing using the Web Audio API
 * simple configuration using YAML preference files
 * automatically generates ITU-R compliant lower anchor files on the fly
 
@@ -28,16 +28,16 @@ Listening tests are widely used to assess the quality of audio systems. In the l
 
 To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system (for example on Mac OS X), you can run a php development server on port 8000 from the terminal using `php -S localhost:8000`. 
 
-Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
-
 Now you can run webMUSHRA using the following URL: http://localhost:8000
+
+Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
 
 The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url http://localhost:8000/?config=mushra_showresults.yaml.
 
 
 #### Change or add a configuration
 
-webMUSHRA uses [YAML](https://en.wikipedia.org/wiki/YAML) to configure experiments. Since YAML is using whitespace indentation (no tab characters!), we recommend to use a text editor like [Atom](http://atom.io) that supports YAML out of the box.
+webMUSHRA uses [YAML](https://en.wikipedia.org/wiki/YAML) to configure experiments. Since YAML is using whitespace indentation (no tab characters!), we recommend to use a text editor like [Atom](http://atom.io) that ships with YAML support.
 
 A simple MUSHRA test in YAML looks like this:
 
@@ -65,7 +65,8 @@ The specific parameters are described in the [Experimenters Manual](doc/experime
  * [Participants Manual](doc/participant.md)
 
 ## Citation
-If you want to cite webMUSHRA, please refer to (see References for the link to the paper):
+
+If you want to cite webMUSHRA, please refer to this publication (see References for the link to the paper):
 
 > "Towards the Next Generation of Web-based Experiments: A Case Study Assessing Basic Audio Quality Following the ITU-R Recommendation BS.1534 (MUSHRA)", Michael Schoeffler, Fabian-Robert Stöter, Bernd Edler and Jürgen Herre, 1st Web Audio Conference, 2015, Paris, France.
 
