@@ -1,11 +1,10 @@
 Software License for the webMUSHRA.js Software
 
-© Copyright 2017
-Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V., 2017
 
 1. INTRODUCTION
 
-The webMUSHRA.js Software Tools (“webMUSHRA Software”) are
+The webMUSHRA.js Software Tools ("webMUSHRA Software") are
 web-based software tools to conduct Listening Tests. Patent licenses may be
 required for using the webMUSHRA Software and it is in your responsibility to
 obtain those if necessary.
@@ -46,7 +45,7 @@ indicated in the copyright notices in the corresponding source files or other
 materials accompanying the respective Open Source software. Each Open Source
 software component is licensable under its own applicable license conditions.
 You must review the licenses under which the respective Open Source software is
-licensed, in order to understand Your rights and obligations under them. In no 
+licensed, in order to understand Your rights and obligations under them. In no
 event You will obtain under this Software License any rights of use from
 Fraunhofer to use the Open Source software.
 

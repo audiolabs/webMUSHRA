@@ -26,7 +26,7 @@ Listening tests are widely used to assess the quality of audio systems. In the l
 
 ## Getting started: Setting up webMUSHRA
 
-To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system (for example on Mac OS X), you can run a php development server on port 8000 from the terminal using `php -S localhost:8000`. 
+To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system (for example on Mac OS X), you can run a php development server on port 8000 from the terminal using `php -S localhost:8000`.
 
 Now you can run webMUSHRA using the following URL: http://localhost:8000
 
@@ -77,8 +77,7 @@ If you want to cite webMUSHRA, please refer to this publication (see References 
 
 ## Copyright/Licence
 
-(C) Copyright AudioLabs 2017
+(C) AudioLabs 2017
 
 This source code is protected by copyright law and international treaties. This source code is made available to you subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to you prior to your download of this source code. By downloading this source code you agree to be bound by the above mentionend terms and conditions, which can also be found [here.](LICENSE.txt)
 Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law.
-
