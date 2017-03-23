@@ -40,6 +40,11 @@ function getParameterByName(name) {
 
 // callbacks
 function callbackFilesLoaded() {
+  pageManager.start();
+  pageTemplateRenderer.renderProgressBar(("page_progressbar"));
+  pageTemplateRenderer.renderHeader(("page_header"));
+  pageTemplateRenderer.renderNavigation(("page_navigation"));
+
   if (config.stopOnErrors == false || !errorHandler.errorOccurred()) {
     $.mobile.loading("hide");
     $("body").children().children().removeClass('ui-disabled');
@@ -54,24 +59,6 @@ function callbackFilesLoaded() {
     $.mobile.loading("hide");
   }
 
-  pageManager.start();
-  pageTemplateRenderer.renderProgressBar(("page_progressbar"));
-  pageTemplateRenderer.renderHeader(("page_header"));
-  pageTemplateRenderer.renderNavigation(("page_navigation"));
-  // if (config.stopOnErrors == false || !errorHandler.errorOccurred()) { //NOTE copy paste error?
-    // $.mobile.loading("hide");
-    // $("body").children().removeClass('ui-disabled');
-    // $("body").children().children().removeClass('ui-disabled');
-  // } else {
-    // var errors = errorHandler.getErrors();
-    // var ul = $("<ul style='text-align:left;'></ul>");
-    // $('#popupErrorsContent').append(ul);
-    // for (var i = 0; i < errors.length; ++i) {
-      // ul.append($('<li>' + errors[i] + '</li>'));
-    // }
-    // $("#popupErrors").popup("open");
-    // $.mobile.loading("hide");
-  // }
   if ($.mobile.activePage) {
     $.mobile.activePage.trigger('create');
   }
