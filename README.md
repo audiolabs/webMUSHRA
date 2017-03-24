@@ -16,10 +16,11 @@ Listening tests are widely used to assess the quality of audio systems. In the l
 
 ## Features
 
-* page based experiments supporting
- * MUSHRA (ITU-R BS.1534)
- * AB (ITU-R BS.1116)
- * training/introduction
+* page based experiments supporting:
+  * MUSHRA (ITU-R BS.1534)
+  * AB (ITU-R BS.1116)
+  * Likert scale questionaires
+  * training/introduction
 * compliant to ITU recommendations (looping, fade-in/out, sample accurate switching)
 * finish page to gather the results and send them to a provided PHP service
 * client side processing using the Web Audio API
