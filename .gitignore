@@ -2,6 +2,7 @@ doc/jsdoc
 *.log
 .project
 dist
+builds/
 
 #####=== Node ===#####
 
