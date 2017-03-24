@@ -41,19 +41,6 @@ module.exports = function(grunt) {
             },
             files: [ 'lib/webmushra/**/*.js' ]
         },
-        symlink: {
-            generic: {
-                src: 'builds/<%= pkg.name %>-<%= pkg.version %>-<%= grunt.task.current.target %>.zip',
-                dest: 'builds/webMUSHRA-<%= grunt.task.current.target %>.zip'
-            },
-            dev: {
-                src: 'builds/<%= pkg.name %>-<%= pkg.version %>-<%= grunt.task.current.target %>.zip',
-                dest: 'builds/webMUSHRA-<%= grunt.task.current.target %>.zip'
-            },
-            options: {
-                overwrite: true
-            }
-        },
         processhtml: {
             generic: {
                 files: {
@@ -85,7 +72,7 @@ module.exports = function(grunt) {
         compress: {
             generic: {
                 options: {
-                  archive: 'builds/<%= pkg.name %>-<%= pkg.version %>-<%= grunt.task.current.target %>.zip'
+                  archive: 'builds/<%= pkg.name %>-<%= pkg.version %>.zip'
                 },
                 files: [
                 {
@@ -93,6 +80,9 @@ module.exports = function(grunt) {
                   dest: '/'
                 }, {
                   src: [ 'LICENSE.txt' ],
+                  dest: '/'
+                }, {
+                  src: [ 'THIRD-PARTY-NOTICES.txt' ],
                   dest: '/'
                 }, {
                   expand: true,
@@ -115,6 +105,9 @@ module.exports = function(grunt) {
                   src: [ 'doc/*.pdf' ],
                   dest: '/'
                 }, {
+                  src: [ 'results/**' ],
+                  dest: '/'
+                }, {
                   src: [ 'design/**' ],
                   dest: '/'
                 }]
@@ -129,6 +122,9 @@ module.exports = function(grunt) {
                   dest: '/'
                 }, {
                   src: [ 'LICENSE.txt' ],
+                  dest: '/'
+                }, {
+                  src: [ 'THIRD-PARTY-NOTICES.txt' ],
                   dest: '/'
                 }, {
                   src: [ 'index.html' ],
@@ -151,6 +147,9 @@ module.exports = function(grunt) {
                   src: [ 'doc/*.pdf' ],
                   dest: '/'
                 }, {
+                  src: [ 'results/**' ],
+                  dest: '/'
+                }, {
                   src: [ 'design/**' ],
                   dest: '/'
                 }]
@@ -165,11 +164,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-concat' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-contrib-compress' );
-    grunt.loadNpmTasks( 'grunt-contrib-symlink' );
     grunt.loadNpmTasks( 'grunt-processhtml' );
     // JS task
     grunt.registerTask( 'js', [ 'jshint' ] );
     // Run tests
     grunt.registerTask( 'test', [ 'qunit' ] );
-    grunt.registerTask( 'package', [ 'jsdoc', 'processhtml', 'concat', 'uglify', 'compress', 'symlink']);
+    grunt.registerTask( 'package', [ 'jsdoc', 'processhtml', 'concat', 'uglify', 'compress']);
 };
