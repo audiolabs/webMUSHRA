@@ -5,7 +5,7 @@ This source code is protected by copyright law and international treaties. This 
 
 **************************************************************************/
 
-function checkOrientation(){ //when changing from potrait to landscape change to the rigth width
+function checkOrientation() {//when changing from potrait to landscape change to the rigth width
 
   var siteWidth = document.body.scrollWidth;
   $("#header").css("width", siteWidth.toString());
@@ -13,29 +13,20 @@ function checkOrientation(){ //when changing from potrait to landscape change to
 }
 
 window.onresize = function(event) {
-  if(pageManager.getCurrentPage()&& pageManager.getCurrentPage().isMushra == true){
+  if (pageManager.getCurrentPage() && pageManager.getCurrentPage().isMushra == true) {
     pageManager.getCurrentPage().renderCanvas("mushra_items");
   }
 
   checkOrientation();
 };
 
-
 // $(document).ready(function(){
-  // $(window).scroll(function(){
-    // $('#header').css({
-      // 'left': $(this).scrollLeft()//Note commented because it causes the endless scrolling to the left
-    // });
-  // });
+// $(window).scroll(function(){
+// $('#header').css({
+// 'left': $(this).scrollLeft()//Note commented because it causes the endless scrolling to the left
 // });
-
-
-function getParameterByName(name) {
-    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-}
-
-
+// });
+// });
 
 
 // callbacks
@@ -64,25 +55,27 @@ function callbackFilesLoaded() {
   }
 }
 
-function callbackURLFound(){
-    var errors = errorHandler.getErrors();
-    var ul = $("<ul style='text-align:left;'></ul>");
-    $('#popupErrorsContent').append(ul);
-    for (var i = 0; i < errors.length; ++i) {
-      ul.append($('<li>' + errors[i] + '</li>'));
-    }
-    $("#popupErrors").popup("open");
+function callbackURLFound() {
+  var errors = errorHandler.getErrors();
+  var ul = $("<ul style='text-align:left;'></ul>");
+  $('#popupErrorsContent').append(ul);
+  for (var i = 0; i < errors.length; ++i) {
+    ul.append($('<li>' + errors[i] + '</li>'));
+  }
+  $("#popupErrors").popup("open");
 }
 
 function addPagesToPageManager(_pageManager, _pages) {
-for (var i = 0; i < _pages.length; ++i) {
-  if (Array.isArray(_pages[i])) {
-  	if (_pages[i][0] === "random") {
-  		_pages[i].shift();
-  		_pages[i].sort(function() { return 0.5 - Math.random(); } );
-  	}
-  	addPagesToPageManager(_pageManager, _pages[i]);
-  } else {
+  for (var i = 0; i < _pages.length; ++i) {
+    if (Array.isArray(_pages[i])) {
+      if (_pages[i][0] === "random") {
+        _pages[i].shift();
+        _pages[i].sort(function() {
+          return 0.5 - Math.random();
+        });
+      }
+      addPagesToPageManager(_pageManager, _pages[i]);
+    } else {
       var pageConfig = _pages[i];
       if (pageConfig.type == "generic") {
         _pageManager.addPage(new GenericPage(_pageManager, pageConfig));
@@ -93,13 +86,13 @@ for (var i = 0; i < _pages.length; ++i) {
         var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
         _pageManager.addPage(mushraPage);
       } else if (pageConfig.type == "paired_comparison") {
-      	var pcPageManager = new PairedComparisonPageManager();
-      	pcPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
-      	pcPageManager = null;
+        var pcPageManager = new PairedComparisonPageManager();
+        pcPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+        pcPageManager = null;
       } else if (pageConfig.type == "bs1116") {
-      	var bs1116PageManager = new BS1116PageManager();
-      	bs1116PageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
-      	bs1116PageManager = null;
+        var bs1116PageManager = new BS1116PageManager();
+        bs1116PageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+        bs1116PageManager = null;
       } else if (pageConfig.type == "likert_single_stimulus") {
         var likertSingleStimulusPageManager = new LikertSingleStimulusPageManager();
         likertSingleStimulusPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
@@ -107,104 +100,141 @@ for (var i = 0; i < _pages.length; ++i) {
       } else if (pageConfig.type == "likert_multi_stimulus") {
         var likertMultiStimulusPage = new LikertMultiStimulusPage(pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         _pageManager.addPage(likertMultiStimulusPage);
-      }else if (pageConfig.type == "finish") {
+      } else if (pageConfig.type == "finish") {
         var finishPage = new FinishPage(_pageManager, session, dataSender, pageConfig, config.language);
-         _pageManager.addPage(finishPage);
+        _pageManager.addPage(finishPage);
       } else {
 
-         errorHandler.sendError("Type not specified.");
+        errorHandler.sendError("Type not specified.");
 
       }
     }
-}
+  }
 }
 
-//NLS
-var localizer = new Localizer();
-localizer.initializeNLSFragments(nls);
+for (var i = 0; i < $("body").children().length; i++) {
+  if ($("body").children().eq(i).attr('id') != "popupErrors" && $("body").children().eq(i).attr('id') != "popupDialog") {
+    $("body").children().eq(i).addClass('ui-disabled');
+  }
+}
+
+
+
+
+function startup(config) {
+
+
+  if (config == null) {
+    errorHandler.sendError("URL couldn't be found!");
+    callbackURLFound();
+  }
+
+  $.mobile.page.prototype.options.theme = 'a';
+  var interval = setInterval(function() {
+    $.mobile.loading("show", {
+      text : "Loading...",
+      textVisible : true,
+      theme : "a",
+      html : ""
+    });
+    clearInterval(interval);
+  }, 1);
+  
+  
+  if (pageManager !== null) { // clear everything for new experiment
+    pageTemplateRenderer.clear();
+    $("#page_content").empty();
+    $('#header').empty();
+  }
+
+  localizer = new Localizer();
+  localizer.initializeNLSFragments(nls);
+
+  pageManager = null;
+  audioContext;
+  audioFileLoader = null;
+  mushraValidator = null;
+  dataSender = null;
+  session = null;
+  pageTemplateRenderer = null;
+  interval2 = null;
+
+  document.title = config.testname;
+  $('#header').append(document.createTextNode(config.testname));
+
+  pageManager = new PageManager("pageManager", "page_content", localizer);
+  window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+  if ( typeof AudioContext !== 'undefined') {
+    audioContext = new AudioContext();
+  } else if ( typeof webkitAudioContext !== 'undefined') {
+    audioContext = new webkitAudioContext();
+  }
+
+  try {
+    audioContext.destination.channelCountMode = "explicit";
+    audioContext.destination.channelInterpretation = "discrete";
+    audioContext.destination.channelCount = audioContext.destination.maxChannelCount;
+  } catch (e) {
+    console.log("webMUSHRA: Could not set channel count of destination node.");
+    console.log(e);
+  }
+  audioContext.volume = 1.0;
+
+  audioFileLoader = new AudioFileLoader(audioContext, errorHandler);
+  mushraValidator = new MushraValidator(errorHandler);
+  dataSender = new DataSender(config);
+
+  session = new Session();
+  session.testId = config.testId;
+  session.config = configFile;
+
+  if (config.language == undefined) {
+    config.language = 'en';
+  }
+  pageTemplateRenderer = new PageTemplateRenderer(pageManager, config.showButtonPreviousPage, config.language);
+  pageManager.addCallbackPageEventChanged(pageTemplateRenderer.refresh.bind(pageTemplateRenderer));
+
+  addPagesToPageManager(pageManager, config.pages);
+
+  interval2 = setInterval(function() {
+    clearInterval(interval2);
+    audioFileLoader.startLoading(callbackFilesLoaded);
+  }, 10);
+
+}
+
+// start code (loads config) 
+
+function getParameterByName(name) {
+  var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+  return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
 
 var config = null;
 var configArg = getParameterByName("config");
 var configFile = '';
 if (configArg) {
-    configFile = 'configs/' + configArg;
+  configFile = 'configs/' + configArg;
 } else {
-    configFile = 'configs/default.yaml';
-  }
+  configFile = 'configs/default.yaml';
+}
 
-  var pageManager = null;
-  var audioContext;
-  var errorHandler = null;
-  var audioFileLoader = null;
-  var mushraValidator = null;
-  var dataSender = null;
-  var session = null;
-  var pageTemplateRenderer = null;
-  var interval2 = null;
 
- for(var i = 0; i < $("body").children().length; i++){
-if($("body").children().eq(i).attr('id') != "popupErrors" && $("body").children().eq(i).attr('id') != "popupDialog"){
+// global variables
+var errorHandler = new ErrorHandler();
+var localizer = null;
+var pageManager = null;
+var audioContext = null;
+var audioFileLoader = null;
+var mushraValidator = null;
+var dataSender = null;
+var session = null;
+var pageTemplateRenderer = null;
+var interval2 = null;
 
-  $("body").children().eq(i).addClass('ui-disabled');
-        }
-      }
 
-errorHandler = new ErrorHandler();
 YAML.load(configFile, (function(result) {
-    if(result == null){
-      errorHandler.sendError("URL couldn't be found!");
-      callbackURLFound();
-    }else{
-    config = result;
-    $.mobile.page.prototype.options.theme = 'a';
-    var interval = setInterval(function(){
-        $.mobile.loading( "show", {text: "Loading...", textVisible: true, theme: "a",  html: ""});
-        clearInterval(interval);
-    },1);
-    }
-
-    document.title = config.testname;
-    $('#header').append(document.createTextNode(config.testname));
-
-    pageManager = new PageManager("pageManager", "page_content", localizer);
-    window.AudioContext = window.AudioContext||window.webkitAudioContext;
-
-    if (typeof AudioContext !== 'undefined') {
-        audioContext = new AudioContext();
-    } else if (typeof webkitAudioContext !== 'undefined') {
-        audioContext = new webkitAudioContext();
-    }
-
-
-    try {
-      audioContext.destination.channelCountMode = "explicit";
-      audioContext.destination.channelInterpretation = "discrete";
-      audioContext.destination.channelCount = audioContext.destination.maxChannelCount;
-    } catch (e) {
-      console.log("webMUSHRA: Could not set channel count of destination node.");
-      console.log(e);
-    }
-    audioContext.volume = 1.0;
-
-    audioFileLoader = new AudioFileLoader(audioContext, errorHandler);
-    mushraValidator = new MushraValidator(errorHandler);
-    dataSender = new DataSender();
-
-    session = new Session();
-    session.testId = config.testId;
-    session.config = configFile;
-
-    if(config.language == undefined){
-      config.language = 'en';
-    }
-    pageTemplateRenderer = new PageTemplateRenderer(pageManager, config.showButtonPreviousPage, config.language);
-    pageManager.addCallbackPageEventChanged(pageTemplateRenderer.refresh.bind(pageTemplateRenderer));
-
-    addPagesToPageManager(pageManager, config.pages);
-
-    interval2 = setInterval(function(){
-        clearInterval(interval2);
-        audioFileLoader.startLoading(callbackFilesLoaded);
-    },10);
-
+  config = result;
+  startup(result);
 }));
