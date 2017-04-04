@@ -4,7 +4,7 @@
 
 ### BS.1534 (MUSHRA)
 
-* <kbd>0</kbd>,r Select and play/pause reference
+* <kbd>0</kbd>,<kbd>r</kbd> Select and play/pause reference
 * <kbd>1-9</kbd> Select and play/pause condition 1-9
 * <kbd>SPACE</kbd> Play/pause the selected condition
 * <kbd>BACKSPACE</kbd> Stop the selected condition
