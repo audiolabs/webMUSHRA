@@ -42,6 +42,11 @@ module.exports = function(grunt) {
             files: [ 'lib/webmushra/**/*.js' ]
         },
         processhtml: {
+            options: {
+              data: {
+                version: '<%= pkg.version %>'
+              }
+            },
             generic: {
                 files: {
                     'dist/<%= grunt.task.current.target %>/index.html': ['index.html']
