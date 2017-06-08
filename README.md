@@ -21,6 +21,7 @@ Listening tests are widely used to assess the quality of audio systems. In the l
   * AB (ITU-R BS.1116)
   * Likert scale questionaires
   * training/introduction
+  * spatial attributes, such as ASW, LEV, and localization (experimental)
 * compliant to ITU recommendations (looping, fade-in/out, sample accurate switching)
 * finish page to gather the results and send them to a provided PHP service
 * client side processing using the Web Audio API
