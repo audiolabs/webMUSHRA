@@ -34,21 +34,9 @@ pages:
           bezierInnerLeft: [50,0,-100]
           bezierInnerRight: [-50,0,-100]
           bezierOuterRight: [-100,0,-50]
-        # - type: hwd
-          # name: hwd
-          # label: HWD1
-          # color: 0x987654
-          # stimulus: C2
-          # bezierOuterLeft: [-100,50,50]
-          # bezierInnerLeft: [-50,50,100]
-          # bezierInnerRight: [299,50,100]
-          # bezierOuterRight: [200,50,50]
-          # height: 100
-          # depth: 50
       views: 
         - view: front
         - view: top
-        # - view: 3d
           position: [400,50,400]
       objects: 
         - type: listener
@@ -119,7 +107,7 @@ pages:
         - type: localization
           name: locA
           label: A
-          color: 0xff0000      
+          color: 0xff0000
           stimulus: C1    
           position: [100,100,0]
           size: 20
