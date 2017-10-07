@@ -38,10 +38,17 @@ To load audio files and save the results as csv text files, webMUSHRA needs to r
 
 Now you can run webMUSHRA using the following URL: http://localhost:8000
 
-Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
-
 The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url http://localhost:8000/?config=mushra_showresults.yaml.
 
+### Docker
+
+You can use docker to set up webMUSHRA quickly. Just run
+`docker-compose -f docker-compose.yml build` to build the webMUSHRA docker container.
+
+To run the container use webMUSHRA `docker-compose -f docker-compose.yml up`. We configured the docker image so that the `configs` and the `results` folder is mounted inside the container so that you can modify it on the fly and receive results within the `results` folder.
+
+### Apache + PHP
+Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
 
 #### Change or add a configuration
 
