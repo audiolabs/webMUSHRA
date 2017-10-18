@@ -33,16 +33,27 @@ Listening tests are widely used to assess the quality of audio systems. In the l
 
  * Google Chrome on Windows, Mac and Linux
 
-## Getting started: Setting up webMUSHRA
+## Getting started: Setting up webMUSHRA using PHP's builtin webserver
 
 To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system (for example on Mac OS X), you can run a php development server on port 8000 from the terminal using `php -S localhost:8000`.
 
 Now you can run webMUSHRA using the following URL: http://localhost:8000
 
-Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
-
 The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url http://localhost:8000/?config=mushra_showresults.yaml.
 
+### Docker
+
+You can use docker to set up webMUSHRA quickly. Just run
+`docker-compose -f docker-compose.yml build` to build the webMUSHRA docker container.
+
+To run the container use webMUSHRA `docker-compose -f docker-compose.yml up`. We configured the docker image so that the `configs` and the `results` folder is mounted inside the container so that you can modify it on the fly and receive results within the `results` folder.
+
+#### Note for Docker on Windows
+
+When using Docker Toolbox/Machine on Windows, volume paths (to mount the `configs` and `results` folder) are not converted by default. To enable this conversion set the environment variable COMPOSE_CONVERT_WINDOWS_PATHS=1 e.g. by `env:COMPOSE_CONVERT_WINDOWS_PATHS=1` in the power shell.
+
+### Apache + PHP
+Another custom to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
 
 #### Change or add a configuration
 
