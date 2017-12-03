@@ -12,7 +12,17 @@ a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikiped
 Listening tests are widely used to assess the quality of audio systems. In the last few years, conducting listening experiments over the Internet, as so called web-based experiments, has become popular. Until now, it was only possible to implement a limited number of listening test types as web-based experiments because web standards were missing some crucial features, e.g. sample manipulation of audio streams. MUSHRA tests are designed to compare the audio quality of several test conditions with intermediate impairments to a high quality reference. With the rise of [Web Audio API](http://webaudio.github.io/web-audio-api/), for the first time MUSHRA experiments can be carried out within the web browser while at the same time being compliant to the ITU-R Recommendation BS.1534 (MUSHRA).
 
 ##### [View Demo](https://audiolabs.github.io/webMUSHRA)
-##### [Download Package](https://github.com/audiolabs/webMUSHRA/releases/latest)
+
+
+### Download
+
+We provide two version of webMUSHRA.
+
+* __webMUSHRA__ provides the version targeted for normale usage and experimenters. The javascript files are compressed which makes it faster to load/serve. The documentation is provided as PDFs.
+
+* __webMUSHRA-dev__ is targeted to developers and experienced users who want to customize experiments. This version is comparable to cloning the git repository
+
+[Download Package Here](https://github.com/audiolabs/webMUSHRA/releases/latest)
 
 ## Features
 
