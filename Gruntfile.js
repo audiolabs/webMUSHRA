@@ -132,6 +132,9 @@ module.exports = function(grunt) {
                   src: [ 'THIRD-PARTY-NOTICES.txt' ],
                   dest: '/'
                 }, {
+                  src: [ 'startup.js' ],
+                  dest: '/'
+                }, {
                   src: [ 'index.html' ],
                   dest: '/'
                 }, {
