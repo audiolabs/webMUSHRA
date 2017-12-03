@@ -272,6 +272,200 @@ if($write_lss){
 	fclose($fp);
 }
 
+//spatial
+//localization
+$write_spatial_localization = false;
+$spatial_localizationData = array();
+
+$input = array("session_test_id");
+for($i =0; $i < $length; $i++){
+    array_push($input, $session->participant->name[$i]);
+}
+array_push($input,  "trial_id", "name", "stimulus", "position_x", "position_y", "position_z");
+array_push($spatial_localizationData, $input);
+
+
+// 
+foreach ($session->trials as $trial) {
+    
+  if ($trial->type == "localization") {
+    
+      foreach ($trial->responses as $response) {        
+        $write_spatial_localization = true;
+    
+        $results = array($session->testId);
+        for($i =0; $i < $length; $i++){
+            array_push($results, $session->participant->response[$i]);
+        }  
+array_push($results, $trial->id, $response->name, $response->stimulus, $response->position[0], $response->position[1], $response->position[2]);
+      
+      
+        array_push($spatial_localizationData, $results); 
+             
+      }
+  }
+}
+
+if ($write_spatial_localization) {
+    
+    $filename = $filepathPrefix."spatial_localization".$filepathPostfix;
+    $isFile = is_file($filename);
+    $fp = fopen($filename, 'a');
+    foreach ($spatial_localizationData as $row) {
+        if ($isFile) {          
+            $isFile = false;
+        } else {
+           fputcsv($fp, $row);
+        }
+    }
+    fclose($fp);
+}
+
+//asw
+$write_spatial_asw = false;
+$spatial_aswData = array();
+
+$input = array("session_test_id");
+for($i =0; $i < $length; $i++){
+    array_push($input, $session->participant->name[$i]);
+}
+
+array_push($input,  "trial_id", "name", "stimulus", "position_outerRight_x", "position_outerRight_y", "position_outerRight_z", "position_innerRight_x", "position_innerRight_y", "position_innerRight_z", "position_innerLeft_x", "position_innerLeft_y", "position_innerLeft_z", "position_outerLeft_x", "position_outerLeft_y", "position_outerLeft_z");
+array_push($spatial_aswData, $input);
+
+
+// 
+foreach ($session->trials as $trial) {
+
+  if ($trial->type == "asw") {
+    
+      foreach ($trial->responses as $response) {        
+        $write_spatial_asw = true;
+    
+        $results = array($session->testId);
+        for($i =0; $i < $length; $i++){
+            array_push($results, $session->participant->response[$i]);
+        }  
+                array_push($results, $trial->id, $response->name, $response->stimulus, $response->position_outerRight[0], $response->position_outerRight[1], $response->position_outerRight[2], $response->position_innerRight[0], $response->position_innerRight[1], $response->position_innerRight[2], $response->position_innerLeft[0], $response->position_innerLeft[1], $response->position_innerLeft[2], $response->position_outerLeft[0], $response->position_outerLeft[1], $response->position_outerLeft[2]);
+        
+        array_push($spatial_aswData, $results); 
+             
+      }
+  }
+}
+
+if ($write_spatial_asw) {
+
+    $filename = $filepathPrefix."spatial_asw".$filepathPostfix;
+    $isFile = is_file($filename);
+    $fp = fopen($filename, 'a');
+    foreach ($spatial_aswData as $row) {
+        if ($isFile) {          
+            $isFile = false;
+        } else {
+           fputcsv($fp, $row);
+        }
+    }
+    fclose($fp);
+}
+
+
+//hwd
+$write_spatial_hwd = false;
+$spatial_hwdData = array();
+
+$input = array("session_test_id");
+for($i =0; $i < $length; $i++){
+    array_push($input, $session->participant->name[$i]);
+}
+
+array_push($input,  "trial_id", "name", "stimulus", "position_outerRight_x", "position_outerRight_y", "position_outerRight_z", "position_innerRight_x", "position_innerRight_y", "position_innerRight_z", "position_innerLeft_x", "position_innerLeft_y", "position_innerLeft_z", "position_outerLeft_x", "position_outerLeft_y", "position_outerLeft_z", "height", "depth");
+array_push($spatial_hwdData, $input);
+
+
+// 
+foreach ($session->trials as $trial) {
+
+  if ($trial->type == "hwd") {
+    
+      foreach ($trial->responses as $response) {        
+        $write_spatial_hwd = true;
+    
+        $results = array($session->testId);
+        for($i =0; $i < $length; $i++){
+            array_push($results, $session->participant->response[$i]);
+        }  
+                array_push($results, $trial->id, $response->name, $response->stimulus, $response->position_outerRight[0], $response->position_outerRight[1], $response->position_outerRight[2], $response->position_innerRight[0], $response->position_innerRight[1], $response->position_innerRight[2], $response->position_innerLeft[0], $response->position_innerLeft[1], $response->position_innerLeft[2], $response->position_outerLeft[0], $response->position_outerLeft[1], $response->position_outerLeft[2], $response->height, $response->depth);
+        
+        array_push($spatial_hwdData, $results); 
+             
+      }
+  }
+}
+
+if ($write_spatial_hwd) {
+    
+    $filename = $filepathPrefix."spatial_hwd".$filepathPostfix;
+    $isFile = is_file($filename);
+    $fp = fopen($filename, 'a');
+    foreach ($spatial_hwdData as $row) {
+        if ($isFile) {          
+            $isFile = false;
+        } else {
+           fputcsv($fp, $row);
+        }
+    }
+    fclose($fp);
+}
+
+//lev
+$write_spatial_lev = false;
+$spatial_levData = array();
+
+$input = array("session_test_id");
+for($i =0; $i < $length; $i++){
+    array_push($input, $session->participant->name[$i]);
+}
+
+array_push($input,  "trial_id", "name", "stimulus", "position_center_x", "position_center_y", "position_center_z", "position_height_x", "position_height_y", "position_height_z", "position_width1_x", "position_width1_y", "position_width1_z", "position_width2_x", "position_width2_y", "position_width2_z");
+array_push($spatial_levData, $input);
+
+
+// 
+foreach ($session->trials as $trial) {
+    
+  if ($trial->type == "lev") {
+    
+      foreach ($trial->responses as $response) {        
+        $write_spatial_lev = true;
+    
+        $results = array($session->testId);
+        for($i =0; $i < $length; $i++){
+            array_push($results, $session->participant->response[$i]);
+        }  
+        array_push($results, $trial->id, $response->name, $response->stimulus, $response->position_center[0], $response->position_center[1], $response->position_center[2], $response->position_height[0], $response->position_height[1], $response->position_height[2], $response->position_width1[0], $response->position_width1[1], $response->position_width1[2], $response->position_width2[0], $response->position_width2[1], $response->position_width2[2]);
+        
+        array_push($spatial_levData, $results); 
+             
+      }
+  }
+}
+
+if ($write_spatial_lev) {
+    $filename = $filepathPrefix."spatial_lev".$filepathPostfix;
+    $isFile = is_file($filename);
+    $fp = fopen($filename, 'a');
+    foreach ($spatial_levData as $row) {
+        if ($isFile) {          
+            $isFile = false;
+        } else {
+           fputcsv($fp, $row);
+        }
+    }
+    fclose($fp);
+
+
+}
 
 
 ?>

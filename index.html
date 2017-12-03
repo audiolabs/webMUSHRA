@@ -38,6 +38,12 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/external/jquery.mobile/plugins/jQuery-Mobile-Progress-Bar-with-Percentage/src/js/tolito-1.0.1.js"></script>
     <script src="lib/external/jquery.mobile/patches/vertical-slider.js"></script>
 
+    <!-- Three js -->
+    <script src ="lib/external/three.js/three.js"></script>
+    <script src ="lib/external/three.js/three-tube/threejs-tube.js"></script>
+    <script src ="lib/external/three.js/loaders/ColladaLoader.js"></script>
+
+
     <!--noUiSlider -->
     <script src="lib/external/wmSlider/slider.min.js"></script>
 
@@ -78,6 +84,17 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/webmushra/datamodel/Session.js"></script>
     <script src="lib/webmushra/datamodel/Stimulus.js"></script>
     <script src="lib/webmushra/datamodel/Trial.js"></script>
+    <script src="lib/webmushra/datamodel/SpatialLocalizationRating.js"></script>
+    <script src="lib/webmushra/datamodel/SpatialASWRating.js"></script>
+    <script src="lib/webmushra/datamodel/SpatialHWDRating.js"></script>
+    <script src="lib/webmushra/datamodel/SpatialLEVRating.js"></script>
+
+    <!-- spatial -->
+    <script src="lib/webmushra/spatial/Camera.js"></script>
+    <script src="lib/webmushra/spatial/Scene.js"></script>
+    <script src="lib/webmushra/spatial/objects/LocalizationObject.js"></script>
+    <script src="lib/webmushra/spatial/objects/LEVObject.js"></script>
+    <script src="lib/webmushra/spatial/objects/ASWObject.js"></script>
 
     <!-- misc -->
     <script src="lib/webmushra/misc/MushraValidator.js"></script>
@@ -98,6 +115,7 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/webmushra/pages/LikertSingleStimulusPage.js"></script>
     <script src="lib/webmushra/pages/LikertSingleStimulusPageManager.js"></script>
     <script src="lib/webmushra/pages/LikertMultiStimulusPage.js"></script>
+    <script src="lib/webmushra/pages/SpatialPage.js"></script>
 
     <script src="lib/webmushra/nls/nls.js"></script>
     <!-- /build -->
@@ -123,10 +141,17 @@ will be prosecuted to the maximum extent possible under law.
     <div class="ui-body ui-body-a ui-corner-all" id="page_navigation">
     </div>
 
-
     <table align="right" class="logo">
       <tr>
-        <td class="logo" style="vertical-align:top; padding-right:0px;"><small><strong>webMUSHRA by</strong></small></td>
+        <td class="logo" style="vertical-align:top; padding-right:0px;"><small><strong>webMUSHRA
+            <!-- build:template:dev
+            Dev
+            /build -->
+            <!-- build:template
+            <%= version %>
+            /build -->
+            by</strong></small>
+        </td>
         <td class="logo"><a href="https://www.audiolabs-erlangen.de/"><img src="design/images/alabs_new.png" class="logo"/></a></td>
         <td class="logo"><a href="http://www.iis.fraunhofer.de/"><img src="design/images/iis.svg" class="logo" /></a></td>
         <td class="logo"><a href="https://www.fau.eu/"><img src="design/images/techfak.svg" class="logo" /></a></td>

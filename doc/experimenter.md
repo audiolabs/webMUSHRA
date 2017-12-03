@@ -23,11 +23,11 @@ At the top level of the config file, general options of the experiment are store
 * **remoteService** A service/URL to which the results (JSON object) are sent. A PHP web service ("service/write.php") is available which writes the results into the "/results" folder. 
 * **pages** An array of experiment pages, random keyword or an pages array ([Array]). 
 
-#### random
+#### `random`
 
 If the string "random" is the first element of an pages array, the content of the array is randomized (e.g. used for randomized experiments).
 
-#### generic page
+#### `generic` page
 
 A generic page contains any content in HTML (e.g. useful for showing the instructions to the participants).
 
@@ -37,7 +37,7 @@ A generic page contains any content in HTML (e.g. useful for showing the instruc
 * **content** Content (HTML) of the page.
 
 
-#### volume page
+#### `volume` page
 
 The volume page can be used to set the volume used in the experiment.
 
@@ -48,7 +48,7 @@ The volume page can be used to set the volume used in the experiment.
 * **stimulus** Filepath to the stimulus that is used for setting the volume.
 * **defaultVolume** Default volume (must be between 0.0 and 1.0).
 
-#### mushra page
+#### `mushra` page
 
 A mushra page shows a trial according to ITU-R Recommendation BS.1534.
 
@@ -67,7 +67,7 @@ A mushra page shows a trial according to ITU-R Recommendation BS.1534.
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).  
 
 
-#### bs1116 page          
+#### `bs1116` page          
 
 A bs1116 page shows a trial according to ITU-R Recommendation BS.1116.
 
@@ -82,7 +82,7 @@ A bs1116 page shows a trial according to ITU-R Recommendation BS.1116.
 * **createAnchor70** If set to true, the 7 kHZ anchor is automatically generated (Increase loading time of the experiment).
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).  
 
-#### paired comparison page
+#### `paired_comparison` page
 
 A paired comparison page creates a forced or unforced paired comparison (AB/ABX/ABN tests).
 
@@ -96,7 +96,7 @@ A paired comparison page creates a forced or unforced paired comparison (AB/ABX/
 * **reference** Filepath to the reference stimulus (WAV file).
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).  
 
-#### likert multi stimulus
+#### `likert_multi_stimulus` page
 
 A likert multi stimulus page creates a multi-stimulus likert rating.
 
@@ -109,7 +109,7 @@ A likert multi stimulus page creates a multi-stimulus likert rating.
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
 * **response** A array which represents the Likert scale, where each array element represents a 'likert point'. The array elements are maps with the keys 'value' (value shown in results), 'label' (label of the likert point), 'img' (path to an image of the likert point), 'imgSelected' (image shown if likert point is selected), and 'imgHigherResponseSelected' (image shown when a 'higher' likert point is selected).  
 
-#### likert single stimulus
+#### `likert_single_stimulus` page
 
 A likert single stimulus page creates a single-stimulus likert rating.
 
@@ -121,7 +121,7 @@ A likert single stimulus page creates a single-stimulus likert rating.
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
 * **response** An array which represents the Likert scale, where each array element represents a 'likert point'. The array elements are maps with the keys 'value' (value shown in results), 'label' (label of the likert point), 'img' (path to an image of the likert point), 'imgSelected' (image shown if likert point is selected), and 'imgHigherResponseSelected' (image shown when a 'higher' likert point is selected).  
 
-#### finish page
+#### `finish` page
 
 The finish page must be the last page of the experiment.
 

@@ -1,4 +1,6 @@
 # webMUSHRA
+[![GitHub release](https://img.shields.io/github/release/audiolabs/webMUSHRA.svg)](https://github.com/audiolabs/webMUSHRA/releases/latest)
+[![Github All Releases](https://img.shields.io/github/downloads/audiolabs/webMUSHRA/total.svg)](https://github.com/audiolabs/webMUSHRA/releases/latest)
 [![Build Status](https://travis-ci.org/audiolabs/webMUSHRA.svg?branch=master)](https://travis-ci.org/audiolabs/webMUSHRA)
 
 a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikipedia.org/wiki/MUSHRA)) compliant web audio API based experiment software.
@@ -9,14 +11,27 @@ a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikiped
 
 Listening tests are widely used to assess the quality of audio systems. In the last few years, conducting listening experiments over the Internet, as so called web-based experiments, has become popular. Until now, it was only possible to implement a limited number of listening test types as web-based experiments because web standards were missing some crucial features, e.g. sample manipulation of audio streams. MUSHRA tests are designed to compare the audio quality of several test conditions with intermediate impairments to a high quality reference. With the rise of [Web Audio API](http://webaudio.github.io/web-audio-api/), for the first time MUSHRA experiments can be carried out within the web browser while at the same time being compliant to the ITU-R Recommendation BS.1534 (MUSHRA).
 
-#### [⚠️ View Demo](https://audiolabs.github.io/webMUSHRA/)
+##### [View Demo](https://audiolabs.github.io/webMUSHRA)
+
+
+### Download
+
+We provide two version of webMUSHRA.
+
+* __webMUSHRA__ provides the version targeted for normale usage and experimenters. The javascript files are compressed which makes it faster to load/serve. The documentation is provided as PDFs.
+
+* __webMUSHRA-dev__ is targeted to developers and experienced users who want to customize experiments. This version is comparable to cloning the git repository
+
+[Download Package Here](https://github.com/audiolabs/webMUSHRA/releases/latest)
 
 ## Features
 
-* page based experiments supporting
- * MUSHRA (ITU-R BS.1534)
- * AB (ITU-R BS.1116)
- * training/introduction
+* page based experiments supporting:
+  * MUSHRA (ITU-R BS.1534)
+  * AB (ITU-R BS.1116)
+  * Likert scale questionaires
+  * training/introduction
+  * spatial attributes, such as ASW, LEV, and localization (experimental)
 * compliant to ITU recommendations (looping, fade-in/out, sample accurate switching)
 * finish page to gather the results and send them to a provided PHP service
 * client side processing using the Web Audio API
@@ -28,16 +43,27 @@ Listening tests are widely used to assess the quality of audio systems. In the l
 
  * Google Chrome on Windows, Mac and Linux
 
-## Getting started: Setting up webMUSHRA
+## Getting started: Setting up webMUSHRA using PHP's builtin webserver
 
 To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system (for example on Mac OS X), you can run a php development server on port 8000 from the terminal using `php -S localhost:8000`.
 
 Now you can run webMUSHRA using the following URL: http://localhost:8000
 
-Another way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
-
 The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url http://localhost:8000/?config=mushra_showresults.yaml.
 
+### Docker
+
+You can use docker to set up webMUSHRA quickly. Just run
+`docker-compose -f docker-compose.yml build` to build the webMUSHRA docker container.
+
+To run the container use webMUSHRA `docker-compose -f docker-compose.yml up`. We configured the docker image so that the `configs` and the `results` folder is mounted inside the container so that you can modify it on the fly and receive results within the `results` folder.
+
+#### Note for Docker on Windows
+
+When using Docker Toolbox/Machine on Windows, volume paths (to mount the `configs` and `results` folder) are not converted by default. To enable this conversion set the environment variable COMPOSE_CONVERT_WINDOWS_PATHS=1 e.g. by `env:COMPOSE_CONVERT_WINDOWS_PATHS=1` in the power shell.
+
+### Apache + PHP
+Another custom way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
 
 #### Change or add a configuration
 
