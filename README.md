@@ -97,12 +97,13 @@ The specific parameters are described in the [Experimenters Manual](doc/experime
 
 ## Citation
 
-If you want to cite webMUSHRA, please refer to this publication (see References for the link to the paper):
+If you use webMUSHRA in your publication, please cite it using the following reference:
 
-> "Towards the Next Generation of Web-based Experiments: A Case Study Assessing Basic Audio Quality Following the ITU-R Recommendation BS.1534 (MUSHRA)", Michael Schoeffler, Fabian-Robert Stöter, Bernd Edler and Jürgen Herre, 1st Web Audio Conference, 2015, Paris, France.
+> Schoeffler, M. et al., (2018). webMUSHRA — A Comprehensive Framework for Web-based Listening Tests. Journal of Open Research Software. 6(1), p.8.
 
 ## References
 
+* [Journal of Open Research Software Paper](http://doi.org/10.5334/jors.187)
 * [Web Audio Conference 2015 Paper](http://wac.ircam.fr/pdf/wac15_submission_8.pdf)
 * [Web Audio Conference 2015 Presentation](http://www.audiolabs-erlangen.de/content/resources/webMUSHRA/slides.html#/)
 
