@@ -43,6 +43,8 @@ We provide two version of webMUSHRA.
 ## Supported Browsers
 
  * Google Chrome on Windows, Mac and Linux
+ 
+ :warning: webMUSHRA is currently not compatible with version 66 of the Chrome browser. Please stay tuned for a fix!
 
 ## Getting started: Setting up webMUSHRA using PHP's builtin webserver
 
