@@ -44,8 +44,6 @@ We provide two version of webMUSHRA.
 
  * Google Chrome on Windows, Mac and Linux
  
- :warning: webMUSHRA is currently not compatible with version 66 of the Chrome browser. Please stay tuned for a fix!
-
 ## Getting started: Setting up webMUSHRA using PHP's builtin webserver
 
 To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system (for example on Mac OS X), you can run a php development server on port 8000 from the terminal using `php -S localhost:8000`.
