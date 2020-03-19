@@ -65,14 +65,22 @@ function callbackURLFound() {
   $("#popupErrors").popup("open");
 }
 
+// Durstenfeld shuffle (https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm)
+function shuffle(_array) {
+  for (var i = _array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = _array[i];
+    _array[i] = _array[j];
+    _array[j] = temp;
+  }
+}
+
 function addPagesToPageManager(_pageManager, _pages) {
   for (var i = 0; i < _pages.length; ++i) {
     if (Array.isArray(_pages[i])) {
       if (_pages[i][0] === "random") {
         _pages[i].shift();
-        _pages[i].sort(function() {
-          return 0.5 - Math.random();
-        });
+        shuffle(_pages[i]);
       }
       addPagesToPageManager(_pageManager, _pages[i]);
     } else {
