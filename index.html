@@ -56,70 +56,7 @@ will be prosecuted to the maximum extent possible under law.
     </script>
 
     <!-- webMUSHRA -->
-    <!-- build:js:generic lib/webMUSHRA.js -->
-    <!-- audio -->
-    <script src="lib/webmushra/audio/AudioFileLoader.js"></script>
-    <script src="lib/webmushra/audio/MushraAudioControl.js"></script>
-    <script src="lib/webmushra/audio/GenericAudioControl.js"></script>
-
-    <!-- business -->
-    <script src="lib/webmushra/business/DataSender.js"></script>
-    <script src="lib/webmushra/business/ErrorHandler.js"></script>
-    <script src="lib/webmushra/business/PageManager.js"></script>
-    <script src="lib/webmushra/business/PageTemplateRenderer.js"></script>
-
-    <!-- control -->
-    <script src="lib/webmushra/control/MushraAudioControlInputController.js"></script>
-    <script src="lib/webmushra/control/BS1116AudioControlInputController.js"></script>
-    <script src="lib/webmushra/control/FilePlayerController.js"></script>
-    <script src="lib/webmushra/control/InputController.js"></script>
-
-    <!-- datamodel -->
-    <script src="lib/webmushra/datamodel/BS1116Rating.js"></script>
-    <script src="lib/webmushra/datamodel/MUSHRARating.js"></script>
-    <script src="lib/webmushra/datamodel/LikertMultiStimulusRating.js"></script>
-    <script src="lib/webmushra/datamodel/LikertSingleStimulusRating.js"></script>
-    <script src="lib/webmushra/datamodel/PairedComparisonChoice.js"></script>
-    <script src="lib/webmushra/datamodel/Participant.js"></script>
-    <script src="lib/webmushra/datamodel/Session.js"></script>
-    <script src="lib/webmushra/datamodel/Stimulus.js"></script>
-    <script src="lib/webmushra/datamodel/Trial.js"></script>
-    <script src="lib/webmushra/datamodel/SpatialLocalizationRating.js"></script>
-    <script src="lib/webmushra/datamodel/SpatialASWRating.js"></script>
-    <script src="lib/webmushra/datamodel/SpatialHWDRating.js"></script>
-    <script src="lib/webmushra/datamodel/SpatialLEVRating.js"></script>
-
-    <!-- spatial -->
-    <script src="lib/webmushra/spatial/Camera.js"></script>
-    <script src="lib/webmushra/spatial/Scene.js"></script>
-    <script src="lib/webmushra/spatial/objects/LocalizationObject.js"></script>
-    <script src="lib/webmushra/spatial/objects/LEVObject.js"></script>
-    <script src="lib/webmushra/spatial/objects/ASWObject.js"></script>
-
-    <!-- misc -->
-    <script src="lib/webmushra/misc/MushraValidator.js"></script>
-    <script src="lib/webmushra/misc/WaveformVisualizer.js"></script>
-    <script src="lib/webmushra/misc/LikertScale.js"></script>
-    <script src="lib/webmushra/misc/FilePlayer.js"></script>
-    <script src="lib/webmushra/misc/Localizer.js"></script>
-    <script src="lib/webmushra/misc/Shuffle.js"></script>
-
-    <!-- pages -->
-    <script src="lib/webmushra/pages/BS1116Page.js"></script>
-    <script src="lib/webmushra/pages/BS1116PageManager.js"></script>
-    <script src="lib/webmushra/pages/FinishPage.js"></script>
-    <script src="lib/webmushra/pages/GenericPage.js"></script>
-    <script src="lib/webmushra/pages/MushraPage.js"></script>
-    <script src="lib/webmushra/pages/PairedComparisonPage.js"></script>
-    <script src="lib/webmushra/pages/PairedComparisonPageManager.js"></script>
-    <script src="lib/webmushra/pages/VolumePage.js"></script>
-    <script src="lib/webmushra/pages/LikertSingleStimulusPage.js"></script>
-    <script src="lib/webmushra/pages/LikertSingleStimulusPageManager.js"></script>
-    <script src="lib/webmushra/pages/LikertMultiStimulusPage.js"></script>
-    <script src="lib/webmushra/pages/SpatialPage.js"></script>
-
-    <script src="lib/webmushra/nls/nls.js"></script>
-    <!-- /build -->
+    <script src="lib/webMUSHRA.js"></script>
 
     <!-- import config -->
     <script src="lib/external/yaml/yaml.min.js"></script>
@@ -148,9 +85,7 @@ will be prosecuted to the maximum extent possible under law.
             <!-- build:template:dev
             Dev
             /build -->
-            <!-- build:template
-            <%= version %>
-            /build -->
+            1.4.2
             by</strong></small>
         </td>
         <td class="logo"><a href="https://www.audiolabs-erlangen.de/"><img src="design/images/alabs_new.png" class="logo"/></a></td>
@@ -171,8 +106,6 @@ will be prosecuted to the maximum extent possible under law.
     <div id="popupResultsContent" style="background-color: white;" class="ui-corner-bottom ui-content">
     </div>
 	</div>
-    <!-- build:js:generic startup.min.js -->
-    <script src="startup.js"></script>
-    <!-- /build -->
+    <script src="startup.min.js"></script>
   </body>
 </html>
