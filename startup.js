@@ -171,6 +171,12 @@ function startup(config) {
     audioContext = new webkitAudioContext();
   }
 
+  document.addEventListener("click", function () {
+    if (audioContext.state !== 'running') {
+      audioContext.resume();
+    }
+  }, true);
+
   try {
     audioContext.destination.channelCountMode = "explicit";
     audioContext.destination.channelInterpretation = "discrete";
