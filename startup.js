@@ -70,9 +70,7 @@ function addPagesToPageManager(_pageManager, _pages) {
     if (Array.isArray(_pages[i])) {
       if (_pages[i][0] === "random") {
         _pages[i].shift();
-        _pages[i].sort(function() {
-          return 0.5 - Math.random();
-        });
+        shuffle(_pages[i]);
       }
       addPagesToPageManager(_pageManager, _pages[i]);
     } else {
@@ -172,6 +170,12 @@ function startup(config) {
   } else if ( typeof webkitAudioContext !== 'undefined') {
     audioContext = new webkitAudioContext();
   }
+
+  document.addEventListener("click", function () {
+    if (audioContext.state !== 'running') {
+      audioContext.resume();
+    }
+  }, true);
 
   try {
     audioContext.destination.channelCountMode = "explicit";

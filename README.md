@@ -2,6 +2,7 @@
 [![GitHub release](https://img.shields.io/github/release/audiolabs/webMUSHRA.svg)](https://github.com/audiolabs/webMUSHRA/releases/latest)
 [![Github All Releases](https://img.shields.io/github/downloads/audiolabs/webMUSHRA/total.svg)](https://github.com/audiolabs/webMUSHRA/releases/latest)
 [![Build Status](https://travis-ci.org/audiolabs/webMUSHRA.svg?branch=master)](https://travis-ci.org/audiolabs/webMUSHRA)
+[![DOI](https://zenodo.org/badge/81722942.svg)](https://zenodo.org/badge/latestdoi/81722942)
 
 a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikipedia.org/wiki/MUSHRA)) compliant web audio API based experiment software.
 
@@ -42,7 +43,7 @@ We provide two version of webMUSHRA.
 ## Supported Browsers
 
  * Google Chrome on Windows, Mac and Linux
-
+ 
 ## Getting started: Setting up webMUSHRA using PHP's builtin webserver
 
 To load audio files and save the results as csv text files, webMUSHRA needs to run on a web server. If you already have `php` installed on your system (for example on Mac OS X), you can run a php development server on port 8000 from the terminal using `php -S localhost:8000`.
@@ -96,12 +97,13 @@ The specific parameters are described in the [Experimenters Manual](doc/experime
 
 ## Citation
 
-If you want to cite webMUSHRA, please refer to this publication (see References for the link to the paper):
+If you use webMUSHRA in your publication, please cite it using the following reference:
 
-> "Towards the Next Generation of Web-based Experiments: A Case Study Assessing Basic Audio Quality Following the ITU-R Recommendation BS.1534 (MUSHRA)", Michael Schoeffler, Fabian-Robert Stöter, Bernd Edler and Jürgen Herre, 1st Web Audio Conference, 2015, Paris, France.
+> Schoeffler, M. et al., (2018). webMUSHRA — A Comprehensive Framework for Web-based Listening Tests. Journal of Open Research Software. 6(1), p.8.
 
 ## References
 
+* [Journal of Open Research Software Paper](http://doi.org/10.5334/jors.187)
 * [Web Audio Conference 2015 Paper](http://wac.ircam.fr/pdf/wac15_submission_8.pdf)
 * [Web Audio Conference 2015 Presentation](http://www.audiolabs-erlangen.de/content/resources/webMUSHRA/slides.html#/)
 
