@@ -1,7 +1,7 @@
 {
 
   "name": "webMUSHRA",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Web Audio API based Listening Experiment Framework",
   "author": "International Audio Laboratories Erlangen",
   "repository": "https://github.com/audiolabs/webMUSHRA",
