@@ -4,6 +4,7 @@ doc/jsdoc
 dist
 builds/
 configs/
+results/
 
 #####=== Node ===#####
 
