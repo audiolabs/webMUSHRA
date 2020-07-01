@@ -3,6 +3,8 @@ doc/jsdoc
 .project
 dist
 builds/
+configs/
+results/
 
 #####=== Node ===#####
 
