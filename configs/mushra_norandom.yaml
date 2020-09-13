@@ -47,6 +47,6 @@ pages:
     - type: finish
       name: Thank you
       content: Thank you for attending
-      popupcontent: Your results were sent. Goodbye and have a nice day      
+      popupContent: Your results were sent. Goodbye and have a nice day      
       showResults: true
       writeResults: true
