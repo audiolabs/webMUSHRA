@@ -104,7 +104,7 @@ A likert multi stimulus page creates a multi-stimulus likert rating.
 * **id** Identifier of the page.
 * **name** Name of the page (is shown as title)
 * **mustRate** If set to true, the participant must rate all stimuli.
-* **mustPlayback** If set to true, the participant must fully play back all stimuli. 
+* **mustPlayback** If set to `ended`, the participant must fully play back all stimuli to the end. If set to `processUpdate`, the participant must start playing back all stimuli before rating becomes possible.
 * **reference** Filepath to the reference stimulus (WAV file).
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
 * **response** A array which represents the Likert scale, where each array element represents a 'likert point'. The array elements are maps with the keys 'value' (value shown in results), 'label' (label of the likert point), 'img' (path to an image of the likert point), 'imgSelected' (image shown if likert point is selected), and 'imgHigherResponseSelected' (image shown when a 'higher' likert point is selected).  
@@ -116,7 +116,8 @@ A likert single stimulus page creates a single-stimulus likert rating.
 * **type** must be likert_single_stimulus.
 * **id** Identifier of the page.
 * **name** Name of the page (is shown as title)
-* **mustRate** If set to true, the participant must rate all stimuli. 
+* **mustRate** If set to true, the participant must rate all stimuli.
+* **mustPlayback** If set to `ended`, the participant must fully play back the stimulus to the end. If set to `processUpdate`, the participant must start it before rating becomes possible.
 * **reference** Filepath to the reference stimulus (WAV file).
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
 * **response** An array which represents the Likert scale, where each array element represents a 'likert point'. The array elements are maps with the keys 'value' (value shown in results), 'label' (label of the likert point), 'img' (path to an image of the likert point), 'imgSelected' (image shown if likert point is selected), and 'imgHigherResponseSelected' (image shown when a 'higher' likert point is selected).  
