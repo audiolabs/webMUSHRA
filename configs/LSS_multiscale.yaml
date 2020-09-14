@@ -1,0 +1,65 @@
+# Likert single stimulus page 1 stimulus, two Likert scales with respecitvely 4 and 2 responses
+
+
+testname: Single Stimulus with multiple Likert scales
+testId: lss_multiscale
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+
+pages:
+
+    - type: likert_single_stimulus
+      id: lss3
+      name: likert
+      content: test description
+      mustPlayback: ended
+      mustRate: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+      response:
+        -
+          - value: not at all
+            label: Not at all
+            img: configs/resources/images/star_off.png
+            imgSelected: configs/resources/images/star_on.png
+            imgHigherResponseSelected: configs/resources/images/star_on.png
+          - value: not a lot
+            label: Not a lot
+            img: configs/resources/images/star_off.png
+            imgSelected: configs/resources/images/star_on.png
+            imgHigherResponseSelected: configs/resources/images/star_on.png
+          - value: a bit
+            label: A bit
+            img: configs/resources/images/star_off.png
+            imgSelected: configs/resources/images/star_on.png
+            imgHigherResponseSelected: configs/resources/images/star_on.png
+          - value: much
+            label: Much
+            img: configs/resources/images/star_off.png
+            imgSelected: configs/resources/images/star_on.png
+            imgHigherResponseSelected: configs/resources/images/star_on.png    
+        -
+          - value: not at all
+            label: Not at all
+            img: configs/resources/images/star_off.png
+            imgSelected: configs/resources/images/star_on.png
+            imgHigherResponseSelected: configs/resources/images/star_on.png
+          - value: not a lot
+            label: Not a lot
+            img: configs/resources/images/star_off.png
+            imgSelected: configs/resources/images/star_on.png
+            imgHigherResponseSelected: configs/resources/images/star_on.png
+
+
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      showResults: true
+      writeResults: true

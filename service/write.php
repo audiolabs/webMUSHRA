@@ -236,7 +236,16 @@ $input = array("session_test_id");
 for($i =0; $i < $length; $i++){
 	array_push($input, $session->participant->name[$i]);
 }
-array_push($input,  "trial_id", "stimuli_rating", "stimuli", "rating_time");
+array_push($input,  "trial_id");
+$ratingCount = count($session->trials[0]->responses[0]->stimulusRating);
+if($ratingCount > 1) {
+    for($i =0; $i < $ratingCount; $i++){
+        array_push($input, "stimuli_rating" . ($i+1));
+    }
+} else {
+    array_push($input, "stimuli_rating");
+}
+array_push($input, "stimuli", "rating_time");
 array_push($lssCSVdata, $input);
 
 foreach($session->trials as $trial) {
@@ -248,8 +257,10 @@ foreach($session->trials as $trial) {
 				$results = array($session->testId);
 			for($i =0; $i < $length; $i++){
 				array_push($results, $session->participant->response[$i]);
-			}  
-			array_push($results,  $trial->id, " $response->stimulusRating ", $response->stimulus, $response->time);
+			}
+            array_push($results, $trial->id);
+            $results = array_merge($results, $response->stimulusRating);
+            array_push($results, $response->stimulus, $response->time);
 		  
 		  	array_push($lssCSVdata, $results); 
 			
