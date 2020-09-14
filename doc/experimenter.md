@@ -118,6 +118,7 @@ A likert single stimulus page creates a single-stimulus likert rating.
 * **mustRate** If set to true, the participant must rate all stimuli.
 * **mustPlayback** If set to `ended`, the participant must fully play back the stimulus to the end. If set to `processUpdate`, the participant must start it before rating becomes possible.
 * **stimuli** A map of stimuli, each of which will be presented on a separate page. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
+* **maxStimuli** An upper limit on the amount of stimuli presented to the user.
 * **response** An array which represents the Likert scale, where each array element represents a 'likert point'. The array elements are maps with the keys 'value' (value shown in results), 'label' (label of the likert point), 'img' (path to an image of the likert point), 'imgSelected' (image shown if likert point is selected), and 'imgHigherResponseSelected' (image shown when a 'higher' likert point is selected).  
 
 #### `finish` page

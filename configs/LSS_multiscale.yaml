@@ -15,9 +15,11 @@ pages:
     - type: likert_single_stimulus
       id: lss3
       name: likert
-      content: test description
+      content: Two out of three stimuli will be randomly selected. In order to select the first two, set randomize to false in the config file.
       mustPlayback: ended
       mustRate: true
+      randomize: true
+      maxStimuli: 2
       stimuli:
           C1: configs/resources/audio/mono_c1.wav
           C2: configs/resources/audio/mono_c2.wav
