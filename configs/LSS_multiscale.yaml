@@ -16,6 +16,7 @@ pages:
       id: lss3
       name: likert
       content: Two out of three stimuli will be randomly selected. In order to select the first two, set randomize to false in the config file.
+      showWaveform: true
       mustPlayback: ended
       mustRate: true
       randomize: true
