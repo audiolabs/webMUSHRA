@@ -66,6 +66,9 @@ When using Docker Toolbox/Machine on Windows, volume paths (to mount the `config
 ### Apache + PHP
 Another custom way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
 
+### Python Backend
+A python based backend to save the results in provided by [pymushra](https://github.com/nils-werner/pymushra).
+
 #### Change or add a configuration
 
 webMUSHRA uses [YAML](https://en.wikipedia.org/wiki/YAML) to configure experiments. Since YAML is using whitespace indentation (no tab characters!), we recommend to use a text editor like [Atom](http://atom.io) that ships with YAML support.
