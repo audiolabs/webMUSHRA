@@ -66,6 +66,9 @@ When using Docker Toolbox/Machine on Windows, volume paths (to mount the `config
 ### Apache + PHP
 Another custom way to run webMUSHRA would be to install a complete web server stack like [XAMPP](https://www.apachefriends.org/download.html).
 
+### Python Backend
+A python based backend to save the results in provided by [pymushra](https://github.com/nils-werner/pymushra).
+
 #### Change or add a configuration
 
 webMUSHRA uses [YAML](https://en.wikipedia.org/wiki/YAML) to configure experiments. Since YAML is using whitespace indentation (no tab characters!), we recommend to use a text editor like [Atom](http://atom.io) that ships with YAML support.
@@ -109,7 +112,7 @@ If you use webMUSHRA in your publication, please cite it using the following ref
 
 ## Copyright/Licence
 
-(C) AudioLabs 2017
+(C) AudioLabs 2020
 
 This source code is protected by copyright law and international treaties. This source code is made available to you subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to you prior to your download of this source code. By downloading this source code you agree to be bound by the above mentionend terms and conditions, which can also be found [here.](LICENSE.txt)
 Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law.
