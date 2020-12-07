@@ -103,10 +103,10 @@ A likert multi stimulus page creates a multi-stimulus likert rating.
 * **type** must be likert_multi_stimulus.
 * **id** Identifier of the page.
 * **name** Name of the page (is shown as title)
+* **content** Content (HTML) of the page. The content is shown on the upper part of the page.
 * **mustRate** If set to true, the participant must rate all stimuli.
-* **mustPlayback** If set to true, the participant must fully play back all stimuli. 
-* **reference** Filepath to the reference stimulus (WAV file).
-* **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
+* **mustPlayback** If set to `ended`, the participant must fully play back all stimuli to the end. If set to `processUpdate`, the participant must start playing back all stimuli before rating becomes possible.
+* **stimuli** A map of stimuli which will all be presented on the same page. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
 * **response** A array which represents the Likert scale, where each array element represents a 'likert point'. The array elements are maps with the keys 'value' (value shown in results), 'label' (label of the likert point), 'img' (path to an image of the likert point), 'imgSelected' (image shown if likert point is selected), and 'imgHigherResponseSelected' (image shown when a 'higher' likert point is selected).  
 
 #### `likert_single_stimulus` page
@@ -116,9 +116,12 @@ A likert single stimulus page creates a single-stimulus likert rating.
 * **type** must be likert_single_stimulus.
 * **id** Identifier of the page.
 * **name** Name of the page (is shown as title)
-* **mustRate** If set to true, the participant must rate all stimuli. 
-* **reference** Filepath to the reference stimulus (WAV file).
-* **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
+* **content** Content (HTML) of the page. The content is shown on the upper part of the page.
+* **showWaveform** If set to true, the waveform of the stimulus is shown. 
+* **mustRate** If set to true, the participant must rate all stimuli.
+* **mustPlayback** If set to `ended`, the participant must fully play back the stimulus to the end. If set to `processUpdate`, the participant must start it before rating becomes possible.
+* **stimuli** A map of stimuli, each of which will be presented on a separate page. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).
+* **maxStimuli** An upper limit on the amount of stimuli presented to the user.
 * **response** An array which represents the Likert scale, where each array element represents a 'likert point'. The array elements are maps with the keys 'value' (value shown in results), 'label' (label of the likert point), 'img' (path to an image of the likert point), 'imgSelected' (image shown if likert point is selected), and 'imgHigherResponseSelected' (image shown when a 'higher' likert point is selected).  
 
 #### `finish` page
