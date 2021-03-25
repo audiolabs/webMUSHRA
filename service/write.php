@@ -18,11 +18,15 @@ function sanitize($string = '', $is_filename = FALSE)
 
 
 $sessionParam = null;
-if(get_magic_quotes_gpc()){
-  $sessionParam = stripslashes($_POST['sessionJSON']);
+
+//get_magic_quotes_gpc() was removed in PHP 8
+if(version_compare(PHP_VERSION, '8.0.0', '<') and get_magic_quotes_gpc()){
+	$sessionParam = stripslashes($_POST['sessionJSON']);
 }else{
-  $sessionParam = $_POST['sessionJSON'];
+	$sessionParam = $_POST['sessionJSON'];
 }
+
+
 $session = json_decode($sessionParam);
 
 
