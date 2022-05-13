@@ -65,7 +65,7 @@ A mushra page shows a trial according to ITU-R Recommendation BS.1534.
 * **randomize** If set to true, the conditions are randomized.
 * **showConditionNames** If set to true, the names of the conditions are shown.
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).  
-
+* **switchBack** If set to true, the time position is set back to the beginning (sample 0) when switching between test conditions and/or the reference. By default, this option is false.
 
 #### `bs1116` page          
 
