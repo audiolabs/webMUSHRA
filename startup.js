@@ -89,7 +89,11 @@ function addPagesToPageManager(_pageManager, _pages) {
         var pcPageManager = new PairedComparisonPageManager();
         pcPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         pcPageManager = null;
-      } else if (pageConfig.type == "bs1116") {
+      } else if (pageConfig.type == "preference_test") {
+		var prefPageManager = new PreferenceTestPageManager();
+		prefPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+		prefPageManager = null;
+	  }else if (pageConfig.type == "bs1116") {
         var bs1116PageManager = new BS1116PageManager();
         bs1116PageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         bs1116PageManager = null;
