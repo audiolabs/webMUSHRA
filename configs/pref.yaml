@@ -1,7 +1,7 @@
 # test config preference test
 
 
-testname: Preference test
+testname: Hörexperiment
 testId: pref
 bufferSize: 2048
 stopOnErrors: true
@@ -15,6 +15,7 @@ pages:
       name: Wilkommen
       content: |
         <h3>Willkommen beim Hörexperiment</h3><p>Ihnen werden auf den folgenden Seiten paarweise einige Äußerungen präsentiert.</p><p>Bitte spielen Sie jeweils beide Varianten ab und wählen Sie dann die Variante aus, die Ihnen natürlicher erscheint.</p>
+        <p><b>Bitte beachten Sie:</b> Sie müssen immer erst alle Äußerungen bis zum Ende hören, bevor Sie eine Entscheidung treffen können.<p>
       
     - type: volume
       id: vol
