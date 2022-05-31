@@ -28,6 +28,7 @@ pages:
       name: Hörexperiment
       content: <p>Welche Äußerung finden Sie natürlicher?</p>
       considerOrder: false
+      mustPlayback: ended
       stimuli:
           - aI-a-e-01: configs/resources/audio/aI-Sie_leiht_sich_eine-a-e.wav
             aI-a-I-01: configs/resources/audio/aI-Sie_leiht_sich_eine-a-I.wav
@@ -69,7 +70,7 @@ pages:
           
     - type: finish
       name: Vielen Dank für Ihre Teilnahme!
-      content: <p>Lassen Sie uns gerne Feedback zum Experiment hier.</p><p>Nachdem Sie auf <b>"Ergebnisse senden"</b> geklickt haben, erhalten Sie den Code zur Einlösung auf Clickworkers.de</p>.
+      content: <p>Lassen Sie uns gerne Feedback zum Experiment hier.</p><p>Nachdem Sie auf <b>"Ergebnisse senden"</b> geklickt haben, erhalten Sie den Code zur Einlösung auf clickworkers.de</p>.
       questionnaire:
          - type: long_text
            label: Kommentar
@@ -85,13 +86,13 @@ pages:
            name: Geschlecht
            label: Gender
            response:
-             - value: weiblich
+             - value: female
                label: weiblich
-             - value: männlich
+             - value: male
                label: männlich
-             - value: divers
+             - value: diverse
                label: divers
       showResults: true
       writeResults: true
       generateSubjectId: true
-      confirmationCode: prefTest
+      confirmationCode: this_is_a_placeholder_code
