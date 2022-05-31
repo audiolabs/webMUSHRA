@@ -1,135 +1,77 @@
-# Likert multi stimulus page 1 stimuli, 4 responses
-
-
-testname: Hörexperiment
-testId: lms_4scale
+testname: webMUSHRA Example
+testId: default_example
 bufferSize: 2048
 stopOnErrors: true
 showButtonPreviousPage: true
-language: de
 remoteService: service/write.php
 
 
 pages:
-    - type: volume
-      id: vol
-      name: Lautstärke
-      content: Bitte regeln Sie die Lautstärke auf ein für Sie angenehmes Niveau.
-      stimulus: configs/resources/audio/bsp-Beispielsatz.wav
-      defaultVolume: 0.5
-
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: Welcome to webMUSHRA!       
+    - type: mushra
+      id: trial1
+      name: MUSHRA
+      content: This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
     - 
-      - random
-      - 
-        - type: likert_multi_stimulus
-          id: aI01
-          name: Sie leiht sich eine
-          mustRate: true
-          mustPlayback: ended
-          content: Wie natürlich klingen diese Äußerungen für Sie?
-          stimuli:
-              C1: configs/resources/audio/aI-Sie_leiht_sich_eine.wav
-              C2: configs/resources/audio/aI-Sie_leiht_sich_eine-a-aI_end.wav
-              C3: configs/resources/audio/aI-Sie_leiht_sich_eine-a-e.wav
-              C4: configs/resources/audio/aI-Sie_leiht_sich_eine-a-I.wav
-              C5: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-aI_end.wav
-              C6: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-e.wav
-              C7: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-I.wav
-          response:
-            - value: 0
-              label: Völlig unnatürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 1
-              label: Etwas unnatürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 2
-              label: Eher natürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 3
-              label: Sehr natürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png          
-      -
-        - type: likert_multi_stimulus
-          id: aI02
-          name: Weißer Hai
-          mustRate: true
-          mustPlayback: ended
-          content: Wie natürlich klingen diese Äußerungen für Sie?
-          stimuli:
-              C1: configs/resources/audio/aI-weisser_Hai.wav
-              C2: configs/resources/audio/aI-weisser_Hai-a-aI_end.wav
-              C3: configs/resources/audio/aI-weisser_Hai-a-e.wav
-              C4: configs/resources/audio/aI-weisser_Hai-a-I.wav
-              C5: configs/resources/audio/aI-weisser_Hai-aI_begin-aI_end.wav
-              C6: configs/resources/audio/aI-weisser_Hai-aI_begin-e.wav
-              C7: configs/resources/audio/aI-weisser_Hai-aI_begin-I.wav
-          response:
-            - value: 0
-              label: Völlig unnatürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 1
-              label: Etwas unnatürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 2
-              label: Eher natürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 3
-              label: Sehr natürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-      -
-        - type: likert_multi_stimulus
-          id: OY01
-          name: neues Europa
-          mustRate: true
-          mustPlayback: ended
-          content: Wie natürlich klingen diese Äußerungen für Sie?
-          stimuli:
-              C1: configs/resources/audio/OY-neues_Europa.wav
-              C2: configs/resources/audio/OY-neues_Europa-O-e.wav
-              C3: configs/resources/audio/OY-neues_Europa-O-I.wav
-              C4: configs/resources/audio/OY-neues_Europa-O-OY_end.wav
-              C5: configs/resources/audio/OY-neues_Europa-OY_begin-e.wav
-              C6: configs/resources/audio/OY-neues_Europa-OY_begin-I.wav
-              C7: configs/resources/audio/OY-neues_Europa-OY_begin-OY_end.wav
-          response:
-            - value: 0
-              label: Völlig unnatürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 1
-              label: Etwas unnatürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 2
-              label: Eher natürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-            - value: 3
-              label: Sehr natürlich
-              img: configs/resources/images/star_off.png
-              imgSelected: configs/resources/images/star_on.png
-              imgHigherResponseSelected: configs/resources/images/star_on.png
-
+          - random
+          - type: mushra
+            id: trial_random_1
+            name: MUSHRA - Random 2
+            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+            enableLooping: true 
+            reference: configs/resources/audio/mono_ref.wav
+            createAnchor35: false
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/mono_c1.wav
+                C2: configs/resources/audio/mono_c2.wav
+                C3: configs/resources/audio/mono_c3.wav          
+          - type: mushra
+            id: trial_random_2
+            name: MUSHRA - Random 1
+            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+            enableLooping: true 
+            reference: configs/resources/audio/mono_ref.wav
+            createAnchor35: false
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/mono_c1.wav
+                C2: configs/resources/audio/mono_c2.wav
+                C3: configs/resources/audio/mono_c3.wav          
     - type: finish
-      name: Danke
-      content: Vielen Dank für Ihre Teilnahme.
+      name: Thank you
+      content: Thank you for attending!
+      showResults: true
       writeResults: true
+      questionnaire:
+          - type: text
+            label: eMail
+            name: email
+          - type: number
+            label: Age
+            name: age
+            min: 0
+            max: 100
+            default: 30
+          - type: likert
+            name: gender
+            label: Gender
+            response:
+             - value: female
+               label: Female
+             - value: male
+               label: Male
+             - value: other
+               label: Other

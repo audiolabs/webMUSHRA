@@ -2,7 +2,7 @@
 
 
 testname: Preference test
-testId: pref
+testId: pref_grouped
 bufferSize: 2048
 stopOnErrors: true
 showButtonPreviousPage: true
@@ -17,9 +17,10 @@ pages:
       considerOrder: true
       mustPlayback: ended
       stimuli:
-        C1: configs/resources/audio/mono_c1.wav
-        C2: configs/resources/audio/mono_c2.wav
-        C3: configs/resources/audio/mono_c3.wav
+          - C1: configs/resources/audio/mono_c1.wav
+            C2: configs/resources/audio/mono_c2.wav
+          - C3: configs/resources/audio/mono_c3.wav
+            C2: configs/resources/audio/mono_c2.wav
 
     - type: finish
       name: Thank you
