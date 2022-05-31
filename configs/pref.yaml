@@ -1,0 +1,55 @@
+# test config preference test
+
+
+testname: Preference test
+testId: pref
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+language: de
+
+pages:
+
+    - type: preference_test
+      id: trialpref2
+      name: Hörexperiment
+      content: Welche Äußerung finden Sie natürlicher?
+      considerOrder: false
+      stimuli:
+          aI-ori: configs/resources/audio/aI-Sie_leiht_sich_eine.wav
+          aI-a-e: configs/resources/audio/aI-Sie_leiht_sich_eine-a-e.wav
+          aI-a-I: configs/resources/audio/aI-Sie_leiht_sich_eine-a-I.wav
+          aI-aI_begin-aI_end: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-aI_end.wav
+          aI-aI_begin-e: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-e.wav
+          aI-aI_begin-I: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-I.wav
+          aI-a-aI_end: configs/resources/audio/aI-Sie_leiht_sich_eine-a-aI_end.wav
+          
+    - type: finish
+      name: Vielen Dank für Ihre Teilnahme!
+      content: <p>Lassen Sie uns gerne Feedback zum Experiment hier.</p><p>Nachdem Sie auf <b>"Ergebnisse senden"</b> geklickt haben, erhalten Sie den Code zur Einlösung auf Clickworkers.de</p>.
+      questionnaire:
+         - type: long_text
+           label: Kommentar
+           name: feedback
+           optional: true
+         - type: number
+           label: Alter
+           name: age
+           min: 0
+           max: 100
+           default: 30
+         - type: likert
+           name: Geschlecht
+           label: Gender
+           response:
+             - value: weiblich
+               label: weiblich
+             - value: männlich
+               label: männlich
+             - value: divers
+               label: divers
+      showResults: true
+      writeResults: true
+      generateSubjectId: true
+      confirmationCode: prefTest
