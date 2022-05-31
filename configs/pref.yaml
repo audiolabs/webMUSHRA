@@ -26,7 +26,9 @@ pages:
     - type: preference_test
       id: trialpref2
       name: Hörexperiment
-      content: <p>Welche Äußerung finden Sie natürlicher?</p>
+      content: |
+        <p><b>Welche Äußerung finden Sie natürlicher?</b></p>
+        <p>(Zifferntaste 1: A abspielen, Zifferntaste 2: B abspielen)</p>
       considerOrder: false
       mustPlayback: ended
       stimuli:
