@@ -10,20 +10,62 @@ remoteService: service/write.php
 language: de
 
 pages:
+    - type: generic
+      id: welcome
+      name: Wilkommen
+      content: |
+        <h3>Willkommen beim Hörexperiment</h3><p>Ihnen werden auf den folgenden Seiten paarweise einige Äußerungen präsentiert.</p><p>Bitte spielen Sie jeweils beide Varianten ab und wählen Sie dann die Variante aus, die Ihnen natürlicher erscheint.</p>
+      
+    - type: volume
+      id: vol
+      name: Lautstärke
+      content: <p>Bitte regeln Sie die Lautstärke auf ein für Sie angenehmes Niveau.</p>
+      stimulus: configs/resources/audio/bsp-Beispielsatz.wav
+      defaultVolume: 0.5
 
     - type: preference_test
       id: trialpref2
       name: Hörexperiment
-      content: Welche Äußerung finden Sie natürlicher?
+      content: <p>Welche Äußerung finden Sie natürlicher?</p>
       considerOrder: false
       stimuli:
-          aI-ori: configs/resources/audio/aI-Sie_leiht_sich_eine.wav
-          aI-a-e: configs/resources/audio/aI-Sie_leiht_sich_eine-a-e.wav
-          aI-a-I: configs/resources/audio/aI-Sie_leiht_sich_eine-a-I.wav
-          aI-aI_begin-aI_end: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-aI_end.wav
-          aI-aI_begin-e: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-e.wav
-          aI-aI_begin-I: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-I.wav
-          aI-a-aI_end: configs/resources/audio/aI-Sie_leiht_sich_eine-a-aI_end.wav
+          - aI-a-e-01: configs/resources/audio/aI-Sie_leiht_sich_eine-a-e.wav
+            aI-a-I-01: configs/resources/audio/aI-Sie_leiht_sich_eine-a-I.wav
+            aI-aI_begin-aI_end-01: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-aI_end.wav
+            aI-aI_begin-e-01: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-e.wav
+            aI-aI_begin-I-01: configs/resources/audio/aI-Sie_leiht_sich_eine-aI_begin-I.wav
+            aI-a-aI_end-01: configs/resources/audio/aI-Sie_leiht_sich_eine-a-aI_end.wav
+          - aI-a-e-02: configs/resources/audio/aI-weisser_Hai-a-e.wav
+            aI-a-I-02: configs/resources/audio/aI-weisser_Hai-a-I.wav
+            aI-aI_begin-aI_end-02: configs/resources/audio/aI-weisser_Hai-aI_begin-aI_end.wav
+            aI-aI_begin-e-02: configs/resources/audio/aI-weisser_Hai-aI_begin-e.wav
+            aI-aI_begin-I-02: configs/resources/audio/aI-weisser_Hai-aI_begin-I.wav
+            aI-a-aI_end-02: configs/resources/audio/aI-weisser_Hai-a-aI_end.wav
+          - aU-a-o-01: configs/resources/audio/aU-blaue_Maus-a-o.wav
+            aU-a-u-01: configs/resources/audio/aU-blaue_Maus-a-u.wav
+            aU-aU_begin-aU_end-01: configs/resources/audio/aU-blaue_Maus-aU_begin-aU_end.wav
+            aU-aU_begin-o-01: configs/resources/audio/aU-blaue_Maus-aU_begin-o.wav
+            aU-aU_begin-u-01: configs/resources/audio/aU-blaue_Maus-aU_begin-u.wav
+            aU-a-aU_end-01: configs/resources/audio/aU-blaue_Maus-a-aU_end.wav
+          - aU-a-o-02: configs/resources/audio/aU-Sie_haut_die_Pauke-a-o.wav
+            aU-a-u-02: configs/resources/audio/aU-Sie_haut_die_Pauke-a-u.wav
+            aU-aU_begin-aU_end-02: configs/resources/audio/aU-Sie_haut_die_Pauke-aU_begin-aU_end.wav
+            aU-aU_begin-o-02: configs/resources/audio/aU-Sie_haut_die_Pauke-aU_begin-o.wav
+            aU-aU_begin-u-02: configs/resources/audio/aU-Sie_haut_die_Pauke-aU_begin-u.wav
+            aU-a-aU_end-02: configs/resources/audio/aU-Sie_haut_die_Pauke-a-aU_end.wav
+          - OY-O-e-01: configs/resources/audio/OY-neues_Europa-O-e.wav
+            OY-O-I-01: configs/resources/audio/OY-neues_Europa-O-I.wav
+            OY-OY_begin-OY_end-01: configs/resources/audio/OY-neues_Europa-OY_begin-OY_end.wav
+            OY-OY_begin-e-01: configs/resources/audio/OY-neues_Europa-OY_begin-e.wav
+            OY-OY_begin-I-01: configs/resources/audio/OY-neues_Europa-OY_begin-I.wav
+            OY-O-OY_end-01: configs/resources/audio/OY-neues_Europa-O-OY_end.wav
+          - OY-O-e-02: configs/resources/audio/OY-neues_Europa-O-e.wav
+            OY-O-I-02: configs/resources/audio/OY-neues_Europa-O-I.wav
+            OY-OY_begin-OY_end-02: configs/resources/audio/OY-neues_Europa-OY_begin-OY_end.wav
+            OY-OY_begin-e-02: configs/resources/audio/OY-neues_Europa-OY_begin-e.wav
+            OY-OY_begin-I-02: configs/resources/audio/OY-neues_Europa-OY_begin-I.wav
+            OY-O-OY_end-02: configs/resources/audio/OY-neues_Europa-O-OY_end.wav
+
           
     - type: finish
       name: Vielen Dank für Ihre Teilnahme!
