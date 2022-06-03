@@ -1,30 +1,78 @@
 # test config preference test
 
 
-testname: Preference test
+testname: Hörexperiment
 testId: pref
-bufferSize: 2048
+bufferSize: 4096
 stopOnErrors: true
 showButtonPreviousPage: true
 remoteService: service/write.php
+language: de
 
 pages:
-    - type: preference_test
-      id: trialpref
-      name: Preference test
+    - type: generic
+      id: welcome
+      name: Willkommen beim Hörexperiment
       content: |
-        <p><b>Which sound do you prefer?</b></p>
-      considerOrder: true
-      mustPlayback: ended
-      stimuli:
-        C1: configs/resources/audio/mono_c1.wav
-        C2: configs/resources/audio/mono_c2.wav
-        C3: configs/resources/audio/mono_c3.wav
+        <p>Ihnen werden auf den folgenden Seiten paarweise einige Äußerungen präsentiert.</p><p>Bitte spielen Sie jeweils beide Varianten ab und wählen Sie dann die Variante aus, die Ihnen <b>natürlicher</b> (realistischer, menschenähnlicher, normaler, ...) erscheint.</p>
+        <p>Hören Sie sich ruhig beide Äußerungen mehrfach an, aber entscheiden Sie letzlich ganz spontan. Wenn Sie bei einem Paar keine klare Entscheidung treffen können, dann folgen Sie einfach Ihrem Bauchgefühl oder wählen Sie eine der Äußerungen zufällig aus.</p>
+        <p><b>Bitte beachten Sie:</b> Sie müssen immer erst alle Äußerungen bis zum Ende hören, bevor Sie eine Entscheidung treffen können.<p>
+        <h3>Steuerung</h3>
+        <p>Sie können das gesamte Experiment mit der Maus bedienen. Wir empfehlen Ihnen jedoch, die Zifferntasten "1" und "2" zum Abspielen der 1. bzw. 2. Äußerung zu verwenden. So können Sie sich mit der Maus auf die Auswahl der bevorzugten Äußerung und das Vor- und Zurückschalten konzentrieren.</p>
+        <h3>Ablauf</h3>
+        <p>Wenn Sie unten auf "Nächste Seite" klicken, folgt zunächst eine Seite, auf der Sie die Lautstärke auf ein für Sie angenehmes Niveau einpegeln können.</p>
+        <p>Auf der Seite danach geht es dann direkt los. Spielen Sie bitte zunächst beide Äußerungen vollständig ab, wählen Sie dann die von Ihnen bevorzugte Äußerung aus und klicken Sie anschließend auf "Nächste Seite".</p>
+        <p>Anhand des Fortschrittbalkens auf jeder Seite können Sie sehen, wie weit Sie schon sind. Sie können ruhig nach eigenem Ermessen jederzeit Pausen einlegen.</p>
+        <p>Am Ende des Experiments bitten wir Sie noch um ein paar statistische Angaben. <b>Danach wird Ihnen der Bestätigungscode angezeigt, den Sie für die Auszahlung der Aufwandsentschädigung benötigen.</b></p>
+        <p>Viel Spaß beim Experiment!</p>
+        
+    - type: volume
+      id: vol
+      name: Lautstärke
+      content: |
+        <p>Bitte regeln Sie die Lautstärke auf ein für Sie angenehmes Niveau.</p>
+        <p>Wenn der Beispielsatz auch bei voller Aussteuerung des Laustärkereglers noch zu leise ist, erhöhen Sie bitte zusätzlich Ihre Systemlautstärke.</p>
+      stimulus: configs/resources/audio/bsp-Beispielsatz.wav
+      defaultVolume: 0.5
 
+    - type: preference_test
+      id: trialpref2
+      name: Hörexperiment
+      content: |
+        <p><b>Welche Äußerung finden Sie natürlicher?</b></p>
+        <p>(Zifferntaste 1: A abspielen, Zifferntaste 2: B abspielen)</p>
+      considerOrder: true
+      stimuli:
+          - aI-a-e-01: configs/resources/audio/aI-Sie_leiht_sich_eine-a-e.wav
+            OY-O-e-01: configs/resources/audio/OY-neues_Europa-O-e.wav
+            aI-a-e-02: configs/resources/audio/aI-weisser_Hai-a-e.wav
+          
     - type: finish
-      name: Thank you
-      content: Thank you for attending
-      showResults: true
+      name: Vielen Dank für Ihre Teilnahme!
+      content: <p>Lassen Sie uns gerne Feedback zum Experiment hier.</p><p>Nachdem Sie auf <b>"Ergebnisse senden"</b> geklickt haben, erhalten Sie den Code zur Einlösung auf clickworkers.de</p>.
+      questionnaire:
+         - type: long_text
+           label: Kommentar
+           name: feedback
+           optional: true
+         - type: number
+           label: Alter
+           name: age
+           min: 0
+           max: 100
+           default: 30
+         - type: likert
+           label: Geschlecht
+           name: gender
+           response:
+             - value: female
+               label: weiblich
+             - value: male
+               label: männlich
+             - value: diverse
+               label: divers
+
+      showResults: false
       writeResults: true
       generateSubjectId: true
-      confirmationCode: your_code_here
+      confirmationCode: this_is_a_placeholder_code
