@@ -80,6 +80,10 @@ function addPagesToPageManager(_pageManager, _pages) {
       } else if (pageConfig.type == "volume") {
         var volumePage = new VolumePage(_pageManager, audioContext, audioFileLoader, pageConfig, config.bufferSize, errorHandler, config.language);
         _pageManager.addPage(volumePage);
+      } else if (pageConfig.type == "headphones_screen") {
+        var hpsPageManager = new HeadphonesScreenPageManager();
+        hpsPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+        hpsPageManager = null; 
       } else if (pageConfig.type == "mushra") {
         var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
         _pageManager.addPage(mushraPage);
@@ -90,10 +94,10 @@ function addPagesToPageManager(_pageManager, _pages) {
         pcPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         pcPageManager = null;
       } else if (pageConfig.type == "preference_test") {
-		var prefPageManager = new PreferenceTestPageManager();
-		prefPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
-		prefPageManager = null;
-	  }else if (pageConfig.type == "bs1116") {
+        var prefPageManager = new PreferenceTestPageManager();
+        prefPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+        prefPageManager = null;
+    }else if (pageConfig.type == "bs1116") {
         var bs1116PageManager = new BS1116PageManager();
         bs1116PageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         bs1116PageManager = null;
