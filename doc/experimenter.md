@@ -48,6 +48,21 @@ The volume page can be used to set the volume used in the experiment.
 * **stimulus** Filepath to the stimulus that is used for setting the volume.
 * **defaultVolume** Default volume (must be between 0.0 and 1.0).
 
+
+#### `headphones_screen` page
+
+This page can be used to perform a headphones screening. Sample files to conduct a test according to [Milne A, Bianco R, Poole K, Zhao S, Oxenham A, Billig A & Chait M. (2020) An online headphone screening test based on dichotic pitch. Behavior Research Methods.](https://rdcu.be/cbWrX) are provided, but the page can be used for any test following the same basic paradigm of identifying a target stimulus among a list of decoy stimuli.
+
+**Important:** There is currently no automated pass/fail arbitration so even subject failing to identify any of the targets will be allowed to complete the rest of the experiment. You can, however, use the results of the screening to filter your experiment results post-hoc.
+
+* **type** must be headphones_screen
+* **id** Identifier of the page.
+* **name** Name of the page (is shown as title)
+* **content** Content (HTML) of the page. The content is shown on the upper part of the page.
+* **repetitions** Determines how many randomized repetitions of the task need to be completed.
+* **target** Filepath to the target stimulus to be identified.
+* **other** A map of stimuli to use as decoys. The key is the name of the decoy. The value is the filepath to the stimulus (WAV file).
+
 #### `mushra` page
 
 A mushra page shows a trial according to ITU-R Recommendation BS.1534.

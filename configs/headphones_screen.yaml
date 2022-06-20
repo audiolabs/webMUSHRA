@@ -30,6 +30,7 @@ pages:
       content: Thank you for attending!
       showResults: true
       writeResults: true
+      generateSubjectId: true
       questionnaire:
           - type: text
             label: eMail
