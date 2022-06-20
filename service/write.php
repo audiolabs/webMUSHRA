@@ -137,6 +137,51 @@ if ($write_pc) {
 	fclose($fp);
 }
 
+// headphones screen
+
+$write_ht = false;
+$htCsvData = array();
+
+$input = array("session_test_id");
+for($i =0; $i < $length; $i++){
+	array_push($input, $session->participant->name[$i]);
+}
+array_push($input, "trial_id", "correct", "time", "comment");
+array_push($htCsvData, $input);
+
+
+
+foreach ($session->trials as $trial) {
+  if ($trial->type == "headphones_screen") {
+	  foreach ($trial->responses as $response) {	  	
+	  	$write_ht = true;
+		  
+		 
+		$results = array($session->testId);
+		for($i =0; $i < $length; $i++){
+			array_push($results, $session->participant->response[$i]);
+		}  
+		array_push($results, $trial->id, $response->correct, $response->time, $response->comment);
+	  
+	  	array_push($htCsvData, $results); 		 
+	  }
+  }
+}
+
+if ($write_ht) {
+	$filename = $filepathPrefix."headphones_screen".$filepathPostfix;
+	$isFile = is_file($filename);
+	$fp = fopen($filename, 'a');
+	foreach ($htCsvData as $row) {
+		if ($isFile) {	    	
+			$isFile = false;
+		} else {
+		   fputcsv($fp, $row);
+		}
+	}
+	fclose($fp);
+}
+
 // preference test
 
 $write_pt = false;
