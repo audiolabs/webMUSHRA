@@ -1,0 +1,53 @@
+testname: webMUSHRA Example
+testId: headphones_screen_example
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: Welcome to webMUSHRA!       
+    - type: volume
+      id: vol
+      name: Volume settings
+      content: Please adjust the volume to a comfortable level.
+      stimulus: configs/resources/audio/stimuli_HugginsPitch/HugginsPitch_calibration.wav
+      defaultVolume: 0.5
+    - type: headphones_screen
+      id: hp_check
+      name: Headphones check
+      repetitions: 6
+      target: configs/resources/audio/stimuli_HugginsPitch/HugginsPitch_1.wav
+      other: 
+        A: configs/resources/audio/stimuli_HugginsPitch/HugginsPitch_2.wav
+        B: configs/resources/audio/stimuli_HugginsPitch/HugginsPitch_3.wav
+    - type: finish
+      name: Thank you
+      content: Thank you for attending!
+      showResults: true
+      writeResults: true
+      generateSubjectId: true
+      questionnaire:
+          - type: text
+            label: eMail
+            name: email
+          - type: number
+            label: Age
+            name: age
+            min: 0
+            max: 100
+            default: 30
+          - type: likert
+            name: gender
+            label: Gender
+            response:
+             - value: female
+               label: Female
+             - value: male
+               label: Male
+             - value: other
+               label: Other
