@@ -46,31 +46,31 @@ $input = array("session_test_id");
 for($i =0; $i < $length; $i++){
 	array_push($input, $session->participant->name[$i]);
 }
-array_push($input, "trial_id", "rating_stimulus", "rating_score", "rating_time", "rating_comment");
+array_push($input, "session_uuid", "trial_id", "rating_stimulus", "rating_score", "rating_time", "rating_comment");
 array_push($mushraCsvData, $input);
 
  
  
  foreach ($session->trials as $trial) {
   if ($trial->type == "mushra") {
-	$write_mushra = true;
+  $write_mushra = true;
 
-	  foreach ($trial->responses as $response) {
-	  	
-		
-		$results = array($session->testId);
-		for($i =0; $i < $length; $i++){
-			array_push($results, $session->participant->response[$i]);
-		}  
-		array_push($results, $trial->id, $response->stimulus, $response->score, $response->time, $response->comment); 
-	  
-	  	array_push($mushraCsvData, $results);
-	  	
-	  
-	  } 
-	    /*array_push($mushraCsvData, array($session->testId, $session->participant->email, $session->participant->age, $session->participant->gender, $trial->id, $response->stimulus, $response->score, $response->time, $response->comment));
-		 * 
-		 */     
+    foreach ($trial->responses as $response) {
+
+
+    $results = array($session->testId);
+    for($i =0; $i < $length; $i++){
+      array_push($results, $session->participant->response[$i]);
+    }
+    array_push($results, $session->uuid, $trial->id, $response->stimulus, $response->score, $response->time, $response->comment);
+
+      array_push($mushraCsvData, $results);
+
+
+    }
+      /*array_push($mushraCsvData, array($session->testId, $session->participant->email, $session->participant->age, $session->participant->gender, $trial->id, $response->stimulus, $response->score, $response->time, $response->comment));
+     *
+     */
   }
 }
 		
