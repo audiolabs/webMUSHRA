@@ -1,0 +1,82 @@
+testname: webMUSHRA Example
+testId: default_example
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: Welcome to webMUSHRA!
+    - type: consent
+      id: consent_page
+      name: Consent
+      mustConsent: true
+      content: <p>You are participating in a listening test. For this, we want to store the answers you give to the following questions.<br>Do you give consent for this?</p>
+    - type: mushra
+      id: trial1
+      name: MUSHRA
+      content: This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav
+    - 
+          - random
+          - type: mushra
+            id: trial_random_1
+            name: MUSHRA - Random 2
+            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+            enableLooping: true 
+            reference: configs/resources/audio/mono_ref.wav
+            createAnchor35: false
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/mono_c1.wav
+                C2: configs/resources/audio/mono_c2.wav
+                C3: configs/resources/audio/mono_c3.wav          
+          - type: mushra
+            id: trial_random_2
+            name: MUSHRA - Random 1
+            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+            enableLooping: true 
+            reference: configs/resources/audio/mono_ref.wav
+            createAnchor35: false
+            createAnchor70: false
+            stimuli:
+                C1: configs/resources/audio/mono_c1.wav
+                C2: configs/resources/audio/mono_c2.wav
+                C3: configs/resources/audio/mono_c3.wav          
+    - type: finish
+      name: Thank you
+      content: Thank you for attending!
+      showResults: true
+      writeResults: true
+      questionnaire:
+          - type: text
+            label: eMail
+            name: email
+          - type: number
+            label: Age
+            name: age
+            min: 0
+            max: 100
+            default: 30
+          - type: likert
+            name: gender
+            label: Gender
+            response:
+             - value: female
+               label: Female
+             - value: male
+               label: Male
+             - value: other
+               label: Other

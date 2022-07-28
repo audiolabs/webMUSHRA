@@ -77,6 +77,8 @@ function addPagesToPageManager(_pageManager, _pages) {
       var pageConfig = _pages[i];
       if (pageConfig.type == "generic") {
         _pageManager.addPage(new GenericPage(_pageManager, pageConfig));
+      } else if (pageConfig.type == "consent") {
+        _pageManager.addPage(new ConsentPage(_pageManager, pageTemplateRenderer, pageConfig));
       } else if (pageConfig.type == "volume") {
         var volumePage = new VolumePage(_pageManager, audioContext, audioFileLoader, pageConfig, config.bufferSize, errorHandler, config.language);
         _pageManager.addPage(volumePage);

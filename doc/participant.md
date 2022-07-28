@@ -12,11 +12,11 @@
 * <kbd>A</kbd> Set begin of loop to start position
 * <kbd>b</kbd> Set end of loop to current position
 * <kbd>B</kbd> Set end of loop to end position
-* <kbd>h</kbd> Switch to previous condition
-* <kbd>l</kbd> Switch to next condition 
-* <kbd>j</kbd> Decrease rating by 1
+* <kbd>h</kbd>, <kbd>LEFT</kbd> Switch to previous condition
+* <kbd>l</kbd>, <kbd>RIGHT</kbd> Switch to next condition 
+* <kbd>j</kbd>, <kbd>DOWN</kbd> Decrease rating by 1
 * <kbd>J</kbd> Decrease rating by 10
-* <kbd>k</kbd> Increase rating by 1 
+* <kbd>k</kbd>, <kbd>UP</kbd> Increase rating by 1 
 * <kbd>K</kbd> Decrease rating by 10
 
 ### BS.1116 
