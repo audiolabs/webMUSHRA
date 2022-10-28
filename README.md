@@ -50,7 +50,7 @@ To load audio files and save the results as csv text files, webMUSHRA needs to r
 
 Now you can run webMUSHRA using the following URL: http://localhost:8000
 
-The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url http://localhost:8000/?config=mushra_showresults.yaml.
+The experiment configurations are stored in the `configs/` folder. To load a configuration/experiment, specify the `config` argument in the url http://localhost:8000/?config=mushra_showresults.yaml. `configs/default.yaml` is the configuration loaded when no config is specified.
 
 ### Docker
 

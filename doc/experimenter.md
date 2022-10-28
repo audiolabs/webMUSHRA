@@ -36,6 +36,15 @@ A generic page contains any content in HTML (e.g. useful for showing the instruc
 * **name** Name of the page (is shown as title)
 * **content** Content (HTML) of the page.
 
+#### `consent` page
+
+A generic page with a consent checkbox.
+
+* **type** must be consent.
+* **id** Identifier of the page.
+* **name** Name of the page (is shown as title)
+* **mustConsent** If set to true, the participant must give consent to continue.
+* **content** Content (HTML) of the page.
 
 #### `volume` page
 
