@@ -31,6 +31,7 @@ We provide two version of webMUSHRA.
   * MUSHRA (ITU-R BS.1534)
   * AB (ITU-R BS.1116)
   * Likert scale questionaires
+  * Ranking by elimination
   * training/introduction
   * spatial attributes, such as ASW, LEV, and localization (experimental)
 * compliant to ITU recommendations (looping, fade-in/out, sample accurate switching)
