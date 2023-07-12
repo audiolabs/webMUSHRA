@@ -19,7 +19,7 @@ Listening tests are widely used to assess the quality of audio systems. In the l
 
 We provide two version of webMUSHRA.
 
-* __webMUSHRA__ provides the version targeted for normale usage and experimenters. The javascript files are compressed which makes it faster to load/serve. The documentation is provided as PDFs.
+* __webMUSHRA__ provides the version targeted for normal usage and experimenters. The javascript files are compressed which makes it faster to load/serve. The documentation is provided as PDFs.
 
 * __webMUSHRA-dev__ is targeted to developers and experienced users who want to customize experiments. This version is comparable to cloning the git repository
 
