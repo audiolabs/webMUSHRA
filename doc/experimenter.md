@@ -105,6 +105,18 @@ A paired comparison page creates a forced or unforced paired comparison (AB/ABX/
 * **reference** Filepath to the reference stimulus (WAV file).
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).  
 
+#### `preference_test` page
+
+A preference test page creates a forced paired comparison between two stimuli. The main difference to `paired_comparison` is that there is no reference or ground truth.
+
+* **type** must be preference_test.
+* **id** Identifier of the page.
+* **name** Name of the page (is shown as title)
+* **content** Content (HTML) of the page. The content is shown on the upper part of the page.
+* **considerOrder** If set to true, a complete set of pairs is generated from the list of stimuli: A set of `{A, B}` would result in two pairs `(A, B)` and `(B, A)`. Otherwise only the pair `(A, B)` would be generated.
+* **mustPlayback** If set to `ended`, the participant must fully play back all stimuli to the end. If set to `processUpdate`, the participant must start playing back all stimuli before responding becomes possible.
+* **stimuli** Either a map of stimuli or an array of maps of stimuli. If it is a map, pairs will be generated from the list and then shuffled. If it is an array of maps, pairs will be generated for each map individually and then all the pairs from all maps are shuffled. 
+
 #### `likert_multi_stimulus` page
 
 A likert multi stimulus page creates a multi-stimulus likert rating.
@@ -142,6 +154,8 @@ The finish page must be the last page of the experiment.
 * **content** Content (HTML) of the page. The content is shown on the upper part of the page.
 * **showResults** The results are shown to the participant.  
 * **writeResults** The results are sent to the remote service (which writes the results into a file).
+* **generateSubjectId** If set to true, a random subject ID is generated and appended to the results.
+* **confirmationCode:** If set, this code is displayed after the results were sent. This can be used to confirm that subjects have completed the experiment and facilitates 
 
 
 ## Results

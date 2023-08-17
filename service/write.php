@@ -137,6 +137,51 @@ if ($write_pc) {
 	fclose($fp);
 }
 
+// preference test
+
+$write_pt = false;
+$ptCsvData = array();
+
+$input = array("session_test_id");
+for($i =0; $i < $length; $i++){
+	array_push($input, $session->participant->name[$i]);
+}
+array_push($input, "trial_id", "choice_option_A", "choice_option_B", "choice_answer", "choice_time", "choice_comment");
+array_push($ptCsvData, $input);
+
+
+
+foreach ($session->trials as $trial) {
+  if ($trial->type == "preference_test") {
+	  foreach ($trial->responses as $response) {	  	
+	  	$write_pc = true;
+		  
+		 
+		$results = array($session->testId);
+		for($i =0; $i < $length; $i++){
+			array_push($results, $session->participant->response[$i]);
+		}  
+		array_push($results, $trial->id, $response->optionA, $response->optionB, $response->answer, $response->time, $response->comment);
+	  
+	  	array_push($ptCsvData, $results); 		 
+	  }
+  }
+}
+
+if ($write_pc) {
+	$filename = $filepathPrefix."preference_test".$filepathPostfix;
+	$isFile = is_file($filename);
+	$fp = fopen($filename, 'a');
+	foreach ($ptCsvData as $row) {
+		if ($isFile) {	    	
+			$isFile = false;
+		} else {
+		   fputcsv($fp, $row);
+		}
+	}
+	fclose($fp);
+}
+
 // bs1116
 
 $write_bs1116 = false;
