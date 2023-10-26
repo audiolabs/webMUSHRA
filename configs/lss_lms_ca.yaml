@@ -1,0 +1,182 @@
+testname: LMS and LSS test
+testId: lss_lms
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+
+pages:
+    - type: generic
+      id: LSS_LMS
+      name: LMS and LSS test
+      content: <ul> <li>This listening test tries to figure out the differences in the ratings with a Single Stimulus Likert Scale and a Multi Stimulus Likert Scale.</li> <li>In order to be able to compare the ratings the same items are first rated with a  Multi Stimulus Likert Scale and afterwards with a Single Stimulus Likert Scale</li><li> Before the test starts you can set the volume to your convenience and after the test you get an overview over your results!</li></ul>
+
+  
+ 
+    - type: volume
+      id: vol
+      name: Volume settings
+      content: Please adjust the volume!
+      stimulus: configs/resources/audio/mono_c1.wav
+      defaultVolume: 0.5
+
+
+
+    - type: likert_multi_stimulus
+      id: lms2
+      name: Overall Impression
+      content: How do you rate the quality of the sound of what you have just heard?
+      stimuli:
+          ref: configs/resources/audio/narrawoband/pol_4.wav
+          C1: configs/resources/audio/continue_2/pol_4.wav
+          C2: configs/resources/audio/finetune_from_cv/pol_4.wav
+
+      response:
+        - value: bad
+          label: Bad
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: poor
+          label: Poor
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: fair
+          label: Fair
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: good
+          label: Good
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png 
+        - value: excellent
+          label: Excellent
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png          
+         
+
+    - type: likert_multi_stimulus
+      id: lms3
+      name: Comprehension problems
+      content: Did you find certain words hard to understand?
+      stimuli:
+          ref: configs/resources/audio/narrawoband/pol_4.wav
+          C1: configs/resources/audio/continue_2/pol_4.wav
+          C2: configs/resources/audio/finetune_from_cv/pol_4.wav
+
+      response:
+        - value: all of the time
+          label: All of the time
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: often
+          label: Often
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: occasionally
+          label: Occasionally
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: rarely
+          label: Rarely
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png 
+        - value: never
+          label: Never
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png          
+
+
+    - type: likert_multi_stimulus
+      id: lms3
+      name: Pronunciation
+      content: Did you notice any anomalies in pronunciation?
+      stimuli:
+          ref: configs/resources/audio/narrawoband/pol_4.wav
+          C1: configs/resources/audio/continue_2/pol_4.wav
+          C2: configs/resources/audio/finetune_from_cv/pol_4.wav
+
+      response:
+        - value: yes, very annoying
+          label: Yes, very annoying
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: yes, annoying
+          label: Yes, annoying
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: yes, slightly annoying
+          label: Yes, slightly annoying
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: yes, but no annoying
+          label: Yes, but no annoying
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png 
+        - value: no
+          label: No
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png          
+
+
+    - type: likert_multi_stimulus
+      id: lms4
+      name: Voice pleasantness
+      content: How would you describe the voice?
+      stimuli:
+          ref: configs/resources/audio/narrawoband/pol_4.wav
+          C1: configs/resources/audio/continue_2/pol_4.wav
+          C2: configs/resources/audio/finetune_from_cv/pol_4.wav
+
+      response:
+        - value: Very unpleasant
+          label: very unpleasant
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: unpleasant
+          label: Unpleasant
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: fair
+          label: fair
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png
+        - value: pleasant
+          label: pleasant
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png 
+        - value: Very pleasant
+          label: very pleasant
+          img: configs/resources/images/star_off.png
+          imgSelected: configs/resources/images/star_on.png
+          imgHigherResponseSelected: configs/resources/images/star_on.png          
+
+
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      showResults: true
+      writeResults: true
+  
+            
