@@ -1,7 +1,7 @@
 /*************************************************************************
-         (C) Copyright AudioLabs 2017 
+         (C) Copyright AudioLabs 2017
 
-This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law. 
+This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law.
 
 **************************************************************************/
 
@@ -9,53 +9,55 @@ This source code is protected by copyright law and international treaties. This 
 input[type=number]::-webkit-outer-spin-button,
 
 input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type=number] {
-    -moz-appearance:textfield;
+  -moz-appearance: textfield;
 }
 
-.ui-slider-track.ui-state-disabled {  
+.ui-slider-track.ui-state-disabled {
   opacity: 1.0;
-  -webkit-filter: brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8)  brightness(1.05);
-  filter:  brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8)  brightness(1.05);  
+  -webkit-filter: brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.05);
+  filter: brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.05);
 }
 
 .noUi-connect {
-  background-color: #ED8C01; /* NOTE Background-color between handles alabs-orange */
+  background-color: #ED8C01;
+  /* NOTE Background-color between handles alabs-orange */
 }
 
 body {
-  font-family: sans-serif,verdana,Helvetica,Arial;
-  text-align:center;
+  font-family: 'BBC Reith Sans';
+  text-align: center;
   background-repeat: repeat-x;
-  background-position: 0 5em; 
+  background-position: 0 5em;
   background-color: #EEE;
-    
-} 
 
-body.ui-mobile-viewport, div.ui-mobile-viewport {
-	overflow-x: scroll;
+}
+
+body.ui-mobile-viewport,
+div.ui-mobile-viewport {
+  overflow-x: scroll;
 }
 
 .ui-mobile .ui-page-active {
-	overflow-x: visible;
+  overflow-x: visible;
 }
 
 
-#container {  
-	position: relative; 
-	top: 0%; 
-	margin-top: 0px; 
-	padding: 0 7%;
+#container {
+  position: relative;
+  top: 0%;
+  margin-top: 0px;
+  padding: 0 7%;
 }
 
 
 
 .header {
-  position:relative;
+  position: relative;
   border-left-width: 0;
   border-right-width: 0;
   border: 1px solid #333;
@@ -67,15 +69,16 @@ body.ui-mobile-viewport, div.ui-mobile-viewport {
   margin: 0 auto;
   padding: .7em 0em;
   text-align: center;
-  
-  background-image: -webkit-gradient(linear,left top,left bottom,from(#3C3C3C),to(#111));
-  background-image: -webkit-linear-gradient(#3C3C3C,#111);
-  background-image: -moz-linear-gradient(#3C3C3C,#111);
-  background-image: -ms-linear-gradient(#3C3C3C,#111);
-  background-image: -o-linear-gradient(#3C3C3C,#111);
-  background-image: linear-gradient(#3C3C3C,#111); 
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3C3C3C), to(#111));
+  background-image: -webkit-linear-gradient(#3C3C3C, #111);
+  background-image: -moz-linear-gradient(#3C3C3C, #111);
+  background-image: -ms-linear-gradient(#3C3C3C, #111);
+  background-image: -o-linear-gradient(#3C3C3C, #111);
+  background-image: linear-gradient(#3C3C3C, #111);
 
 }
+
 .default_padding {
   border-collapse: separate;
   border-spacing: 1.5em 0.1em;
@@ -101,12 +104,12 @@ img.logo {
 }
 
 table.logo {
-  margin-top: 0.8em;  
+  margin-top: 0.8em;
 }
 
 
 .center {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 td.stopButton {
@@ -129,20 +132,20 @@ td.stopButton {
 }
 
 #BS1116conditionNameScale {
-	width:13em;
+  width: 13em;
 }
 
-#buttonStop, .audioControlElement {
+#buttonStop,
+.audioControlElement {
   width: 5.5em !important;
-  margin : 0 auto;
+  margin: 0 auto;
 }
 
 #mainUp {
-  width : 100%;
+  width: 100%;
 }
 
-.ui-tolito-progressbar-outer-a
-{
+.ui-tolito-progressbar-outer-a {
   background: #fff;
   /*
   background-image: linear-gradient( #202020, #2c2c2c);
@@ -158,8 +161,7 @@ td.stopButton {
   text-shadow: 0 1px 1px #111;
 }
 
-.ui-tolito-progressbar-active-b
-{
+.ui-tolito-progressbar-active-b {
   background: #FFb500;
   /*
   background-image: linear-gradient( #6FACD5, #497BAE);
@@ -177,69 +179,68 @@ td.stopButton {
 
 #page_progressbar {
   width: 30em;
-  height: 1em;  
-  margin:0.5em auto;
+  height: 1em;
+  margin: 0.5em auto;
 }
 
 .fileplayer_progressbar {
   width: 10em;
-  height: 1.5em;    
+  height: 1.5em;
 }
 
 /* grey background of the wavesurfer behind the slider*/
 #slider {
-	z-index:10;
-	cursor: auto;
+  z-index: 10;
+  cursor: auto;
 }
 
 /* alignment of the "start"button */
 #buttonReference {
-	margin-left:-0.4em !important;
-	margin : 0 auto;
+  margin-left: -0.4em !important;
+  margin: 0 auto;
 }
 
-/* justifications of the display of the slider values */ 
+/* justifications of the display of the slider values */
 .limits {
-	width:4em !important; 
-	text-align:center !important;
+  width: 4em !important;
+  text-align: center !important;
 }
 
 #div_lower_limit {
-	margin-right:1.5em; 
-	margin-bottom:-12px;
+  margin-right: 1.5em;
+  margin-bottom: -12px;
 }
 
 #div_upper_limit {
-	margin-left:1.5em; 
-	margin-bottom:-12px;
+  margin-left: 1.5em;
+  margin-bottom: -12px;
 }
 
 #main {
-	cursor:auto;
+  cursor: auto;
 }
 
 #tdPlayButton {
-	text-align:left
+  text-align: left
 }
 
 #tdStopButton {
-	text-align:left
+  text-align: left
 }
 
 
 .noUi-handle {
-	cursor: auto;
+  cursor: auto;
 }
 
-li{
-	text-align:left;
-	width:50%;
-	margin-left:25%;
+li {
+  text-align: left;
+  width: 50%;
+  margin-left: 25%;
 }
 
 .left {
-	text-align:left;
-	width:50%;
-	margin-left:25%;
+  text-align: left;
+  width: 50%;
+  margin-left: 25%;
 }
-
