@@ -141,8 +141,8 @@ function startup(config) {
     });
     clearInterval(interval);
   }, 1);
-  
-  
+
+
   if (pageManager !== null) { // clear everything for new experiment
     pageTemplateRenderer.clear();
     $("#page_content").empty();
@@ -212,7 +212,7 @@ function startup(config) {
 
 }
 
-// start code (loads config) 
+// start code (loads config)
 
 function getParameterByName(name) {
   var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
@@ -225,7 +225,7 @@ var configFile = '';
 if (configArg) {
   configFile = 'configs/' + configArg;
 } else {
-  configFile = 'configs/default.yaml';
+  configFile = 'configs/hell.yaml';
 }
 
 
