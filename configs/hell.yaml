@@ -1,4 +1,4 @@
-testname: This is not a mushra!
+testname: NOT a MUSHRA
 testId: default_example
 bufferSize: 2048
 stopOnErrors: true
@@ -11,67 +11,64 @@ pages:
     #   id: first_page
     #   name: Welcome
     #   content: Welcome to webMUSHRA!
+    # - type: consent
+    #   id: consent_page
+    #   name: Consent
+    #   mustConsent: true
+    #   content: Do you consent to having your brains harvested in the name of science?
+
     - type: mushra
       id: trial1
       name: MUSHRA
-      content: This is most certainly and definitely not a MUSHRA. 
+      content: Training example
       showWaveform: true
       enableLooping: true
-      reference: stimuli/DIP-3_mix.wav
-      createAnchor35: true
-      createAnchor70: true
+      randomize: false
+      reference: stimuli/A.wav
       stimuli:
-          C1: stimuli/DIP-3_mix.wav
-          C2: stimuli/DIP-3_mix.wav
-          C3: stimuli/DIP-3_mix.wav
-    -
-          - random
-          - type: mushra
-            id: trial_random_1
-            name: MUSHRA - Random 2
-            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
-            enableLooping: true
-            reference: configs/resources/audio/mono_ref.wav
-            createAnchor35: false
-            createAnchor70: false
-            stimuli:
-                C1: configs/resources/audio/mono_c1.wav
-                C2: configs/resources/audio/mono_c2.wav
-                C3: configs/resources/audio/mono_c3.wav
-          - type: mushra
-            id: trial_random_2
-            name: MUSHRA - Random 1
-            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
-            enableLooping: true
-            reference: configs/resources/audio/mono_ref.wav
-            createAnchor35: false
-            createAnchor70: false
-            stimuli:
-                C1: configs/resources/audio/mono_c1.wav
-                C2: configs/resources/audio/mono_c2.wav
-                C3: configs/resources/audio/mono_c3.wav
+          C1: stimuli/B.wav
+          C2: stimuli/C.wav
+          C3: stimuli/D.wav
+          C4: stimuli/E.wav
+
+    # -
+    #   - random
+    #   - type: mushra
+    #     id: trial_random_1
+    #     name: Clip 1
+    #     content: How does the speech clarity of these clips compare to the reference clip?
+    #     reference: stimuli/A.wav
+    #     stimuli:
+    #         C1: stimuli/B.wav
+    #         C2: stimuli/C.wav
+    #         C3: stimuli/D.wav
+    #         C4: stimuli/E.wav
+    #     enableLooping: true
+    #     randomize: true
+
     - type: finish
       name: Thank you
       content: Thank you for attending!
       showResults: true
       writeResults: true
       questionnaire:
-          - type: text
-            label: eMail
-            name: email
+
           - type: number
             label: Age
             name: age
             min: 0
             max: 100
-            default: 0
-          - type: likert
-            name: gender
-            label: Gender
+            default: 30
+          - type : likert
+            label :  Are you a hearing aid user?
             response:
-             - value: female
-               label: Female
-             - value: male
-               label: Male
-             - value: other
-               label: Other
+             - value: 1
+               label: Yes
+             - value: 0
+               label: No
+          - type: text
+            label: Gender
+            name: gender
+          - type: text
+            label: Email (optional)
+            name: mail
