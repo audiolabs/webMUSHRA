@@ -1,5 +1,5 @@
 testname: Improving dialogue clarity in BBC programmes
-testId: default_example
+testId: dialogue_enhancement
 bufferSize: 2048
 stopOnErrors: true
 showButtonPreviousPage: true
@@ -7,18 +7,18 @@ remoteService: service/write.php
 
 
 pages:
-    - type: generic
-      id: first_page
-      name: Welcome
-      content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?
-    - type: consent
-      id: consent_page
-      name: Consent
-      mustConsent: true
-      content: Do you consent to having your brains harvested in the name of science?
+    # - type: generic
+    #   id: first_page
+    #   name: Welcome
+    #   content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?
+    # - type: consent
+    #   id: consent_page
+    #   name: Consent
+    #   mustConsent: true
+    #   content: Do you consent to having your brains harvested in the name of science?
 
     - type: mushra
-      id: trial1
+      id: training
       name: MUSHRA
       content: Training example
       showWaveform: true
@@ -31,20 +31,20 @@ pages:
           C3: stimuli/D.wav
           C4: stimuli/E.wav
 
-    # -
-    #   - random
-    #   - type: mushra
-    #     id: trial_random_1
-    #     name: Clip 1
-    #     content: How does the speech clarity of these clips compare to the reference clip?
-    #     reference: stimuli/A.wav
-    #     stimuli:
-    #         C1: stimuli/B.wav
-    #         C2: stimuli/C.wav
-    #         C3: stimuli/D.wav
-    #         C4: stimuli/E.wav
-    #     enableLooping: true
-    #     randomize: true
+    -
+      - random
+      - type: mushra
+        id: trial_random_1
+        name: Clip 1
+        content: How does the speech clarity of these clips compare to the reference clip?
+        reference: stimuli/A.wav
+        stimuli:
+            C1: stimuli/B.wav
+            C2: stimuli/C.wav
+            C3: stimuli/D.wav
+            C4: stimuli/E.wav
+        enableLooping: true
+        randomize: true
 
     - type: finish
       name: Thank you
