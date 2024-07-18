@@ -7,15 +7,16 @@ remoteService: service/write.php
 
 
 pages:
-    # - type: generic
-    #   id: first_page
-    #   name: Welcome
-    #   content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?
-    # - type: consent
-    #   id: consent_page
-    #   name: Consent
-    #   mustConsent: true
-    #   content: Do you consent to having your brains harvested in the name of science?
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?
+    - type: consent
+      id: consent_page
+      name: Consent
+      mustConsent: true
+      content: Do you consent to having your brains harvested in the name of science?
+
 
     - type: mushra
       id: training
@@ -24,25 +25,24 @@ pages:
       showWaveform: true
       enableLooping: true
       randomize: false
-      reference: stimuli/A.wav
+      reference: stimuli/HDM-02-mix.wav
       stimuli:
-          C1: stimuli/B.wav
-          C2: stimuli/C.wav
-          C3: stimuli/D.wav
-          C4: stimuli/E.wav
-
+          C1: stimuli/HDM-02-mix-hf-n.wav
+          C2: stimuli/HDM-02-remix-orig-hf-n.wav
+          C3: stimuli/HDM-02-remix-bss-htdft-hf-n.wav
+          C4: stimuli/HDM-02-remix-bss-cfk-hf-n.wav
     -
       - random
       - type: mushra
-        id: trial_random_1
+        id: trial_1_DIP-02
         name: Clip 1
         content: How does the speech clarity of these clips compare to the reference clip?
-        reference: stimuli/A.wav
+        reference: stimuli/DIP-02-mix.wav
         stimuli:
-            C1: stimuli/B.wav
-            C2: stimuli/C.wav
-            C3: stimuli/D.wav
-            C4: stimuli/E.wav
+            C1: stimuli/DIP-02-mix-hf-n.wav
+            C2: stimuli/DIP-02-remix-orig-hf-n.wav
+            C3: stimuli/DIP-02-remix-bss-htdft-hf-n.wav
+            C4: stimuli/DIP-02-remix-bss-cfk-hf-n.wav
         enableLooping: true
         randomize: true
 
