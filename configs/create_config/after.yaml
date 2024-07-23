@@ -5,23 +5,22 @@
       showResults: true
       writeResults: true
       questionnaire:
-
-          - type: number
-            label: Age
-            name: age
-            min: 0
-            max: 100
-            default: 30
-          - type : likert
-            label :  Are you a hearing aid user?
-            response:
-             - value: 1
-               label: Yes
-             - value: 0
-               label: No
-          - type: text
-            label: Gender
-            name: gender
-          - type: text
-            label: Email (optional)
-            name: mail
+        - type: number
+          label: Age
+          name: age
+          min: 0
+          max: 100
+          default: 30
+        - type : likert
+          label :  Are you a hearing aid user?
+          response:
+            - value: 1
+              label: Yes
+            - value: 0
+              label: No
+        - type: text
+          label: Gender
+          name: gender
+        - type: text
+          label: Email (optional)
+          name: mail

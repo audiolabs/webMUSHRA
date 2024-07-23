@@ -47,17 +47,17 @@ for group in [group1, group2]:
         print(f"{i} Group{np.unique(group.group)[0]} {clipname}")
         experiment_page = f"""
         - type: mushra
-            id: trial_{i+1}_{clipname}
-            name: Clip {i+1}
-            content: How does the speech clarity of these clips compare to the reference ?
-            reference: stimuli/{clipname}-mix.wav
-            stimuli:
-                C1: stimuli/{clipname}-mix-hf-n.wav
-                C2: stimuli/{clipname}-remix-orig-hf-n.wav
-                C3: stimuli/{clipname}-remix-bss-htdft-hf-n.wav
-                C4: stimuli/{clipname}-remix-bss-cfk-hf-n.wav
-            enableLooping: true
-            randomize: true
+          id: trial_{i+1}_{clipname}
+          name: Clip {i+1}
+          content: How does the speech clarity of these clips compare to the reference ?
+          reference: stimuli/{clipname}-mix.wav
+          stimuli:
+            C1: stimuli/{clipname}-mix-hf-n.wav
+            C2: stimuli/{clipname}-remix-orig-hf-n.wav
+            C3: stimuli/{clipname}-remix-bss-htdft-hf-n.wav
+            C4: stimuli/{clipname}-remix-bss-cfk-hf-n.wav
+          enableLooping: true
+          randomize: true
     """
         # break
         yaml_text += experiment_page
