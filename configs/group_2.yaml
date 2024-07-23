@@ -1,0 +1,270 @@
+testname: Improving dialogue clarity in BBC programmes
+testId: dialogue_enhancement
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?
+    - type: consent
+      id: consent_page
+      name: Consent
+      mustConsent: true
+      content: Do you consent to having your brains harvested in the name of science?
+
+
+    - type: mushra
+      id: training
+      name: MUSHRA
+      content: Training example
+      showWaveform: true
+      enableLooping: true
+      randomize: false
+      reference: stimuli/HDM-02-mix.wav
+      stimuli:
+          C1: stimuli/HDM-02-mix-hf-n.wav
+          C2: stimuli/HDM-02-remix-orig-hf-n.wav
+          C3: stimuli/HDM-02-remix-bss-htdft-hf-n.wav
+          C4: stimuli/HDM-02-remix-bss-cfk-hf-n.wav
+    
+    -
+        - random
+        - type: mushra
+            id: trial_1_DIP-05
+            name: Clip 1
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/DIP-05-mix.wav
+            stimuli:
+                C1: stimuli/DIP-05-mix-hf-n.wav
+                C2: stimuli/DIP-05-remix-orig-hf-n.wav
+                C3: stimuli/DIP-05-remix-bss-htdft-hf-n.wav
+                C4: stimuli/DIP-05-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_2_DIP-06
+            name: Clip 2
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/DIP-06-mix.wav
+            stimuli:
+                C1: stimuli/DIP-06-mix-hf-n.wav
+                C2: stimuli/DIP-06-remix-orig-hf-n.wav
+                C3: stimuli/DIP-06-remix-bss-htdft-hf-n.wav
+                C4: stimuli/DIP-06-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_3_DIP-08
+            name: Clip 3
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/DIP-08-mix.wav
+            stimuli:
+                C1: stimuli/DIP-08-mix-hf-n.wav
+                C2: stimuli/DIP-08-remix-orig-hf-n.wav
+                C3: stimuli/DIP-08-remix-bss-htdft-hf-n.wav
+                C4: stimuli/DIP-08-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_4_HDM-03
+            name: Clip 4
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/HDM-03-mix.wav
+            stimuli:
+                C1: stimuli/HDM-03-mix-hf-n.wav
+                C2: stimuli/HDM-03-remix-orig-hf-n.wav
+                C3: stimuli/HDM-03-remix-bss-htdft-hf-n.wav
+                C4: stimuli/HDM-03-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_5_HDM-04
+            name: Clip 5
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/HDM-04-mix.wav
+            stimuli:
+                C1: stimuli/HDM-04-mix-hf-n.wav
+                C2: stimuli/HDM-04-remix-orig-hf-n.wav
+                C3: stimuli/HDM-04-remix-bss-htdft-hf-n.wav
+                C4: stimuli/HDM-04-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_6_HDM-06
+            name: Clip 6
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/HDM-06-mix.wav
+            stimuli:
+                C1: stimuli/HDM-06-mix-hf-n.wav
+                C2: stimuli/HDM-06-remix-orig-hf-n.wav
+                C3: stimuli/HDM-06-remix-bss-htdft-hf-n.wav
+                C4: stimuli/HDM-06-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_7_HDM-07
+            name: Clip 7
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/HDM-07-mix.wav
+            stimuli:
+                C1: stimuli/HDM-07-mix-hf-n.wav
+                C2: stimuli/HDM-07-remix-orig-hf-n.wav
+                C3: stimuli/HDM-07-remix-bss-htdft-hf-n.wav
+                C4: stimuli/HDM-07-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_8_HDM-12
+            name: Clip 8
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/HDM-12-mix.wav
+            stimuli:
+                C1: stimuli/HDM-12-mix-hf-n.wav
+                C2: stimuli/HDM-12-remix-orig-hf-n.wav
+                C3: stimuli/HDM-12-remix-bss-htdft-hf-n.wav
+                C4: stimuli/HDM-12-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_9_HDM-13
+            name: Clip 9
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/HDM-13-mix.wav
+            stimuli:
+                C1: stimuli/HDM-13-mix-hf-n.wav
+                C2: stimuli/HDM-13-remix-orig-hf-n.wav
+                C3: stimuli/HDM-13-remix-bss-htdft-hf-n.wav
+                C4: stimuli/HDM-13-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_10_SASRH-01
+            name: Clip 10
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/SASRH-01-mix.wav
+            stimuli:
+                C1: stimuli/SASRH-01-mix-hf-n.wav
+                C2: stimuli/SASRH-01-remix-orig-hf-n.wav
+                C3: stimuli/SASRH-01-remix-bss-htdft-hf-n.wav
+                C4: stimuli/SASRH-01-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_11_SASRH-03
+            name: Clip 11
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/SASRH-03-mix.wav
+            stimuli:
+                C1: stimuli/SASRH-03-mix-hf-n.wav
+                C2: stimuli/SASRH-03-remix-orig-hf-n.wav
+                C3: stimuli/SASRH-03-remix-bss-htdft-hf-n.wav
+                C4: stimuli/SASRH-03-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_12_SASRH-04
+            name: Clip 12
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/SASRH-04-mix.wav
+            stimuli:
+                C1: stimuli/SASRH-04-mix-hf-n.wav
+                C2: stimuli/SASRH-04-remix-orig-hf-n.wav
+                C3: stimuli/SASRH-04-remix-bss-htdft-hf-n.wav
+                C4: stimuli/SASRH-04-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_13_SASRH-06
+            name: Clip 13
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/SASRH-06-mix.wav
+            stimuli:
+                C1: stimuli/SASRH-06-mix-hf-n.wav
+                C2: stimuli/SASRH-06-remix-orig-hf-n.wav
+                C3: stimuli/SASRH-06-remix-bss-htdft-hf-n.wav
+                C4: stimuli/SASRH-06-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_14_SASRH-07
+            name: Clip 14
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/SASRH-07-mix.wav
+            stimuli:
+                C1: stimuli/SASRH-07-mix-hf-n.wav
+                C2: stimuli/SASRH-07-remix-orig-hf-n.wav
+                C3: stimuli/SASRH-07-remix-bss-htdft-hf-n.wav
+                C4: stimuli/SASRH-07-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_15_SASRH-09
+            name: Clip 15
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/SASRH-09-mix.wav
+            stimuli:
+                C1: stimuli/SASRH-09-mix-hf-n.wav
+                C2: stimuli/SASRH-09-remix-orig-hf-n.wav
+                C3: stimuli/SASRH-09-remix-bss-htdft-hf-n.wav
+                C4: stimuli/SASRH-09-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+        - type: mushra
+            id: trial_16_SASRH-12
+            name: Clip 16
+            content: How does the speech clarity of these clips compare to the reference ?
+            reference: stimuli/SASRH-12-mix.wav
+            stimuli:
+                C1: stimuli/SASRH-12-mix-hf-n.wav
+                C2: stimuli/SASRH-12-remix-orig-hf-n.wav
+                C3: stimuli/SASRH-12-remix-bss-htdft-hf-n.wav
+                C4: stimuli/SASRH-12-remix-bss-cfk-hf-n.wav
+            enableLooping: true
+            randomize: true
+    
+    - type: finish
+      name: Thank you
+      content: Thank you for attending!
+      showResults: true
+      writeResults: true
+      questionnaire:
+
+          - type: number
+            label: Age
+            name: age
+            min: 0
+            max: 100
+            default: 30
+          - type : likert
+            label :  Are you a hearing aid user?
+            response:
+             - value: 1
+               label: Yes
+             - value: 0
+               label: No
+          - type: text
+            label: Gender
+            name: gender
+          - type: text
+            label: Email (optional)
+            name: mail
