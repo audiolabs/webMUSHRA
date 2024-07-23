@@ -7,5 +7,6 @@ services:
     volumes:
       - ./results:/var/www/html/results
       - ./configs:/var/www/html/configs
+      - ./stimuli:/var/www/html/stimuli
     ports:
       - "8000:80"
