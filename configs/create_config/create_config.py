@@ -1,4 +1,3 @@
-import os
 import glob
 import numpy as np
 import pandas as pd
@@ -15,11 +14,29 @@ group1 = df[df.group == 1]
 group2 = df[df.group == 2]
 training = df[df.group == 0]
 
-
-for group in [group1, group2]:
+for i, group in enumerate([group1, group2]):
     # Read the YAML file as text
-    with open("before.yaml", "r") as file:
-        yaml_text = file.read()
+    head = f"""testname: Improving dialogue clarity in BBC programmes
+testId: dialogue_enhancement_{i+1}
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?<br/><br/>You are in group {i+1}
+    - type: consent
+      id: consent_page
+      name: Consent
+      mustConsent: true
+      content: Do you consent to having your brains harvested in the name of science?
+"""
+
+    yaml_text = head
 
     training_clip = training.new.values[0]
 

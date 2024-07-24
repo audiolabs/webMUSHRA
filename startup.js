@@ -225,7 +225,7 @@ var configFile = '';
 if (configArg) {
   configFile = 'configs/' + configArg;
 } else {
-  configFile = 'configs/group_2.yaml';
+  configFile = 'configs/group_1.yaml';
 }
 
 

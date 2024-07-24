@@ -1,5 +1,5 @@
 testname: Improving dialogue clarity in BBC programmes
-testId: dialogue_enhancement
+testId: dialogue_enhancement_2
 bufferSize: 2048
 stopOnErrors: true
 showButtonPreviousPage: true
@@ -10,13 +10,12 @@ pages:
     - type: generic
       id: first_page
       name: Welcome
-      content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?
+      content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?<br/><br/>You are in group 2
     - type: consent
       id: consent_page
       name: Consent
       mustConsent: true
       content: Do you consent to having your brains harvested in the name of science?
-
 
     - type: mushra
       id: training
