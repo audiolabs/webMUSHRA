@@ -11,6 +11,8 @@ pages:
       id: first_page
       name: Welcome
       content: You are in group 2<p></p>Thank you for participating in our experiment!<br/><br/>This experiment will take about an hour.<br/><br/>We are going to ask you to rate five slightly different versions of a clip from one of our shows for dialogue clarity. You can take as long as you like on each clip, there will be fifteen in total. You will be asked whether the version is better or worse than a reference clip. The first clip is for practise, to get used to the interface. After the first clip, the experiment will begin.<br/><br/>
+    - type: headphones
+      content: Hello world
     - type: consent
       id: consent_page
       name: Consent

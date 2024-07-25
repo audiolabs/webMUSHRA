@@ -36,6 +36,8 @@ pages:
       id: first_page
       name: Welcome
       content: You are in group {i+1}<p></p>{intro}
+    - type: headphones
+      content: Hello world
     - type: consent
       id: consent_page
       name: Consent

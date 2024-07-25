@@ -1,0 +1,72 @@
+<!--
+    Sijia Zhao (2020-2021) sijia.zhao@psy.ox.ac.uk
+    Read LICENSE file before using
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo: Binaural Beat Headphone Test</title>
+    <meta charset="UTF-8">
+    <meta content="user-scalable=no" name="viewport">
+    <!-- Required stylesheets: JQuery-UI -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Required libraries: JQuery and JQuery-UI -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+
+<!-- Add the headphonesCheck.js JavaScript file -->
+<script src="headphonesCheck.js"></script>
+
+<!-- Example usage -->
+<script>
+
+  // Optional: set options (see JSDoc in headphonesCheck.js for a full list of options).
+  // For example:
+  //    - set the check type to 'beat' for a Beat test
+  //    - provide a volume calibration sound
+  //    - provide an example check sound
+  //    - provide a set of check sounds
+  const options = {
+    checkType: 'beat',
+    volumeSound: 'stimuli_Beat/Beat_calibration.flac',
+    checkExample: 'stimuli_Beat/Beat_example_2.flac',
+    checkSounds: [
+      {answer: 2, file: 'stimuli_Beat/Beat_1_2.flac'},
+      {answer: 3, file: 'stimuli_Beat/Beat_2_3.flac'},
+      {answer: 1, file: 'stimuli_Beat/Beat_3_1.flac'},
+      {answer: 3, file: 'stimuli_Beat/Beat_4_3.flac'},
+      {answer: 3, file: 'stimuli_Beat/Beat_5_3.flac'},
+      {answer: 2, file: 'stimuli_Beat/Beat_6_2.flac'},
+      {answer: 1, file: 'stimuli_Beat/Beat_7_1.flac'},
+      {answer: 2, file: 'stimuli_Beat/Beat_8_2.flac'},
+      {answer: 3, file: 'stimuli_Beat/Beat_9_3.flac'},
+      {answer: 1, file: 'stimuli_Beat/Beat_10_1.flac'},
+      {answer: 1, file: 'stimuli_Beat/Beat_11_1.flac'},
+      {answer: 2, file: 'stimuli_Beat/Beat_12_2.flac'},
+    ],
+  };
+
+  // Create a new HeadphonesCheck using the options set above.
+  const headphonesCheck = new HeadphonesCheck(options);
+
+  // Perform the check (optional: call the showResult function when finished).
+  headphonesCheck.checkHeadphones(showResult);
+
+  // Function to display the result after completing the test.
+  function showResult(result) {
+    let resultMessage = result ? 'Pass' : 'Fail';
+    $('body').append('<div id="testResults" style="width: 100%; text-align: center; font-size: 3em;"></div>');
+    $('#testResults')
+        .append('<p style="margin-top: 1em;">' + resultMessage + '</p>')
+        .append('<p>' + headphonesCheck.attemptRecord[headphonesCheck.attemptCount].numberCorrect + ' out of 6 correct<br>after ' + headphonesCheck.attemptCount + ' attempt(s).<br>(The pass mark is 6.)</p>')
+        .append('<p><a href="https://sijiazhao.github.io/headphonecheck/">Go back to the Headphone Check homepage</a></p>');
+  }
+
+</script>
+<div style="text-align: center; margin: 1em;">Implemented by Sijia Zhao (2020-2021)</div>
+</body>
+</html>
