@@ -78,7 +78,7 @@ function addPagesToPageManager(_pageManager, _pages) {
       if (pageConfig.type == "generic") {
         _pageManager.addPage(new GenericPage(_pageManager, pageConfig));
       } else if (pageConfig.type == "headphones") {
-        _pageManager.addPage(new HeadphonesPage(_pageManager, pageConfig));
+        _pageManager.addPage(new HeadphonesPage(_pageManager, pageTemplateRenderer, pageConfig));
       } else if (pageConfig.type == "consent") {
         _pageManager.addPage(new ConsentPage(_pageManager, pageTemplateRenderer, pageConfig));
       } else if (pageConfig.type == "volume") {
