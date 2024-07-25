@@ -14,6 +14,13 @@ group1 = df[df.group == 1]
 group2 = df[df.group == 2]
 training = df[df.group == 0]
 
+intro = "Thank you for participating in our experiment!<br/><br/>This experiment will take about an hour.<br/><br/>We are going to ask you to rate five slightly different versions of a clip from one of our shows for dialogue clarity. You can take as long as you like on each clip, there will be fifteen in total. You will be asked whether the version is better or worse than a reference clip. The first clip is for practise, to get used to the interface. After the first clip, the experiment will begin.<br/><br/>"
+
+question = "How does the speech clarity of each version of the broadcast clip compare to the reference?"
+
+instructions = "In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. "
+
+
 for i, group in enumerate([group1, group2]):
     # Read the YAML file as text
     head = f"""testname: Improving dialogue clarity in BBC programmes
@@ -28,7 +35,7 @@ pages:
     - type: generic
       id: first_page
       name: Welcome
-      content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?<br/><br/>You are in group {i+1}
+      content: You are in group {i+1}<p></p>{intro}
     - type: consent
       id: consent_page
       name: Consent
@@ -43,8 +50,8 @@ pages:
     yaml_text += f"""
     - type: mushra
       id: training
-      name: MUSHRA
-      content: Training example
+      name: {question}
+      content: <b>This is a training example! Take as long as you like to familiarise yourself with the interface.</b><br></br>{instructions}
       showWaveform: true
       enableLooping: true
       randomize: false
@@ -65,8 +72,8 @@ pages:
         experiment_page = f"""
         - type: mushra
           id: trial_{i+1}_{clipname}
-          name: Clip {i+1}
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: {question}
+          content: {instructions}
           reference: stimuli/{clipname}-mix.wav
           stimuli:
             C1: stimuli/{clipname}-mix-hf-n.wav

@@ -10,7 +10,7 @@ pages:
     - type: generic
       id: first_page
       name: Welcome
-      content: Welcome to BBC Research and Development's experiment! <br/><br/>Are you ready to be thrilled for almost an hour!?<br/><br/>You are in group 2
+      content: You are in group 2<p></p>Thank you for participating in our experiment!<br/><br/>This experiment will take about an hour.<br/><br/>We are going to ask you to rate five slightly different versions of a clip from one of our shows for dialogue clarity. You can take as long as you like on each clip, there will be fifteen in total. You will be asked whether the version is better or worse than a reference clip. The first clip is for practise, to get used to the interface. After the first clip, the experiment will begin.<br/><br/>
     - type: consent
       id: consent_page
       name: Consent
@@ -19,8 +19,8 @@ pages:
 
     - type: mushra
       id: training
-      name: MUSHRA
-      content: Training example
+      name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+      content: <b>This is a training example! Take as long as you like to familiarise yourself with the interface.</b><br></br>In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
       showWaveform: true
       enableLooping: true
       randomize: false
@@ -35,8 +35,8 @@ pages:
         - random
         - type: mushra
           id: trial_1_DIP-05
-          name: Clip 1
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/DIP-05-mix.wav
           stimuli:
             C1: stimuli/DIP-05-mix-hf-n.wav
@@ -48,8 +48,8 @@ pages:
     
         - type: mushra
           id: trial_2_DIP-06
-          name: Clip 2
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/DIP-06-mix.wav
           stimuli:
             C1: stimuli/DIP-06-mix-hf-n.wav
@@ -61,8 +61,8 @@ pages:
     
         - type: mushra
           id: trial_3_DIP-08
-          name: Clip 3
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/DIP-08-mix.wav
           stimuli:
             C1: stimuli/DIP-08-mix-hf-n.wav
@@ -74,8 +74,8 @@ pages:
     
         - type: mushra
           id: trial_4_HDM-03
-          name: Clip 4
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/HDM-03-mix.wav
           stimuli:
             C1: stimuli/HDM-03-mix-hf-n.wav
@@ -87,8 +87,8 @@ pages:
     
         - type: mushra
           id: trial_5_HDM-04
-          name: Clip 5
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/HDM-04-mix.wav
           stimuli:
             C1: stimuli/HDM-04-mix-hf-n.wav
@@ -100,8 +100,8 @@ pages:
     
         - type: mushra
           id: trial_6_HDM-06
-          name: Clip 6
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/HDM-06-mix.wav
           stimuli:
             C1: stimuli/HDM-06-mix-hf-n.wav
@@ -113,8 +113,8 @@ pages:
     
         - type: mushra
           id: trial_7_HDM-07
-          name: Clip 7
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/HDM-07-mix.wav
           stimuli:
             C1: stimuli/HDM-07-mix-hf-n.wav
@@ -126,8 +126,8 @@ pages:
     
         - type: mushra
           id: trial_8_HDM-12
-          name: Clip 8
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/HDM-12-mix.wav
           stimuli:
             C1: stimuli/HDM-12-mix-hf-n.wav
@@ -139,8 +139,8 @@ pages:
     
         - type: mushra
           id: trial_9_HDM-13
-          name: Clip 9
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/HDM-13-mix.wav
           stimuli:
             C1: stimuli/HDM-13-mix-hf-n.wav
@@ -152,8 +152,8 @@ pages:
     
         - type: mushra
           id: trial_10_SASRH-01
-          name: Clip 10
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/SASRH-01-mix.wav
           stimuli:
             C1: stimuli/SASRH-01-mix-hf-n.wav
@@ -165,8 +165,8 @@ pages:
     
         - type: mushra
           id: trial_11_SASRH-03
-          name: Clip 11
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/SASRH-03-mix.wav
           stimuli:
             C1: stimuli/SASRH-03-mix-hf-n.wav
@@ -178,8 +178,8 @@ pages:
     
         - type: mushra
           id: trial_12_SASRH-04
-          name: Clip 12
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/SASRH-04-mix.wav
           stimuli:
             C1: stimuli/SASRH-04-mix-hf-n.wav
@@ -191,8 +191,8 @@ pages:
     
         - type: mushra
           id: trial_13_SASRH-06
-          name: Clip 13
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/SASRH-06-mix.wav
           stimuli:
             C1: stimuli/SASRH-06-mix-hf-n.wav
@@ -204,8 +204,8 @@ pages:
     
         - type: mushra
           id: trial_14_SASRH-07
-          name: Clip 14
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/SASRH-07-mix.wav
           stimuli:
             C1: stimuli/SASRH-07-mix-hf-n.wav
@@ -217,8 +217,8 @@ pages:
     
         - type: mushra
           id: trial_15_SASRH-09
-          name: Clip 15
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/SASRH-09-mix.wav
           stimuli:
             C1: stimuli/SASRH-09-mix-hf-n.wav
@@ -230,8 +230,8 @@ pages:
     
         - type: mushra
           id: trial_16_SASRH-12
-          name: Clip 16
-          content: How does the speech clarity of these clips compare to the reference ?
+          name: How does the speech clarity of each version of the broadcast clip compare to the reference?
+          content: In each vertical column is a different version of a clip from a BBC programme. For this programme clip, please rank each dialogue clarity of each version against the reference clip, avoiding comparing the versions to eachother. You can listen to each clip and version as many times as you like, and choose to loop a part of it to focus on a shorter section of the clip. 
           reference: stimuli/SASRH-12-mix.wav
           stimuli:
             C1: stimuli/SASRH-12-mix-hf-n.wav
