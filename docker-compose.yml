@@ -8,5 +8,9 @@ services:
       - ./results:/var/www/html/results
       - ./configs:/var/www/html/configs
       - ./stimuli:/var/www/html/stimuli
+      - ./lib:/var/www/html/lib
+      - ./stimuli_Beat:/var/www/html/stimuli_Beat
+      - ./index.html:/var/www/html/index.html
+      - ./startup.js:/var/www/html/startup.js
     ports:
       - "8000:80"
