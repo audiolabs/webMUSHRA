@@ -8,6 +8,7 @@ stopOnErrors: true
 showButtonPreviousPage: true
 remoteService: service/write.php
 
+# Ranking test does not support showing the waveform of the samples currently
 
 pages:
     - type: generic
@@ -19,30 +20,28 @@ pages:
       id: trial1
       name: Mono Trial
       content: test description
-      showWaveform: false
       enableLooping: false
       randomize: true
       showConditionNames: true
       showResetButton: true
       stimuli:
-          C1: configs/resources/audio/mono_c1.wav
-          C2: configs/resources/audio/mono_c2.wav
-          C3: configs/resources/audio/mono_c3.wav
+        C1: configs/resources/audio/mono_c1.wav
+        C2: configs/resources/audio/mono_c2.wav
+        C3: configs/resources/audio/mono_c3.wav
 
     - type: ranking
       id: trial2
       name: Mono Trial
       content: test description
-      showWaveform: false
       enableLooping: false
       randomize: true
       showConditionNames: true
       showResetButton: true
 
       stimuli:
-          C1: configs/resources/audio/mono_c1.wav
-          C2: configs/resources/audio/mono_c2.wav
-          C3: configs/resources/audio/mono_c3.wav
+        C1: configs/resources/audio/mono_c1.wav
+        C2: configs/resources/audio/mono_c2.wav
+        C3: configs/resources/audio/mono_c3.wav
 
     - type: finish
       name: Thank you
@@ -50,13 +49,12 @@ pages:
       showResults: true
       writeResults: true
       questionnaire:
-          - type: text
-            label: Nickname
-            name: id
-          - type: number
-            label: Age
-
-            name: age
-            min: 0
-            max: 100
-            default: 30
+        - type: text
+          label: Nickname
+          name: id
+        - type: number
+          label: Age
+          name: age
+          min: 0
+          max: 100
+          default: 30

@@ -40,7 +40,7 @@ $length = count($session->participant->name);
 // mushra
 $write_mushra = false;
 $mushraCsvData = array();
-
+$write_ranking = false;
 
 $input = array("session_test_id");
 for($i =0; $i < $length; $i++){
