@@ -76,6 +76,22 @@ A mushra page shows a trial according to ITU-R Recommendation BS.1534.
 * **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).  
 * **switchBack** If set to true, the time position is set back to the beginning (sample 0) when switching between test conditions and/or the reference. By default, this option is false.
 
+#### `ranking` page
+
+A ranking-by-elimination test trial page
+
+* **type** must be ranking.
+* **id** Identifier of the page.
+* **name** Name of the page (is shown as title)
+* **content** Content (HTML) of the page. The content is shown on the upper part of the page.
+* **showWaveform** If set to true, the waveform of the reference is shown.
+* **enableLooping** If set to true, the participant can set loops.
+* **randomize** If set to true, the conditions are randomized.
+* **showConditionNames** If set to true, the names of the conditions are shown.
+* **stimuli** A map of stimuli representing three conditions. The key is the name of the condition. The value is the filepath to the stimulus (WAV file).  
+* **switchBack** If set to true, the time position is set back to the beginning (sample 0) when switching between test conditions and/or the reference. By default, this option is false.
+* **forceRankAll** If set to true, the "next" button will only be enabled if all items are ranked.
+
 #### `bs1116` page          
 
 A bs1116 page shows a trial according to ITU-R Recommendation BS.1116.

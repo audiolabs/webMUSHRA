@@ -1,0 +1,60 @@
+# test config ranking page, waveform, 11 conditions, no looping
+
+
+testname: Rank order Elimination-by-Aspects
+testId: ranking_noloop
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+# Ranking test does not support showing the waveform of the samples currently
+
+pages:
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: <p style="text-align:left;"> Welcome to the rank order elimination-by-aspects test. <br> The goal of this test is to rank the presented conditions on personal preference of quality. <br> The test is conducted as described below: <br>[1] Listen to all the conditions one after the other using the "Play" button. <br> [2] Eliminate the worst condition using the "X" button below it. <br> [3] Repeat steps [1] and [2] until you are left with one condition or if you don't have a preference over remaining conditions.<br> [4]  You can reset the rankings by pressing "Reset" at any time, and all rankings done till that point will be reset.<br> [5] Proceed to the next test using "next" button. <br><br> NOTE.1: You can only eliminate an "active" condition, i.e. a condition whose button is currently higlighted. <br>  NOTE.2:  You cannot play again an already eliminated condition. ("Reset" re-enables all conditions). <br> NOTE.3: Once a condition is eliminated, its rank will appear on its button. Lower rank (1-5) indicate worse quality. So the worst condition will have rank 1, the second worst 2, ... <br> NOTE.4: If you press the "previous" button, the rankings of the previous test are lost and you can repeat the previous test. </p>
+
+    - type: ranking
+      id: trial1
+      name: Mono Trial
+      content: test description
+      enableLooping: false
+      randomize: true
+      showConditionNames: true
+      showResetButton: true
+      stimuli:
+        C1: configs/resources/audio/mono_c1.wav
+        C2: configs/resources/audio/mono_c2.wav
+        C3: configs/resources/audio/mono_c3.wav
+
+    - type: ranking
+      id: trial2
+      name: Mono Trial
+      content: test description
+      enableLooping: false
+      randomize: true
+      showConditionNames: true
+      showResetButton: true
+
+      stimuli:
+        C1: configs/resources/audio/mono_c1.wav
+        C2: configs/resources/audio/mono_c2.wav
+        C3: configs/resources/audio/mono_c3.wav
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending!
+      showResults: true
+      writeResults: true
+      questionnaire:
+        - type: text
+          label: Nickname
+          name: id
+        - type: number
+          label: Age
+          name: age
+          min: 0
+          max: 100
+          default: 30

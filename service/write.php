@@ -40,7 +40,7 @@ $length = count($session->participant->name);
 // mushra
 $write_mushra = false;
 $mushraCsvData = array();
-
+$write_ranking = false;
 
 $input = array("session_test_id");
 for($i =0; $i < $length; $i++){
@@ -86,6 +86,36 @@ if ($write_mushra) {
 		}
 	}
 	fclose($fp);
+}
+
+// Ranking write
+foreach ($session->trials as $trial){
+  if ($trial->type == "ranking") {
+      $write_ranking = true;
+
+      foreach ($trial->responses as $response) {
+      $results = array($session->testId);
+      for($i =0; $i < $length; $i++){
+        array_push($results, $session->participant->response[$i]);
+      }
+      array_push($results, $session->uuid, $trial->id, $response->stimulus, $response->score, $response->time, $response->comment);
+
+      array_push($mushraCsvData, $results);
+    }
+  }
+}
+if ($write_ranking) {
+  $filename = $filepathPrefix."ranking".$filepathPostfix;
+  $isFile = is_file($filename);
+  $fp = fopen($filename, 'a');
+  foreach ($mushraCsvData as $row) {
+    if ($isFile) {
+      $isFile = false;
+    } else {
+       fputcsv($fp, $row);
+    }
+  }
+  fclose($fp);
 }
 
 // paired comparison
