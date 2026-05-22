@@ -1,0 +1,30 @@
+# test config bs11.16 page, waveform, 11 conditions, no looping
+
+
+testname: Degradation Category Rating (DCR)
+testId: dcr_test
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+
+    - type: dcrp808
+      id: trial1
+      name: DMOS Quality Assessment
+      content: ' DCR Test'
+      showWaveform: false
+      enableLooping: false
+      createAnchor35: false
+      createAnchor70: false
+      reference: configs/resources/audio/mono_c1.wav
+      stimuli:
+        stim1: configs/resources/audio/mono_c1.wav
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      showResults: true
+      writeResults: true

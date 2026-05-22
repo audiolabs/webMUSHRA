@@ -82,7 +82,7 @@ if ($write_mushra) {
 		if ($isFile) {	    	
 			$isFile = false;
 		} else {
-		   fputcsv($fp, $row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
 		}
 	}
 	fclose($fp);
@@ -161,7 +161,7 @@ if ($write_pc) {
 		if ($isFile) {	    	
 			$isFile = false;
 		} else {
-		   fputcsv($fp, $row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
 		}
 	}
 	fclose($fp);
@@ -206,7 +206,48 @@ if ($write_bs1116) {
 		if ($isFile) {	    	
 			$isFile = false;
 		} else {
-		   fputcsv($fp, $row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
+		}
+	}
+	fclose($fp);
+}
+
+// dcrp808
+$write_dcrp808 = false;
+$dcrp808CsvData = array();
+
+$input = array("session_test_id");
+for($i =0; $i < $length; $i++){
+	array_push($input, $session->participant->name[$i]);
+}
+array_push($input,  "trial_id", "rating_non_reference", "rating_non_reference_score", "rating_time", "choice_comment");
+array_push($dcrp808CsvData, $input);
+
+foreach ($session->trials as $trial) {
+  if ($trial->type == "dcrp808") {
+	  foreach ($trial->responses as $response) {	  	
+	  	$write_dcrp808 = true;
+		  
+		$results = array($session->testId);
+		for($i =0; $i < $length; $i++){
+			array_push($results, $session->participant->response[$i]);
+		}  
+		array_push($results, $trial->id, $response->nonReference, $response->nonReferenceScore, $response->time, $response->comment);
+	  
+	  	array_push($dcrp808CsvData, $results); 
+	  }
+  }
+}
+
+if ($write_dcrp808) {
+	$filename = $filepathPrefix."dcrp808".$filepathPostfix;
+	$isFile = is_file($filename);
+	$fp = fopen($filename, 'a');
+	foreach ($dcrp808CsvData as $row) {
+		if ($isFile) {	    	
+			$isFile = false;
+		} else {
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
 		}
 	}
 	fclose($fp);
@@ -252,7 +293,7 @@ if($write_lms){
 		if ($isFile){
 			$isFile = false; 
 		} else {
-			fputcsv($fp,$row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
 		}
 	}
 	fclose($fp);
@@ -311,7 +352,7 @@ if($write_lss){
 		if ($isFile){
 			$isFile = false; 
 		} else {
-			fputcsv($fp,$row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
 		}
 	}
 	fclose($fp);
@@ -360,7 +401,7 @@ if ($write_spatial_localization) {
         if ($isFile) {          
             $isFile = false;
         } else {
-           fputcsv($fp, $row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
         }
     }
     fclose($fp);
@@ -408,7 +449,7 @@ if ($write_spatial_asw) {
         if ($isFile) {          
             $isFile = false;
         } else {
-           fputcsv($fp, $row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
         }
     }
     fclose($fp);
@@ -457,7 +498,7 @@ if ($write_spatial_hwd) {
         if ($isFile) {          
             $isFile = false;
         } else {
-           fputcsv($fp, $row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
         }
     }
     fclose($fp);
@@ -504,7 +545,7 @@ if ($write_spatial_lev) {
         if ($isFile) {          
             $isFile = false;
         } else {
-           fputcsv($fp, $row);
+            fputcsv($fp, $row, $delimiter = ",", $enclosure='"', $escape_char='\\');
         }
     }
     fclose($fp);
