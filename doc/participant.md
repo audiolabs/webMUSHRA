@@ -41,3 +41,8 @@
 * <kbd>SPACE</kbd> Play/pause the current selection
 * <kbd>a</kbd> Set begin of loop to current position
 * <kbd>b</kbd> Set end of loop to current position
+
+### Preference test
+
+* <kbd>1</kbd> Play item A
+* <kbd>2</kbd> Play item B

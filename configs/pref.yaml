@@ -1,0 +1,30 @@
+# test config preference test
+
+
+testname: Preference test
+testId: pref
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+pages:
+    - type: preference_test
+      id: trialpref
+      name: Preference test
+      content: |
+        <p><b>Which sound do you prefer?</b></p>
+      considerOrder: true
+      mustPlayback: ended
+      stimuli:
+        C1: configs/resources/audio/mono_c1.wav
+        C2: configs/resources/audio/mono_c2.wav
+        C3: configs/resources/audio/mono_c3.wav
+
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      showResults: true
+      writeResults: true
+      generateSubjectId: true
+      confirmationCode: your_code_here

@@ -284,6 +284,20 @@ pages:
             label: Male
           - value: other
             label: Other
+       - type: dropdown
+         name: referral
+         label: How have you heard of us?
+         response:
+           - value: searchEngine
+             label: Google/internet search
+           - value: friends
+             label: Friends or colleagues
+           - value: participant
+             label: Previous experiment
+           - value: paper
+             label: Seen in published paper
+           - value: other
+             label: Other             
        - type: long_text
          label: Feedback
          name: feedback
