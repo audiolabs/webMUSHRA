@@ -1,4 +1,6 @@
 /* global module:false */
+// Third-Party Modified Version of the webMUSHRA Software.
+// Modified 2026-10-19: include finish-page submission regression tests.
 module.exports = function(grunt) {
     var port = grunt.option('port') || 8000;
     // Project configuration
@@ -15,7 +17,8 @@ module.exports = function(grunt) {
 			   }
 	    },
         qunit: {
-            files: [ 'tests/test_yaml.html' ]
+            files: [ 'tests/test_yaml.html' ],
+            finish: [ 'tests/test_finish.html' ]
         },
         jshint: {
             options: {
