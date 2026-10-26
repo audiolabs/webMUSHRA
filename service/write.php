@@ -271,7 +271,15 @@ for($i =0; $i < $length; $i++){
 	array_push($input, $session->participant->name[$i]);
 }
 array_push($input,  "trial_id");
-$ratingCount = count($session->trials[0]->responses[0]->stimulusRating);
+// Check the first likert_single_stimulus response to get the
+// rating count. Set to 0 if no LSS responses
+$ratingCount = 0;
+foreach ($session->trials as $trial) {
+  if ($trial->type == "likert_single_stimulus" && count($trial->responses) > 0) {
+    $ratingCount = count($trial->responses[0]->stimulusRating);
+    break;
+  }
+}
 if($ratingCount > 1) {
     for($i =0; $i < $ratingCount; $i++){
         array_push($input, "stimuli_rating" . ($i+1));
