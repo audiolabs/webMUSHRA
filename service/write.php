@@ -19,6 +19,11 @@ function sanitize($string = '', $is_filename = FALSE)
 
 $sessionParam = null;
 
+if (!isset($_POST['sessionJSON'])) {
+	http_response_code(400);
+	exit;
+}
+
 //get_magic_quotes_gpc() was removed in PHP 8
 if(version_compare(PHP_VERSION, '8.0.0', '<') and get_magic_quotes_gpc()){
 	$sessionParam = stripslashes($_POST['sessionJSON']);
@@ -28,6 +33,10 @@ if(version_compare(PHP_VERSION, '8.0.0', '<') and get_magic_quotes_gpc()){
 
 
 $session = json_decode($sessionParam);
+if ($session === null) {
+	http_response_code(400);
+	exit;
+}
 
 
 $filepathPrefix = "../results/".sanitize($string = $session->testId, $is_filename =FALSE)."/";
@@ -82,7 +91,7 @@ if ($write_mushra) {
 		if ($isFile) {	    	
 			$isFile = false;
 		} else {
-		   fputcsv($fp, $row);
+		   fputcsv($fp, $row, ",", "\"", "\\");
 		}
 	}
 	fclose($fp);
@@ -112,7 +121,7 @@ if ($write_ranking) {
     if ($isFile) {
       $isFile = false;
     } else {
-       fputcsv($fp, $row);
+       fputcsv($fp, $row, ",", "\"", "\\");
     }
   }
   fclose($fp);
@@ -161,7 +170,7 @@ if ($write_pc) {
 		if ($isFile) {	    	
 			$isFile = false;
 		} else {
-		   fputcsv($fp, $row);
+		   fputcsv($fp, $row, ",", "\"", "\\");
 		}
 	}
 	fclose($fp);
@@ -206,7 +215,7 @@ if ($write_bs1116) {
 		if ($isFile) {	    	
 			$isFile = false;
 		} else {
-		   fputcsv($fp, $row);
+		   fputcsv($fp, $row, ",", "\"", "\\");
 		}
 	}
 	fclose($fp);
@@ -252,7 +261,7 @@ if($write_lms){
 		if ($isFile){
 			$isFile = false; 
 		} else {
-			fputcsv($fp,$row);
+			fputcsv($fp, $row, ",", "\"", "\\");
 		}
 	}
 	fclose($fp);
@@ -271,7 +280,15 @@ for($i =0; $i < $length; $i++){
 	array_push($input, $session->participant->name[$i]);
 }
 array_push($input,  "trial_id");
-$ratingCount = count($session->trials[0]->responses[0]->stimulusRating);
+// Check the first likert_single_stimulus response to get the
+// rating count. Set to 0 if no LSS responses
+$ratingCount = 0;
+foreach ($session->trials as $trial) {
+  if ($trial->type == "likert_single_stimulus" && count($trial->responses) > 0) {
+    $ratingCount = count($trial->responses[0]->stimulusRating);
+    break;
+  }
+}
 if($ratingCount > 1) {
     for($i =0; $i < $ratingCount; $i++){
         array_push($input, "stimuli_rating" . ($i+1));
@@ -311,7 +328,7 @@ if($write_lss){
 		if ($isFile){
 			$isFile = false; 
 		} else {
-			fputcsv($fp,$row);
+			fputcsv($fp, $row, ",", "\"", "\\");
 		}
 	}
 	fclose($fp);
@@ -360,7 +377,7 @@ if ($write_spatial_localization) {
         if ($isFile) {          
             $isFile = false;
         } else {
-           fputcsv($fp, $row);
+           fputcsv($fp, $row, ",", "\"", "\\");
         }
     }
     fclose($fp);
@@ -408,7 +425,7 @@ if ($write_spatial_asw) {
         if ($isFile) {          
             $isFile = false;
         } else {
-           fputcsv($fp, $row);
+           fputcsv($fp, $row, ",", "\"", "\\");
         }
     }
     fclose($fp);
@@ -457,7 +474,7 @@ if ($write_spatial_hwd) {
         if ($isFile) {          
             $isFile = false;
         } else {
-           fputcsv($fp, $row);
+           fputcsv($fp, $row, ",", "\"", "\\");
         }
     }
     fclose($fp);
@@ -504,7 +521,7 @@ if ($write_spatial_lev) {
         if ($isFile) {          
             $isFile = false;
         } else {
-           fputcsv($fp, $row);
+           fputcsv($fp, $row, ",", "\"", "\\");
         }
     }
     fclose($fp);
